@@ -206,41 +206,56 @@
     }
 
     /* ─── GSAP SCROLL REVEALS ─── */
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
 
-        // Grid elements are handled by their own stagger animations below — skip them here
-        const GRID_ELS = '.pcard, .strat-card, .why-item, .sitem, .proj-card, .mcard';
-        gsap.utils.toArray('.js-reveal').forEach(el => {
-            if (el.matches(GRID_ELS)) return;
-            gsap.fromTo(el,
-                { y: 52, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.95, ease: 'power3.out',
-                  scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' } }
-            );
-        });
+        // Immediately show all reveals when user prefers reduced motion
+        if (prefersReducedMotion) {
+            document.querySelectorAll('.js-reveal, .js-reveal-left').forEach(el => {
+                el.style.opacity = '1';
+                el.style.transform = 'none';
+            });
+        }
 
-        // Grid stagger animations — use fromTo so elements animate TO visible state
-        const pGrid = document.querySelector('.profiles-grid');
-        if (pGrid) gsap.fromTo('.pcard', { y: 64, opacity: 0 }, { y: 0, opacity: 1, duration: 1, stagger: 0.14, ease: 'power3.out', scrollTrigger: { trigger: pGrid, start: 'top 82%' } });
+        if (!prefersReducedMotion) {
+            // Grid elements handled by stagger animations below — skip here
+            const GRID_ELS = '.pcard, .strat-card, .why-item, .sitem, .proj-card, .mcard, .ethos-card';
+            gsap.utils.toArray('.js-reveal').forEach(el => {
+                if (el.matches(GRID_ELS)) return;
+                gsap.fromTo(el,
+                    { y: 48, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out',
+                      scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' } }
+                );
+            });
 
-        const sGrid = document.querySelector('.strat-grid');
-        if (sGrid) gsap.fromTo('.strat-card', { y: 64, opacity: 0 }, { y: 0, opacity: 1, duration: 1, stagger: 0.12, ease: 'power3.out', scrollTrigger: { trigger: sGrid, start: 'top 82%' } });
+            // Grid stagger animations
+            const pGrid = document.querySelector('.profiles-grid');
+            if (pGrid) gsap.fromTo('.pcard', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1, stagger: 0.12, ease: 'power3.out', scrollTrigger: { trigger: pGrid, start: 'top 82%' } });
 
-        const wGrid = document.querySelector('.why-grid');
-        if (wGrid) gsap.fromTo('.why-item', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.75, stagger: 0.07, ease: 'power3.out', scrollTrigger: { trigger: wGrid, start: 'top 82%' } });
+            const sGrid = document.querySelector('.strat-grid');
+            if (sGrid) gsap.fromTo('.strat-card', { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: sGrid, start: 'top 82%' } });
 
-        const sbar = document.querySelector('.sbar');
-        if (sbar) gsap.fromTo('.sitem', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.65, stagger: 0.09, ease: 'power3.out', scrollTrigger: { trigger: sbar, start: 'top 95%' } });
+            const wGrid = document.querySelector('.why-grid');
+            if (wGrid) gsap.fromTo('.why-item', { y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, stagger: 0.06, ease: 'power3.out', scrollTrigger: { trigger: wGrid, start: 'top 82%' } });
 
-        const projGrid = document.querySelector('.portfolio-grid');
-        if (projGrid) gsap.fromTo('.proj-card', { y: 56, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, stagger: 0.14, ease: 'power3.out', scrollTrigger: { trigger: projGrid, start: 'top 82%' } });
+            const sbar = document.querySelector('.sbar');
+            if (sbar) gsap.fromTo('.sitem', { y: 28, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, stagger: 0.08, ease: 'power3.out', scrollTrigger: { trigger: sbar, start: 'top 95%' } });
 
-        const mGrid = document.querySelector('.markets-grid');
-        if (mGrid) gsap.fromTo('.mcard', { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1, stagger: 0.18, ease: 'power3.out', scrollTrigger: { trigger: mGrid, start: 'top 82%' } });
+            const projGrid = document.querySelector('.portfolio-grid');
+            if (projGrid) gsap.fromTo('.proj-card', { y: 52, opacity: 0 }, { y: 0, opacity: 1, duration: 0.85, stagger: 0.12, ease: 'power3.out', scrollTrigger: { trigger: projGrid, start: 'top 82%' } });
 
-        const ctaEl = document.querySelector('.cta');
-        if (ctaEl) gsap.to('.cta-wm', { xPercent: -8, ease: 'none', scrollTrigger: { trigger: ctaEl, start: 'top bottom', end: 'bottom top', scrub: true } });
+            const mGrid = document.querySelector('.markets-grid');
+            if (mGrid) gsap.fromTo('.mcard', { y: 64, opacity: 0 }, { y: 0, opacity: 1, duration: 1.0, stagger: 0.16, ease: 'power3.out', scrollTrigger: { trigger: mGrid, start: 'top 82%' } });
+
+            const ethosGrid = document.querySelector('.ethos-right');
+            if (ethosGrid) gsap.fromTo('.ethos-card', { y: 44, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: ethosGrid, start: 'top 82%' } });
+
+            const ctaEl = document.querySelector('.cta');
+            if (ctaEl) gsap.to('.cta-wm', { xPercent: -8, ease: 'none', scrollTrigger: { trigger: ctaEl, start: 'top bottom', end: 'bottom top', scrub: true } });
+        }
     }
 
     /* ─── STAT COUNTERS ─── */
@@ -300,11 +315,11 @@
             const target = document.querySelector(href);
             if (!target) return;
             e.preventDefault();
-            const top = target.getBoundingClientRect().top + scrollY - 80;
             playNavSound();
-            window.scrollTo({ top, behavior: 'smooth' });
+            // scroll-margin-top on section handles nav offset; scrollIntoView is precise
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             if (typeof ScrollTrigger !== 'undefined') {
-                setTimeout(() => ScrollTrigger.refresh(), 800);
+                setTimeout(() => ScrollTrigger.refresh(), 600);
             }
         });
     });
@@ -461,9 +476,8 @@
             }
             const consult = document.getElementById('consultation');
             if (consult) {
-                const top = consult.getBoundingClientRect().top + window.scrollY - 80;
                 playNavSound();
-                window.scrollTo({ top, behavior: 'smooth' });
+                consult.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });

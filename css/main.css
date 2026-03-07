@@ -23,7 +23,7 @@
 
 /* ─── 2. RESET ─── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
 body {
     font-family: var(--sans);
     background: var(--bg);
@@ -202,6 +202,9 @@ nav.scrolled {
 }
 .nav-drawer a:hover { color: var(--green-bright); }
 .nav-drawer a.active { color: var(--white); }
+
+/* ─── SCROLL OFFSET (fixed nav clearance) ─── */
+section, .calc-section { scroll-margin-top: 88px; }
 
 /* ─── 8. SECTION COMMONS ─── */
 .container { max-width: 1400px; margin: 0 auto; }
@@ -415,7 +418,7 @@ nav.scrolled {
 .teaser-link:hover { gap: 16px; }
 
 /* ─── 14. INVESTOR PROFILES ─── */
-.profiles { padding: 140px 56px; background: var(--bg); }
+.profiles { padding: 100px 56px; background: var(--bg); }
 .profiles-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
 .pcard {
     padding: 48px 40px; background: var(--white); border: 1px solid var(--border);
@@ -440,7 +443,7 @@ nav.scrolled {
 .pfeatures li::before { content: ''; width: 18px; height: 1px; background: var(--green); flex-shrink: 0; }
 
 /* ─── 15. STRATEGIES ─── */
-.strategies { padding: 140px 56px; background: var(--hero-dark); }
+.strategies { padding: 100px 56px; background: var(--hero-dark); }
 .strat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
 .strat-card {
     padding: 56px 44px; background: rgba(255,255,255,0.02);
@@ -467,7 +470,7 @@ nav.scrolled {
 .strat-link:hover { gap: 16px; }
 
 /* ─── 16. WHY SAUDI ─── */
-.why { padding: 140px 56px; background: var(--bg); }
+.why { padding: 100px 56px; background: var(--bg); }
 .why-grid { display: grid; grid-template-columns: repeat(3,1fr); border: 1px solid var(--border); }
 .why-item { padding: 56px 44px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; transition: background 0.3s; }
 .why-item:hover { background: var(--green-light); }
@@ -479,7 +482,7 @@ nav.scrolled {
 .why-desc { font-family: var(--serif); font-size: 15px; font-style: italic; color: var(--grey); line-height: 1.6; }
 
 /* ─── 17. VISION 2030 ─── */
-.vision { padding: 140px 56px; background: var(--bg); }
+.vision { padding: 100px 56px; background: var(--bg); }
 .vision-intro { font-family: var(--serif); font-size: clamp(17px,1.6vw,22px); font-style: italic; color: var(--grey); max-width: 640px; margin-bottom: 56px; line-height: 1.7; }
 .vision-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
 .vcard { padding: 44px 40px; background: var(--white); border: 1px solid var(--border); position: relative; overflow: hidden; }
@@ -501,7 +504,7 @@ nav.scrolled {
 .t-label { font-size: 9px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.4); text-align: center; max-width: 100px; line-height: 1.4; }
 
 /* ─── 19. MEGA PROJECTS ─── */
-.megaprojects { padding: 140px 56px; background: var(--black); }
+.megaprojects { padding: 100px 56px; background: var(--black); }
 .mega-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 3px; }
 .mega-card { position: relative; overflow: hidden; height: 480px; }
 .mega-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s cubic-bezier(0.45,0.02,0.09,0.98); }
@@ -516,7 +519,7 @@ nav.scrolled {
 .mega-stat span:last-child { font-size: 7px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
 
 /* ─── 20. MARKETS ─── */
-.markets { padding: 140px 56px; background: var(--black); }
+.markets { padding: 100px 56px; background: var(--black); }
 .markets-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
 .mcard { position: relative; overflow: hidden; height: 580px; }
 .mcard img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(0.45,0.02,0.09,0.98); display: block; }
@@ -531,7 +534,7 @@ nav.scrolled {
 .mdata-item span:last-child { font-size: 7px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
 
 /* ─── 21. LEGAL FRAMEWORK ─── */
-.legal { padding: 140px 56px; background: var(--bg); }
+.legal { padding: 100px 56px; background: var(--bg); }
 .legal-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; margin-bottom: 56px; }
 .legal-card { padding: 44px 40px; background: var(--white); border: 1px solid var(--border); }
 .legal-card-title { font-weight: 800; font-size: 16px; text-transform: uppercase; letter-spacing: -0.01em; color: var(--black); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
@@ -549,7 +552,7 @@ nav.scrolled {
 .legal-stat-lbl { font-size: 9px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--grey); display: block; margin-top: 6px; }
 
 /* ─── 22. ANALYSIS TABLE ─── */
-.analysis { padding: 140px 56px; background: var(--hero-dark); }
+.analysis { padding: 100px 56px; background: var(--hero-dark); }
 .analysis-table-wrap { overflow-x: auto; margin-bottom: 48px; }
 .analysis-table { width: 100%; border-collapse: collapse; min-width: 600px; }
 .analysis-table th { font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.4); padding: 16px 24px; border-bottom: 1px solid rgba(255,255,255,0.08); text-align: left; white-space: nowrap; }
@@ -564,19 +567,59 @@ nav.scrolled {
 .ah-val { font-weight: 900; font-size: clamp(24px,2.5vw,36px); letter-spacing: -0.04em; color: var(--white); display: block; margin-bottom: 8px; }
 .ah-desc { font-family: var(--serif); font-size: 14px; font-style: italic; color: rgba(255,255,255,0.4); line-height: 1.5; }
 
-/* ─── 23. SUCCESS STORIES ─── */
-.stories { padding: 140px 56px; background: var(--bg); }
-.story-card { background: var(--white); border: 1px solid var(--border); padding: 52px 48px; margin-bottom: 48px; }
-.story-quote { font-family: var(--serif); font-size: clamp(18px,2vw,24px); font-style: italic; line-height: 1.6; color: var(--black); margin-bottom: 28px; }
-.story-quote::before { content: '\201C'; font-size: 52px; color: var(--green); line-height: 0.5; display: block; margin-bottom: 12px; font-style: normal; }
-.story-meta { padding-top: 24px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-.story-name { font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: -0.01em; color: var(--black); }
-.story-role { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey); margin-top: 3px; }
-.story-inv { font-size: 11px; color: var(--green); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-.story-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); }
-.story-stat { background: var(--white); padding: 32px 28px; }
-.story-stat-val { font-weight: 900; font-size: clamp(22px,2.5vw,36px); letter-spacing: -0.04em; color: var(--green); display: block; }
-.story-stat-lbl { font-size: 9px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--grey); display: block; margin-top: 6px; }
+/* ─── 23. THE SADDLEPOINT STANDARD (ethos) ─── */
+.ethos { padding: 100px 56px; background: var(--bg); }
+.ethos-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.ethos-h {
+    font-family: var(--sans); font-weight: 900;
+    font-size: clamp(28px,4vw,64px); line-height: 0.9;
+    letter-spacing: -0.04em; text-transform: uppercase;
+    color: var(--black); margin-bottom: 36px;
+}
+.ethos-body {
+    font-family: var(--serif); font-size: clamp(15px,1.3vw,18px);
+    font-style: italic; color: var(--grey);
+    line-height: 1.75; margin-bottom: 20px; max-width: 460px;
+}
+.ethos-right { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.ethos-card {
+    padding: 40px 32px; background: var(--white);
+    border: 1px solid var(--border); position: relative; overflow: hidden;
+    transition: background 0.3s;
+}
+.ethos-card:hover { background: var(--green-light); }
+.ethos-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px;
+    background: linear-gradient(to right, var(--green), var(--green-bright));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.4,0,0,1);
+}
+.ethos-card:hover::after { transform: scaleX(1); }
+.ethos-num {
+    font-size: 8px; font-weight: 700; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--green); display: block; margin-bottom: 16px;
+}
+.ethos-card-title {
+    font-weight: 800; font-size: 15px; text-transform: uppercase;
+    letter-spacing: -0.01em; color: var(--black); margin-bottom: 12px;
+}
+.ethos-card-desc {
+    font-family: var(--serif); font-size: 14px; font-style: italic;
+    color: var(--grey); line-height: 1.65;
+}
+
+/* ─── PORTFOLIO DISCLAIMER ─── */
+.portfolio-disclaimer {
+    font-size: 11px; color: rgba(255,255,255,0.25); font-style: italic;
+    margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06);
+    line-height: 1.6;
+}
+
+/* ─── STRATEGY DISCLAIMER ─── */
+.strat-disclaimer {
+    font-size: 10px; color: rgba(255,255,255,0.22); font-style: italic;
+    text-align: center; margin-top: 28px; line-height: 1.5; max-width: 640px; margin-left: auto; margin-right: auto;
+}
 
 /* ─── 24. INVESTMENT CALCULATOR ─── */
 .calc-section { padding: 80px 56px; background: var(--bg); border-top: 1px solid var(--border); }
@@ -710,8 +753,8 @@ footer { background: var(--hero-dark); padding: 80px 56px 40px; }
     .teaser-layout { grid-template-columns: 1fr; gap: 40px; }
     .teaser { padding: 80px 28px; }
     .teaser-header { flex-direction: column; align-items: flex-start; gap: 20px; }
-    .profiles, .strategies, .why, .markets, .cta, .vision { padding: 100px 28px; }
-    .megaprojects, .legal, .analysis, .stories, .consult, .faq-section { padding: 80px 28px; }
+    .profiles, .strategies, .why, .markets, .cta, .vision { padding: 72px 28px; }
+    .megaprojects, .legal, .analysis, .ethos, .consult, .faq-section { padding: 72px 28px; }
     .markets-grid { grid-template-columns: 1fr; }
     .mega-grid { grid-template-columns: 1fr; }
     .calc-wrap { grid-template-columns: 1fr; }
@@ -721,12 +764,13 @@ footer { background: var(--hero-dark); padding: 80px 56px 40px; }
     .ws-radio-grid, .ws-row { grid-template-columns: 1fr; }
     .timeline-track { flex-direction: column; gap: 28px; align-items: flex-start; }
     .timeline-track::before { display: none; }
-    .story-stats { grid-template-columns: 1fr; }
+    .ethos-layout { grid-template-columns: 1fr; gap: 48px; }
+    .ethos-right { gap: 2px; }
     footer { padding: 60px 28px 32px; }
-    .portfolio { padding: 80px 28px; }
+    .portfolio { padding: 72px 28px; }
     .portfolio-grid { grid-template-columns: 1fr; }
-    .timeline { padding: 60px 28px; }
-    .calc-section { padding: 60px 28px; }
+    .timeline { padding: 56px 28px; }
+    .calc-section { padding: 56px 28px; }
 }
 @media (max-width: 600px) {
     .sbar, .profiles-grid, .strat-grid, .why-grid { grid-template-columns: 1fr; }
@@ -739,4 +783,17 @@ footer { background: var(--hero-dark); padding: 80px 56px 40px; }
     .vision-grid { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr; }
     .hero-btns { flex-direction: column; }
+    .ethos-right { grid-template-columns: 1fr; }
+}
+
+/* ─── REDUCED MOTION ─── */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    .js-reveal { opacity: 1 !important; transform: none !important; }
+    .js-reveal-left { opacity: 1 !important; transform: none !important; }
+    .loader-logo-char { opacity: 1 !important; transform: none !important; }
+    .loader-bar { animation: none !important; left: 0 !important; }
+    .scroll-line::after { animation: none !important; }
+    #cur, #cur-f { display: none; }
 }
