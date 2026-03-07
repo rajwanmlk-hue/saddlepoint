@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Intelligence — Saddlepoint</title>
+    <meta name="description" content="Real-time intelligence on Saudi Arabia's fastest-growing property markets. Riyadh, Jeddah, and NEOM data — updated quarterly. Plus our investment return calculator.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div id="cur"></div>
+<div id="cur-f"></div>
+
+<!-- Mute toggle -->
+<button id="mute-btn" title="Toggle ambient audio" aria-label="Toggle audio">
+    <svg id="sound-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+    </svg>
+</button>
+
+<!-- NAV -->
+<nav id="nav">
+    <a href="/" class="nav-logo">Saddlepoint<span class="nav-dot"></span></a>
+    <ul class="nav-links">
+        <li><a href="/why-saudi/">Why Saudi</a></li>
+        <li><a href="/mega-projects/">Mega Projects</a></li>
+        <li><a href="/strategies/">Strategies</a></li>
+        <li><a href="/market-intelligence/">Market</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+    </ul>
+    <div class="nav-right">
+        <a href="/#consultation" class="nav-btn"><span>Book Consultation</span></a>
+        <button class="nav-ham" id="nav-ham" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="nav-drawer" id="nav-drawer">
+    <ul>
+        <li><a href="/why-saudi/">Why Saudi</a></li>
+        <li><a href="/mega-projects/">Mega Projects</a></li>
+        <li><a href="/strategies/">Strategies</a></li>
+        <li><a href="/market-intelligence/">Market Intelligence</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/#consultation">Book Consultation</a></li>
+    </ul>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+    <!-- TODO: Replace with Jeddah waterfront / Red Sea coast aerial image -->
+    <div class="page-hero-bg" style="background-image: url('https://picsum.photos/seed/jeddah-coast/1600/900');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+        <div class="page-hero-breadcrumb">
+            <a href="/">Home</a>
+            <span>/</span>
+            <a href="/market-intelligence/">Market Intelligence</a>
+        </div>
+        <span class="page-hero-eyebrow">Proprietary Data · Updated Q1 2026</span>
+        <h1 class="page-hero-title">Market<br>Intelligence</h1>
+        <p class="page-hero-sub">Real-time intelligence on Saudi Arabia's fastest-growing property markets. Proprietary data on Riyadh, Jeddah, and NEOM — updated quarterly.</p>
+    </div>
+</div>
+
+<!-- MARKET CARDS -->
+<section class="markets" id="market">
+    <div class="container">
+        <span class="section-label bright js-reveal">Key Growth Markets</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h light js-reveal" style="margin-bottom:20px;">Key Growth<br>Markets</h2>
+        <p class="js-reveal" style="font-family:var(--serif);font-size:clamp(15px,1.4vw,19px);font-style:italic;color:rgba(255,255,255,0.4);max-width:560px;line-height:1.7;margin-bottom:48px;">Real-time intelligence on Saudi Arabia's fastest-growing property markets. Proprietary data updated quarterly.</p>
+        <div class="markets-grid">
+            <div class="mcard js-reveal">
+                <!-- TODO: Replace with Riyadh skyline / King Abdullah Financial District image -->
+                <img src="https://picsum.photos/seed/riyadh-sky/900/580" alt="Riyadh skyline">
+                <div class="moverlay"></div>
+                <div class="mcontent">
+                    <div class="mgrowth">▲ +45% Growth</div>
+                    <div class="mcity">Riyadh</div>
+                    <div class="minvest">Financial District — Saudi Arabia's Economic Hub</div>
+                    <div class="mdata">
+                        <div class="mdata-item"><span>$850B</span><span>Total Investment</span></div>
+                        <div class="mdata-item"><span>120+</span><span>Active Projects</span></div>
+                        <div class="mdata-item"><span>SAR 8,500</span><span>Avg /sqm</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mcard js-reveal">
+                <!-- TODO: Replace with Jeddah Corniche waterfront / new development image -->
+                <img src="https://picsum.photos/seed/jeddah-coast/900/580" alt="Jeddah waterfront">
+                <div class="moverlay"></div>
+                <div class="mcontent">
+                    <div class="mgrowth">▲ +38% Growth</div>
+                    <div class="mcity">Jeddah</div>
+                    <div class="minvest">Red Sea Gateway — Tourism &amp; Commerce Hub</div>
+                    <div class="mdata">
+                        <div class="mdata-item"><span>$620B</span><span>Total Investment</span></div>
+                        <div class="mdata-item"><span>85+</span><span>Active Projects</span></div>
+                        <div class="mdata-item"><span>SAR 7,200</span><span>Avg /sqm</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ANALYSIS TABLE -->
+<section class="analysis" id="analysis">
+    <div class="container">
+        <span class="section-label bright js-reveal">Market Analysis</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h light js-reveal" style="margin-bottom:40px;">Comparative Market<br>Analysis — Q1 2026</h2>
+        <div class="analysis-table-wrap js-reveal">
+            <table class="analysis-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th class="hl">Riyadh (KAFD)</th>
+                        <th>Jeddah Corniche</th>
+                        <th>NEOM Region</th>
+                        <th>Dubai (comparison)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="row-lbl">YoY Capital Growth</td>
+                        <td class="hl">+45%</td>
+                        <td>+38%</td>
+                        <td>+120%*</td>
+                        <td>+22%</td>
+                    </tr>
+                    <tr>
+                        <td class="row-lbl">Avg Price /sqm (SAR)</td>
+                        <td class="hl">8,500</td>
+                        <td>7,200</td>
+                        <td>12,000*</td>
+                        <td>11,400</td>
+                    </tr>
+                    <tr>
+                        <td class="row-lbl">Gross Rental Yield</td>
+                        <td class="hl">7.8%</td>
+                        <td>7.2%</td>
+                        <td>N/A (dev phase)</td>
+                        <td>5.1%</td>
+                    </tr>
+                    <tr>
+                        <td class="row-lbl">Capital Gains Tax</td>
+                        <td class="hl">0%</td>
+                        <td>0%</td>
+                        <td>0%</td>
+                        <td>0%</td>
+                    </tr>
+                    <tr>
+                        <td class="row-lbl">Transaction Cost</td>
+                        <td class="hl">2.5%</td>
+                        <td>2.5%</td>
+                        <td>2.5%</td>
+                        <td>4.0%</td>
+                    </tr>
+                    <tr>
+                        <td class="row-lbl">Foreign Ownership</td>
+                        <td class="hl">100%</td>
+                        <td>100%</td>
+                        <td>100%</td>
+                        <td>Designated zones</td>
+                    </tr>
+                    <tr>
+                        <td class="row-lbl">Currency Stability</td>
+                        <td class="hl">USD Pegged</td>
+                        <td>USD Pegged</td>
+                        <td>USD Pegged</td>
+                        <td>USD Pegged</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size:10px;color:rgba(255,255,255,0.3);font-style:italic;margin-bottom:56px;">* NEOM Region estimates based on pre-development land; subject to regulatory developments. All data Q1 2026.</p>
+
+        <div class="analysis-highlights">
+            <div class="ah-card js-reveal">
+                <span class="ah-label">Peak Growth Market</span>
+                <span class="ah-val" data-target="45" data-suffix="%">0%</span>
+                <div class="ah-desc">Riyadh KAFD year-on-year capital appreciation — the highest of any major Gulf city in 2025.</div>
+            </div>
+            <div class="ah-card js-reveal">
+                <span class="ah-label">Best Rental Yield</span>
+                <span class="ah-val">7.8%</span>
+                <div class="ah-desc">Gross rental yield in Riyadh's prime residential zones — 53% above comparable Dubai assets.</div>
+            </div>
+            <div class="ah-card js-reveal">
+                <span class="ah-label">Transaction Cost Advantage</span>
+                <span class="ah-val">2.5%</span>
+                <div class="ah-desc">Saudi Arabia's transfer tax vs 4%+ in Dubai, 5%+ in UK, and 7%+ in Singapore — maximising net returns.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INVESTMENT CALCULATOR -->
+<div class="calc-section" id="calculator">
+    <div class="container">
+        <span class="section-label js-reveal">Return Modelling</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h js-reveal" style="margin-bottom:12px;">Investment<br>Return Calculator</h2>
+        <p class="js-reveal" style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--grey);margin-bottom:48px;line-height:1.6;">Model your potential returns based on Saudi market historical data and your investment parameters.</p>
+        <div class="calc-wrap js-reveal">
+            <div class="calc-inputs">
+                <div class="calc-field">
+                    <label for="calc-inv">Investment Amount (SAR)</label>
+                    <input id="calc-inv" type="number" value="1000000" min="100000" step="100000">
+                </div>
+                <div class="calc-field">
+                    <label for="calc-years">Holding Period (Years)</label>
+                    <input id="calc-years" type="number" value="5" min="1" max="30">
+                </div>
+                <div class="calc-field">
+                    <label for="calc-growth">Expected Annual Growth (%)</label>
+                    <input id="calc-growth" type="number" value="12" min="1" max="50" step="0.5">
+                </div>
+                <div class="calc-field">
+                    <label for="calc-yield">Annual Rental Yield (%)</label>
+                    <input id="calc-yield" type="number" value="7.2" min="0" max="30" step="0.1">
+                </div>
+            </div>
+            <div>
+                <div class="calc-outputs">
+                    <div class="calc-out">
+                        <span class="calc-out-label">Capital Appreciation</span>
+                        <div class="calc-out-val" id="calc-cap">SAR 762K</div>
+                    </div>
+                    <div class="calc-out">
+                        <span class="calc-out-label">Rental Income</span>
+                        <div class="calc-out-val" id="calc-rent">SAR 360K</div>
+                    </div>
+                    <div class="calc-out">
+                        <span class="calc-out-label">Total Return</span>
+                        <div class="calc-out-val" id="calc-total">SAR 1.12M</div>
+                    </div>
+                    <div class="calc-out roi">
+                        <span class="calc-out-label">Total ROI</span>
+                        <div class="calc-out-val" id="calc-roi">112.2%</div>
+                    </div>
+                </div>
+                <p style="font-size:10px;color:var(--grey);margin-top:16px;font-style:italic;line-height:1.5;">* Projections based on historical Saudi market data. Past performance does not guarantee future results. Consult an advisor before investing.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA BANNER -->
+<section class="cta">
+    <div class="cta-wm" aria-hidden="true">SADDLEPOINT</div>
+    <span class="section-label">Private Briefing</span>
+    <h2 class="cta-h js-reveal">Get a Full Market<br>Intelligence Report</h2>
+    <p class="cta-sub js-reveal">Our quarterly market report includes proprietary transaction data, project timelines, and our top investment picks. Exclusively for clients.</p>
+    <div class="cta-btns js-reveal">
+        <a href="/#consultation" class="btn btn-white"><span>Book Market Briefing</span></a>
+        <a href="/public/reports/saddlepoint-market-report-2026-q1.pdf" download target="_blank" class="btn btn-outline-w"><span>Download Q1 2026 Report</span></a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-top">
+            <div>
+                <span class="fbrand">Saddle<em>point</em></span>
+                <p class="ftagline">Your trusted partner in navigating Saudi Arabia's real estate transformation. Professional advisory for intelligent capital placement aligned with Vision 2030.</p>
+            </div>
+            <div>
+                <span class="fcol-title">Investment Services</span>
+                <ul class="flinks">
+                    <li><a href="/why-saudi/">Why Saudi Arabia</a></li>
+                    <li><a href="/mega-projects/">Mega Projects</a></li>
+                    <li><a href="/strategies/">Strategies</a></li>
+                    <li><a href="/market-intelligence/">Market Intelligence</a></li>
+                    <li><a href="/portfolio/">Portfolio</a></li>
+                    <li><a href="/#consultation">Private Consultation</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="fcol-title">Resources</span>
+                <ul class="flinks">
+                    <li><a href="/why-saudi/#legal">Legal Framework Guide</a></li>
+                    <li><a href="/market-intelligence/#analysis">Market Analysis</a></li>
+                    <li><a href="/market-intelligence/#calculator">Investment Calculator</a></li>
+                    <li><a href="/why-saudi/#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="fcol-title">Company</span>
+                <ul class="flinks">
+                    <li><a href="#">About Saddlepoint</a></li>
+                    <li><a href="#">Advisory Team</a></li>
+                    <li><a href="/portfolio/">Success Stories</a></li>
+                    <li><a href="mailto:hello@saddlepoint.sa">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bot">
+            <span class="fcopy">© 2026 Saddlepoint. All rights reserved.</span>
+            <ul class="flegal">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<!-- Shared JS -->
+<script src="/js/shared.js"></script>
+
+</body>
+</html>

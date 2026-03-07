@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Growth Markets — Saddlepoint | Saudi Arabia Investment Regions</title>
+  <meta name="description" content="Six key growth markets for Saudi Arabia real estate investment: Riyadh, Jeddah, Eastern Province, Diriyah, Red Sea, and entertainment corridors.">
+  <meta property="og:title" content="Key Growth Markets — Saddlepoint">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    .market-detail-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--border-l);
+      margin-bottom: 3px;
+      overflow: hidden;
+    }
+    .market-detail-card:nth-child(even) { flex-direction: row-reverse; }
+    .market-detail-card .img-side {
+      height: 480px;
+      position: relative;
+      overflow: hidden;
+    }
+    .market-detail-card .img-side img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 1.2s ease;
+    }
+    .market-detail-card:hover .img-side img { transform: scale(1.05); }
+    .market-detail-card .content-side {
+      padding: 56px 52px;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .market-detail-card:nth-child(even) .content-side { background: var(--cream); }
+    .asset-tag {
+      display: inline-block;
+      padding: 5px 12px;
+      background: var(--green-light);
+      border: 1px solid rgba(0,108,53,0.2);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin: 4px 4px 4px 0;
+    }
+    .kpi-row {
+      display: flex;
+      gap: 32px;
+      margin: 28px 0;
+      padding: 28px 0;
+      border-top: 1px solid var(--border-l);
+      border-bottom: 1px solid var(--border-l);
+    }
+    .kpi-item .val { font-family:var(--serif); font-size:28px; font-weight:400; color:var(--navy); display:block; }
+    .kpi-item .lbl { font-size:9px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:#999; }
+    @media (max-width:900px) {
+      .market-detail-card { grid-template-columns:1fr; }
+      .market-detail-card .img-side { height: 300px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="/" class="nav-logo">Saddlepoint <span class="nav-logo-dot"></span></a>
+  <ul class="nav-links">
+    <li><a href="/growth-markets/" class="active">Markets</a></li>
+    <li><a href="/market-reports/">Reports</a></li>
+    <li><a href="/investor/">Investors</a></li>
+    <li><a href="/mega-projects/">Projects</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="sound-wrap">
+      <button class="sound-toggle" id="sound-toggle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+        <span class="sound-label">Sound Off</span>
+      </button>
+      <div class="sound-mode-picker" id="sound-picker">
+        <button class="sound-mode-btn active" data-mode="cinematic">Cinematic</button>
+        <button class="sound-mode-btn" data-mode="jazz">Hotel Jazz</button>
+      </div>
+    </div>
+    <a href="/contact/" class="nav-cta">Book Consultation</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero" aria-label="Growth Markets">
+  <img class="hero-img" src="https://picsum.photos/seed/saudi-map/1920/900" alt="Saudi Arabia cityscape" loading="eager" style="opacity:0.28;">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="breadcrumb reveal"><a href="/">Home</a><span>·</span><span style="color:var(--gold);">Key Growth Markets</span></div>
+    <h1 class="display-heading reveal">Six Cities.<br><em>One</em> Transformation.</h1>
+    <p class="reveal" style="font-family:var(--serif);font-size:clamp(17px,1.8vw,22px);font-style:italic;color:var(--text-mid);margin-top:24px;max-width:580px;line-height:1.7;">
+      Saudi Arabia's investment opportunity is not distributed evenly. We map exactly where capital should concentrate — and why — across six distinct growth corridors.
+    </p>
+  </div>
+</section>
+
+<!-- OVERVIEW METRICS -->
+<div class="section section-navy" style="padding-top:0;padding-bottom:0;">
+  <div class="metrics-bar" style="grid-template-columns:repeat(4,1fr);">
+    <div class="metric-item reveal"><span class="metric-num">6</span><span class="metric-label">Priority Markets</span></div>
+    <div class="metric-item reveal reveal-delay-1"><span class="metric-num" style="color:var(--white);">$3.3T</span><span class="metric-label">Pipeline Value</span></div>
+    <div class="metric-item reveal reveal-delay-2"><span class="metric-num">120+</span><span class="metric-label">Active Projects</span></div>
+    <div class="metric-item reveal reveal-delay-3"><span class="metric-num" style="color:var(--white);">2030</span><span class="metric-label">Delivery Horizon</span></div>
+  </div>
+</div>
+
+<!-- MARKETS GRID — FULL -->
+<section class="section section-cream" style="padding-left:0;padding-right:0;">
+
+  <!-- 1. RIYADH -->
+  <div class="market-detail-card reveal" id="riyadh">
+    <div class="img-side">
+      <img src="https://picsum.photos/seed/riyadh-skyline-2/1200/800" alt="Riyadh skyline at dusk" loading="lazy">
+    </div>
+    <div class="content-side">
+      <span class="label green">01 — Western Province</span>
+      <div class="gold-rule green-r"></div>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--navy);margin-bottom:14px;line-height:1.05;">Riyadh</h2>
+      <p style="font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#999;margin-bottom:16px;">HQ Migration · Grade A Office · Branded Residences · Executive Rentals</p>
+      <p style="font-family:var(--serif);font-size:16px;font-style:italic;color:#555;line-height:1.7;margin-bottom:20px;">
+        The mandatory HQ relocation programme has transformed Riyadh into the most undersupplied Grade A office market in the Middle East. Every major multinational — from JPMorgan to McKinsey — now legally required to base regional HQ here. Office vacancy is 5.2%, a MENA record.
+      </p>
+      <p style="font-size:14px;color:#444;line-height:1.6;margin-bottom:24px;">
+        Beyond offices: executive residential demand has surged 34% YoY as C-suite expats relocate. Serviced apartments in Diplomatic Quarter achieve SAR 45,000/month. Mixed-use districts anchored by King Salman Park and the new Cultural District create two premium new sub-markets.
+      </p>
+      <div class="kpi-row">
+        <div class="kpi-item"><span class="val">+18%</span><span class="lbl">Office Rent Growth</span></div>
+        <div class="kpi-item"><span class="val">5.2%</span><span class="lbl">Grade A Vacancy</span></div>
+        <div class="kpi-item"><span class="val">11%</span><span class="lbl">Typical Yield</span></div>
+      </div>
+      <div>
+        <p style="font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#999;margin-bottom:12px;">Recommended Asset Classes</p>
+        <span class="asset-tag">Grade A Office Floors</span>
+        <span class="asset-tag">Executive Serviced Apts</span>
+        <span class="asset-tag">Branded Residences</span>
+        <span class="asset-tag">Mixed-Use Retail</span>
+      </div>
+      <a href="/contact/" class="btn btn-dark" style="margin-top:28px;align-self:flex-start;">Explore Riyadh Deals →</a>
+    </div>
+  </div>
+
+  <!-- 2. JEDDAH -->
+  <div class="market-detail-card reveal" id="jeddah">
+    <div class="content-side" style="background:var(--cream);">
+      <span class="label green">02 — Hejaz Region</span>
+      <div class="gold-rule green-r"></div>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--navy);margin-bottom:14px;line-height:1.05;">Jeddah</h2>
+      <p style="font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#999;margin-bottom:16px;">Gateway City · Coastal Lifestyle · Waterfront Living · Hospitality · Premium Mid-Rise</p>
+      <p style="font-family:var(--serif);font-size:16px;font-style:italic;color:#555;line-height:1.7;margin-bottom:20px;">
+        Jeddah is repositioning from gateway city to premium coastal lifestyle destination. At 40% of Dubai Marina pricing, with the same Red Sea frontage and far superior yield — the arbitrage opportunity is structural, not temporary.
+      </p>
+      <p style="font-size:14px;color:#444;line-height:1.6;margin-bottom:24px;">
+        Al-Balad (UNESCO-listed) is generating 85% pre-sold boutique hotel conversions. Obhur Creek Marina expansion is driving a marine-adjacent residential premium of 28%. Corniche branded residences under hotel management yield 8–9%.
+      </p>
+      <div class="kpi-row">
+        <div class="kpi-item"><span class="val">+22%</span><span class="lbl">Residential Growth</span></div>
+        <div class="kpi-item"><span class="val">8.9%</span><span class="lbl">Average Yield</span></div>
+        <div class="kpi-item"><span class="val">74%</span><span class="lbl">Hotel Occupancy</span></div>
+      </div>
+      <div>
+        <span class="asset-tag">Corniche Branded Residences</span>
+        <span class="asset-tag">Boutique Hospitality</span>
+        <span class="asset-tag">Al-Balad Heritage Conversions</span>
+        <span class="asset-tag">Marina-Adjacent Premium Mid-Rise</span>
+      </div>
+      <a href="/contact/" class="btn btn-dark" style="margin-top:28px;align-self:flex-start;">Explore Jeddah Deals →</a>
+    </div>
+    <div class="img-side">
+      <img src="https://picsum.photos/seed/jeddah-waterfront-2/1200/800" alt="Jeddah waterfront" loading="lazy">
+    </div>
+  </div>
+
+  <!-- 3. EASTERN PROVINCE -->
+  <div class="market-detail-card reveal" id="eastern-province">
+    <div class="img-side">
+      <img src="https://picsum.photos/seed/eastern-province/1200/800" alt="Eastern Province industrial and residential" loading="lazy">
+    </div>
+    <div class="content-side">
+      <span class="label green">03 — Eastern Province</span>
+      <div class="gold-rule green-r"></div>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--navy);margin-bottom:14px;line-height:1.05;">Eastern Province</h2>
+      <p style="font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#999;margin-bottom:16px;">Industry · Energy Ecosystem · Logistics Parks · Corporate Housing</p>
+      <p style="font-family:var(--serif);font-size:16px;font-style:italic;color:#555;line-height:1.7;margin-bottom:20px;">
+        Dammam, Al Khobar and Dhahran form the Kingdom's industrial heartland — home to Aramco, SABIC and the world's largest integrated energy ecosystem. The pivot from pure extraction to downstream manufacturing and logistics is creating a new layer of commercial real estate demand.
+      </p>
+      <p style="font-size:14px;color:#444;line-height:1.6;margin-bottom:24px;">
+        Logistics park demand is 2.3x supply through 2028. Corporate housing for Aramco contractors commands SAR 120,000+ annual rent. King Abdullah Economic City (KAEC) on the coast is the logistics gateway for $60B in planned industrial investment.
+      </p>
+      <div class="kpi-row">
+        <div class="kpi-item"><span class="val">2.3x</span><span class="lbl">Logistics Demand/Supply</span></div>
+        <div class="kpi-item"><span class="val">+15%</span><span class="lbl">Corporate Rent Growth</span></div>
+        <div class="kpi-item"><span class="val">$60B</span><span class="lbl">Industrial Investment</span></div>
+      </div>
+      <div>
+        <span class="asset-tag">Logistics Parks</span>
+        <span class="asset-tag">Corporate Housing Compounds</span>
+        <span class="asset-tag">Industrial Warehousing</span>
+        <span class="asset-tag">KAEC Coastal Residential</span>
+      </div>
+      <a href="/contact/" class="btn btn-dark" style="margin-top:28px;align-self:flex-start;">Explore Eastern Province →</a>
+    </div>
+  </div>
+
+  <!-- 4. DIRIYAH / HERITAGE LUXURY -->
+  <div class="market-detail-card reveal" id="diriyah">
+    <div class="content-side" style="background:var(--cream);">
+      <span class="label green">04 — Heritage Corridor</span>
+      <div class="gold-rule green-r"></div>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--navy);margin-bottom:14px;line-height:1.05;">Diriyah &<br>Heritage Luxury</h2>
+      <p style="font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#999;margin-bottom:16px;">UNESCO · Boutique Hospitality · Cultural Tourism · Premium Retail</p>
+      <p style="font-family:var(--serif);font-size:16px;font-style:italic;color:#555;line-height:1.7;margin-bottom:20px;">
+        Diriyah — the birthplace of the Saudi state, UNESCO World Heritage Site — is being transformed into the world's most ambitious luxury heritage destination. The $20B Diriyah Gate project creates 100,000 sqm of premium retail, 38 boutique hotels, and cultural institutions rivalling the Louvre Abu Dhabi.
+      </p>
+      <p style="font-size:14px;color:#444;line-height:1.6;margin-bottom:24px;">
+        Heritage tourism is the fastest-growing segment of Saudi's Vision 2030 diversification. Boutique hotel concessions in Diriyah are selling at premiums unavailable elsewhere in the region. Cultural tourism target: 150M visitors/year by 2030.
+      </p>
+      <div class="kpi-row">
+        <div class="kpi-item"><span class="val">$20B</span><span class="lbl">Total Investment</span></div>
+        <div class="kpi-item"><span class="val">38</span><span class="lbl">Boutique Hotels Planned</span></div>
+        <div class="kpi-item"><span class="val">150M</span><span class="lbl">Annual Visitor Target</span></div>
+      </div>
+      <div>
+        <span class="asset-tag">Boutique Hotel Concessions</span>
+        <span class="asset-tag">Premium Heritage Retail</span>
+        <span class="asset-tag">Cultural Tourism Assets</span>
+        <span class="asset-tag">Branded Residences</span>
+      </div>
+      <a href="/contact/" class="btn btn-dark" style="margin-top:28px;align-self:flex-start;">Explore Diriyah Deals →</a>
+    </div>
+    <div class="img-side">
+      <img src="https://picsum.photos/seed/diriyah-heritage-2/1200/800" alt="Diriyah heritage architecture" loading="lazy">
+    </div>
+  </div>
+
+  <!-- 5. RED SEA DESTINATION -->
+  <div class="market-detail-card reveal" id="red-sea">
+    <div class="img-side">
+      <img src="https://picsum.photos/seed/red-sea-destination/1200/800" alt="Red Sea coastal resort" loading="lazy">
+    </div>
+    <div class="content-side">
+      <span class="label green">05 — Giga Project</span>
+      <div class="gold-rule green-r"></div>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--navy);margin-bottom:14px;line-height:1.05;">Red Sea<br>Destination</h2>
+      <p style="font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#999;margin-bottom:16px;">Hospitality Assets · Branded Resort Residences · Operator-Led Investments</p>
+      <p style="font-family:var(--serif);font-size:16px;font-style:italic;color:#555;line-height:1.7;margin-bottom:20px;">
+        The Red Sea Project is the most significant hospitality real estate development in the world today. 28 pristine islands, 1,300km of coastline, and a zero-net-carbon target. Phase 1 opens in 2026 with Six Senses, Jumeirah and W Hotel. Private investor windows open for Phase 2.
+      </p>
+      <p style="font-size:14px;color:#444;line-height:1.6;margin-bottom:24px;">
+        Operator-managed resort residences offer unique covenant security — the operator guarantees occupancy and handles all management. Yields of 9–12% with luxury operator branding. Phase 2 price windows are the lowest they will ever be.
+      </p>
+      <div class="kpi-row">
+        <div class="kpi-item"><span class="val">$6.4B</span><span class="lbl">Phase 2 Committed</span></div>
+        <div class="kpi-item"><span class="val">9–12%</span><span class="lbl">Projected Yield</span></div>
+        <div class="kpi-item"><span class="val">28</span><span class="lbl">Islands Developed</span></div>
+      </div>
+      <div>
+        <span class="asset-tag">Operator-Managed Resort Units</span>
+        <span class="asset-tag">Branded Residences</span>
+        <span class="asset-tag">Marina & Marine Retail</span>
+        <span class="asset-tag">Hospitality Concessions</span>
+      </div>
+      <a href="/contact/" class="btn btn-dark" style="margin-top:28px;align-self:flex-start;">Explore Red Sea Deals →</a>
+    </div>
+  </div>
+
+  <!-- 6. ENTERTAINMENT CORRIDORS -->
+  <div class="market-detail-card reveal" id="entertainment">
+    <div class="content-side" style="background:var(--cream);">
+      <span class="label green">06 — Entertainment Corridors</span>
+      <div class="gold-rule green-r"></div>
+      <h2 style="font-family:var(--serif);font-size:clamp(28px,3vw,44px);font-weight:300;color:var(--navy);margin-bottom:14px;line-height:1.05;">Qiddiya &<br>Entertainment Zones</h2>
+      <p style="font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#999;margin-bottom:16px;">Event-Driven Demand · Short-Stay · Hospitality · Ancillary Retail</p>
+      <p style="font-family:var(--serif);font-size:16px;font-style:italic;color:#555;line-height:1.7;margin-bottom:20px;">
+        Saudi Arabia has reversed its entertainment prohibition. Qiddiya — the $8.2B entertainment capital — will host Formula E, the world's largest theme park complex, and 20,000-seat concert arenas. This creates entirely new demand patterns: event-driven short-stay, premium hospitality, and ancillary F&B and retail.
+      </p>
+      <p style="font-size:14px;color:#444;line-height:1.6;margin-bottom:24px;">
+        Smart investors are positioning in the hospitality and short-stay assets within a 30-minute radius of Qiddiya before major events drive permanent premium re-pricing. The Formula E race weekend alone generates 4,000 additional hotel room-nights per event.
+      </p>
+      <div class="kpi-row">
+        <div class="kpi-item"><span class="val">$8.2B</span><span class="lbl">Qiddiya Investment</span></div>
+        <div class="kpi-item"><span class="val">+31%</span><span class="lbl">Short-Stay ADR Growth</span></div>
+        <div class="kpi-item"><span class="val">76%</span><span class="lbl">Event Hotel Occupancy</span></div>
+      </div>
+      <div>
+        <span class="asset-tag">Short-Stay Hospitality</span>
+        <span class="asset-tag">Event-Adjacent Hotels</span>
+        <span class="asset-tag">Ancillary Retail</span>
+        <span class="asset-tag">F&B Hospitality Assets</span>
+      </div>
+      <a href="/contact/" class="btn btn-dark" style="margin-top:28px;align-self:flex-start;">Explore Entertainment Zones →</a>
+    </div>
+    <div class="img-side">
+      <img src="https://picsum.photos/seed/entertainment-zone/1200/800" alt="Entertainment district aerial" loading="lazy">
+    </div>
+  </div>
+
+</section>
+
+<!-- CTA -->
+<section class="section section-dark" aria-label="Market Advisory CTA">
+  <div class="container" style="max-width:760px;text-align:center;">
+    <span class="label reveal" style="display:block;text-align:center;margin-bottom:16px;">Private Market Advisory</span>
+    <h2 class="section-heading light reveal" style="margin-bottom:20px;">Not sure which market<br>fits your mandate?</h2>
+    <p class="reveal" style="font-family:var(--serif);font-size:18px;font-style:italic;color:var(--text-mid);line-height:1.7;margin-bottom:44px;">
+      Our advisory team runs a complimentary 60-minute market mapping session — we'll identify which of the six markets best matches your risk profile, ticket size, and return expectations.
+    </p>
+    <div class="btn-group reveal" style="justify-content:center;">
+      <a href="/contact/" class="btn btn-gold">Book Market Mapping Session</a>
+      <a href="/market-reports/" class="btn btn-ghost">Download Market Report →</a>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Saddlepoint <span class="nav-logo-dot"></span></div>
+      <p class="footer-tagline">Vision 2030 Investment Partner. Institutional-grade advisory for intelligent capital placement in Saudi Arabia.</p>
+    </div>
+    <div>
+      <span class="footer-col-title">Markets</span>
+      <ul class="footer-links">
+        <li><a href="#riyadh">Riyadh</a></li>
+        <li><a href="#jeddah">Jeddah</a></li>
+        <li><a href="#eastern-province">Eastern Province</a></li>
+        <li><a href="#diriyah">Diriyah &amp; Heritage</a></li>
+        <li><a href="#red-sea">Red Sea</a></li>
+        <li><a href="#entertainment">Entertainment Corridors</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">Invest</span>
+      <ul class="footer-links">
+        <li><a href="/investor/">Investor Profiles</a></li>
+        <li><a href="/market-reports/">Market Reports</a></li>
+        <li><a href="/mega-projects/">Mega Projects</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-title">Contact</span>
+      <ul class="footer-links">
+        <li><a href="/contact/">Book Consultation</a></li>
+        <li><a href="mailto:invest@saddlepoint.com">invest@saddlepoint.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Saddlepoint Investment Advisory. All rights reserved.</p>
+    <ul class="footer-legal">
+      <li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li><li><a href="#">Disclosures</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

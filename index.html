@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saddlepoint</title>
+    <meta name="description" content="Professional real estate advisory for intelligent capital placement in Saudi Arabia. Vision 2030 aligned. Data-driven. Exclusively advisory.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+    <div class="loader-logo" id="loader-logo"></div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    <div class="loader-sub">Vision 2030 Investment Partner</div>
+</div>
+
+<!-- Custom cursor -->
+<div id="cur"></div>
+<div id="cur-f"></div>
+
+<!-- Mute toggle -->
+<button id="mute-btn" title="Toggle ambient audio" aria-label="Toggle audio">
+    <svg id="sound-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+    </svg>
+</button>
+
+<!-- NAV -->
+<nav id="nav">
+    <a href="#hero" class="nav-logo">Saddlepoint<span class="nav-dot"></span></a>
+    <ul class="nav-links">
+        <li><a href="#why">Why Saudi</a></li>
+        <li><a href="#megaprojects">Mega Projects</a></li>
+        <li><a href="#strategies">Strategies</a></li>
+        <li><a href="#market">Market</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+    </ul>
+    <div class="nav-right">
+        <a href="#consultation" class="nav-btn"><span>Book Consultation</span></a>
+        <button class="nav-ham" id="nav-ham" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- MOBILE NAV DRAWER -->
+<div class="nav-drawer" id="nav-drawer">
+    <ul>
+        <li><a href="#why">Why Saudi Arabia</a></li>
+        <li><a href="#megaprojects">Mega Projects</a></li>
+        <li><a href="#strategies">Strategies</a></li>
+        <li><a href="#market">Market Intelligence</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#consultation">Book Consultation</a></li>
+    </ul>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════ -->
+<section class="hero" id="hero">
+    <canvas id="hero-canvas"></canvas>
+
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span class="badge-dot"></span>
+            <span class="badge-label">Vision 2030 Investment Partner</span>
+        </div>
+        <h1 class="hero-heading">
+            <span class="line"><span class="word">Your Trusted</span></span>
+            <span class="line"><span class="word">Partner in</span></span>
+            <span class="line"><em><span class="word">Saudi Arabia's</span></em></span>
+            <span class="line"><span class="word">Transformation</span></span>
+        </h1>
+        <div class="hero-row">
+            <div>
+                <p class="hero-sub js-reveal">Navigate Vision 2030 opportunities with confidence. Professional advisory for intelligent capital placement in one of the world's most dynamic emerging markets.</p>
+                <div class="hero-btns js-reveal">
+                    <a href="#consultation" class="btn btn-primary"><span>Book Private Consultation</span></a>
+                    <a href="/public/reports/saddlepoint-market-report-2026-q1.pdf" download target="_blank" class="btn btn-ghost"><span>Download Market Report</span></a>
+                </div>
+            </div>
+            <div class="hero-stats js-reveal">
+                <div class="hero-stat">
+                    <span class="h-stat-num" data-prefix="" data-target="5.7" data-suffix="%">0%</span>
+                    <span class="h-stat-label">GDP Growth Target</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="h-stat-num" data-prefix="$" data-target="3.3" data-suffix="T">$0T</span>
+                    <span class="h-stat-label">Investment Opportunities</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="h-stat-num" data-prefix="" data-target="100" data-suffix="%">0%</span>
+                    <span class="h-stat-label">Foreign Ownership</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-ind">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SERVICES BAR
+═══════════════════════════════════════════════════ -->
+<div class="sbar">
+    <div class="sitem">
+        <span class="snum">01</span>
+        <div class="stitle">Acquisitions</div>
+        <div class="sdesc">Sourcing elite properties before they reach the market</div>
+    </div>
+    <div class="sitem">
+        <span class="snum">02</span>
+        <div class="stitle">Disposition</div>
+        <div class="sdesc">Strategic marketing for maximum value realisation</div>
+    </div>
+    <div class="sitem">
+        <span class="snum">03</span>
+        <div class="stitle">Advisory</div>
+        <div class="sdesc">Portfolio strategy, valuation, and market intelligence</div>
+    </div>
+    <div class="sitem">
+        <span class="snum">04</span>
+        <div class="stitle">Investment</div>
+        <div class="sdesc">Identifying high-yield Vision 2030 aligned opportunities</div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     WHY SAUDI ARABIA
+═══════════════════════════════════════════════════ -->
+<section class="why" id="why">
+    <div class="container">
+        <span class="section-label js-reveal">The Investment Case</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h js-reveal">Six Reasons to<br>Invest in Saudi Arabia</h2>
+        <div class="why-grid">
+            <div class="why-item">
+                <span class="why-num">$3.3T</span>
+                <span class="why-highlight">Total Investment Pipeline</span>
+                <div class="why-title">Unprecedented Capital Deployment</div>
+                <div class="why-desc">The Saudi government is deploying $3.3 trillion across infrastructure, tourism, tech, and real estate — creating demand far exceeding current supply in every major city.</div>
+            </div>
+            <div class="why-item">
+                <span class="why-num">0%</span>
+                <span class="why-highlight">Capital Gains Tax</span>
+                <div class="why-title">World's Most Competitive Tax Environment</div>
+                <div class="why-desc">No personal income tax. No capital gains tax on property. Transaction costs of just 2.5%. Saudi Arabia offers foreign investors exceptional after-tax returns unavailable in most Western markets.</div>
+            </div>
+            <div class="why-item">
+                <span class="why-num">100%</span>
+                <span class="why-highlight">Foreign Ownership Rights</span>
+                <div class="why-title">Full Freehold Title Available</div>
+                <div class="why-desc">Since 2020 reforms, foreign nationals can own property outright in approved zones with no nationality restrictions, full inheritance rights, and long-term residency eligibility.</div>
+            </div>
+            <div class="why-item">
+                <span class="why-num">35M</span>
+                <span class="why-highlight">Population</span>
+                <div class="why-title">Young, Growing Population</div>
+                <div class="why-desc">With 70% of Saudis under 35 and a rapidly growing urban middle class, residential and hospitality demand is structurally rising. Vision 2030 targets 100M+ annual visitors.</div>
+            </div>
+            <div class="why-item">
+                <span class="why-num">3.75</span>
+                <span class="why-highlight">SAR/USD Fixed Rate</span>
+                <div class="why-title">Dollar-Pegged Currency Stability</div>
+                <div class="why-desc">The Saudi Riyal has been pegged to the US Dollar since 1986. Investors face zero currency volatility risk — a rare advantage for international capital in emerging markets.</div>
+            </div>
+            <div class="why-item">
+                <span class="why-num">24h</span>
+                <span class="why-highlight">Title Transfer</span>
+                <div class="why-title">World-Class Digital Infrastructure</div>
+                <div class="why-desc">Saudi Arabia's fully digital deed registration system enables title transfer within 24–48 hours. Transparent, efficient, supported in English — among the fastest systems globally.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     VISION 2030
+═══════════════════════════════════════════════════ -->
+<section class="vision" id="vision">
+    <div class="container">
+        <span class="section-label js-reveal">Vision 2030</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h js-reveal">The Transformation<br>Blueprint</h2>
+        <p class="vision-intro js-reveal">Vision 2030 is Saudi Arabia's national transformation plan — the most ambitious economic diversification programme in the Arab world. Every pillar creates direct real estate demand.</p>
+        <div class="vision-grid">
+            <div class="vcard js-reveal">
+                <span class="vcard-num">01 · Economic Diversification</span>
+                <div class="vcard-title">Non-Oil GDP to 50%</div>
+                <div class="vcard-desc">Reducing oil dependence drives massive investment in finance, tourism, manufacturing, and entertainment — all requiring commercial and mixed-use real estate at scale.</div>
+                <span class="vcard-stat">Target: SAR 1.7T non-oil GDP by 2030</span>
+            </div>
+            <div class="vcard js-reveal">
+                <span class="vcard-num">02 · Tourism &amp; Entertainment</span>
+                <div class="vcard-title">100 Million Visitors Annually</div>
+                <div class="vcard-desc">From virtually zero tourist visas in 2018 to a target of 100M annual visitors, hospitality demand across the Kingdom is undergoing structural transformation.</div>
+                <span class="vcard-stat">150+ new tourism destinations planned</span>
+            </div>
+            <div class="vcard js-reveal">
+                <span class="vcard-num">03 · Urban Development</span>
+                <div class="vcard-title">New Cities &amp; Districts</div>
+                <div class="vcard-desc">NEOM, Red Sea Project, Qiddiya, and Diriyah Gate represent $1 trillion+ in entirely new urban environments requiring integrated real estate ecosystems from scratch.</div>
+                <span class="vcard-stat">$1T+ in mega-project real estate</span>
+            </div>
+            <div class="vcard js-reveal">
+                <span class="vcard-num">04 · Population Growth</span>
+                <div class="vcard-title">Urbanisation &amp; Housing Demand</div>
+                <div class="vcard-desc">Vision 2030 targets 70% homeownership rates and is attracting skilled expatriate workers. Both drivers create sustained residential demand across all price points.</div>
+                <span class="vcard-stat">1.5M new homes needed by 2030</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     TIMELINE
+═══════════════════════════════════════════════════ -->
+<section class="timeline" id="timeline">
+    <div class="container">
+        <span class="section-label bright js-reveal">Milestones</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h light js-reveal">Vision 2030 Timeline</h2>
+        <div class="timeline-track">
+            <div class="t-node"><div class="t-dot"></div><div class="t-year">2016</div><div class="t-label">Vision 2030 Announced</div></div>
+            <div class="t-node"><div class="t-dot"></div><div class="t-year">2018</div><div class="t-label">Tourist Visas Opened</div></div>
+            <div class="t-node"><div class="t-dot"></div><div class="t-year">2020</div><div class="t-label">100% Foreign Ownership</div></div>
+            <div class="t-node"><div class="t-dot"></div><div class="t-year">2023</div><div class="t-label">NEOM Phase 1 Construction</div></div>
+            <div class="t-node"><div class="t-dot"></div><div class="t-year">2025</div><div class="t-label">Red Sea Resort Opens</div></div>
+            <div class="t-node"><div class="t-dot"></div><div class="t-year">2030</div><div class="t-label">Vision 2030 Target Year</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     MEGA PROJECTS
+═══════════════════════════════════════════════════ -->
+<section class="megaprojects" id="megaprojects">
+    <div class="container">
+        <span class="section-label bright js-reveal">Giga-Projects</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h light js-reveal">$1 Trillion in<br>Transformative Projects</h2>
+        <div class="mega-grid">
+            <div class="mega-card js-reveal">
+                <!-- Futuristic linear city architecture — swap for official NEOM render -->
+                <img src="https://picsum.photos/seed/saddleneom/900/580" alt="NEOM — The Line">
+                <div class="mega-overlay"></div>
+                <div class="mega-content">
+                    <span class="mega-phase">Active · Phase 1 Construction</span>
+                    <div class="mega-name">NEOM</div>
+                    <div class="mega-desc">A $500B cognitive city redefining how humanity lives, works, and thrives. The Line, Sindalah, Oxagon, Trojena — each a world unto itself.</div>
+                    <div class="mega-stats">
+                        <div class="mega-stat"><span>$500B</span><span>Project Value</span></div>
+                        <div class="mega-stat"><span>170km</span><span>The Line Length</span></div>
+                        <div class="mega-stat"><span>9M</span><span>Future Residents</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mega-card js-reveal">
+                <!-- Luxury Red Sea island resort — swap for official Red Sea Project render -->
+                <img src="https://picsum.photos/seed/saddleredsea/900/580" alt="Red Sea Project">
+                <div class="mega-overlay"></div>
+                <div class="mega-content">
+                    <span class="mega-phase">Active · Phase 1 Open 2025</span>
+                    <div class="mega-name">Red Sea Project</div>
+                    <div class="mega-desc">A $28B luxury tourism destination across 22 pristine islands and six inland sites — 50 hotels, a private airport, entirely renewable-energy powered.</div>
+                    <div class="mega-stats">
+                        <div class="mega-stat"><span>$28B</span><span>Project Value</span></div>
+                        <div class="mega-stat"><span>22</span><span>Islands</span></div>
+                        <div class="mega-stat"><span>50</span><span>Hotels</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mega-card js-reveal">
+                <!-- Entertainment city / theme park concept — swap for official Qiddiya render -->
+                <img src="https://picsum.photos/seed/saddleqiddiya/900/580" alt="Qiddiya">
+                <div class="mega-overlay"></div>
+                <div class="mega-content">
+                    <span class="mega-phase">Active · Opening 2027</span>
+                    <div class="mega-name">Qiddiya</div>
+                    <div class="mega-desc">A $8B entertainment and sports mega-city 45km from Riyadh — Formula E, Six Flags, 185,000-seat stadium, and a water theme park.</div>
+                    <div class="mega-stats">
+                        <div class="mega-stat"><span>$8B</span><span>Project Value</span></div>
+                        <div class="mega-stat"><span>334km²</span><span>Area</span></div>
+                        <div class="mega-stat"><span>2027</span><span>Opening</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mega-card js-reveal">
+                <!-- Heritage mud-brick ancient city — swap for official Diriyah Gate render -->
+                <img src="https://picsum.photos/seed/saddlediriyah/900/580" alt="Diriyah Gate">
+                <div class="mega-overlay"></div>
+                <div class="mega-content">
+                    <span class="mega-phase">Active · Phased Opening 2025–2030</span>
+                    <div class="mega-name">Diriyah Gate</div>
+                    <div class="mega-desc">A $20B cultural tourism destination at the birthplace of Saudi Arabia — UNESCO-linked heritage, luxury hotels, museums, and 100,000 sqm of retail.</div>
+                    <div class="mega-stats">
+                        <div class="mega-stat"><span>$20B</span><span>Project Value</span></div>
+                        <div class="mega-stat"><span>7km²</span><span>Area</span></div>
+                        <div class="mega-stat"><span>100K</span><span>Sqm Retail</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     INVESTOR PROFILES
+═══════════════════════════════════════════════════ -->
+<section class="profiles" id="profiles">
+    <div class="container">
+        <span class="section-label js-reveal">Find Your Investment Pathway</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h js-reveal">Select Your<br>Investor Profile</h2>
+        <div class="profiles-grid">
+            <div class="pcard js-reveal" data-tilt>
+                <div class="pcard-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                </div>
+                <div class="pcard-title">Foreign Investor</div>
+                <div class="pcard-sub">International capital seeking Saudi market entry</div>
+                <ul class="pfeatures">
+                    <li>100% foreign ownership</li>
+                    <li>Vision 2030 alignment</li>
+                    <li>Legal framework guidance</li>
+                    <li>Market entry support</li>
+                </ul>
+            </div>
+            <div class="pcard js-reveal" data-tilt>
+                <div class="pcard-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <div class="pcard-title">High-Net-Worth Individual</div>
+                <div class="pcard-sub">Sophisticated investors seeking portfolio expansion</div>
+                <ul class="pfeatures">
+                    <li>Institutional-grade advisory</li>
+                    <li>Portfolio diversification</li>
+                    <li>Exclusive off-market deals</li>
+                    <li>Long-term partnership</li>
+                </ul>
+            </div>
+            <div class="pcard js-reveal" data-tilt>
+                <div class="pcard-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                    </svg>
+                </div>
+                <div class="pcard-title">Emerging Investor</div>
+                <div class="pcard-sub">Mid-career professionals with investment capital</div>
+                <ul class="pfeatures">
+                    <li>Strategic guidance</li>
+                    <li>Market education</li>
+                    <li>Risk management</li>
+                    <li>Growth opportunities</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     STRATEGIES
+═══════════════════════════════════════════════════ -->
+<section class="strategies" id="strategies">
+    <div class="container">
+        <span class="section-label bright js-reveal">Investment Strategies</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h light js-reveal">Three Approaches.<br>One Goal: Returns.</h2>
+        <div class="strat-grid">
+            <div class="strat-card js-reveal">
+                <span class="strat-tag">Capital Growth</span>
+                <div class="strat-returns">18–42%</div>
+                <span class="strat-period">Capital Appreciation Target</span>
+                <div class="strat-name">Growth Maximiser</div>
+                <div class="strat-desc">High-conviction land and development plays in NEOM-adjacent zones and Riyadh's financial district expansion corridors.</div>
+                <ul class="strat-feats">
+                    <li>NEOM region land acquisition</li>
+                    <li>Riyadh KAFD district plays</li>
+                    <li>5–10 year investment horizon</li>
+                    <li>Higher risk / highest reward</li>
+                </ul>
+                <a href="#consultation" class="strat-link">Discuss this strategy →</a>
+            </div>
+            <div class="strat-card featured js-reveal">
+                <span class="strat-tag">Most Popular</span>
+                <div class="strat-returns">12–18%</div>
+                <span class="strat-period">Annual Target Return</span>
+                <div class="strat-name">Growth + Yield Hybrid</div>
+                <div class="strat-desc">Balanced exposure to capital appreciation and rental income across Vision 2030 priority zones in Riyadh and Jeddah.</div>
+                <ul class="strat-feats">
+                    <li>Riyadh &amp; Jeddah markets</li>
+                    <li>3–7 year investment horizon</li>
+                    <li>Mixed residential &amp; commercial</li>
+                    <li>Quarterly income distributions</li>
+                </ul>
+                <a href="#consultation" class="strat-link">Discuss this strategy →</a>
+            </div>
+            <div class="strat-card js-reveal">
+                <span class="strat-tag">Yield Focus</span>
+                <div class="strat-returns">7–11%</div>
+                <span class="strat-period">Annual Rental Yield Target</span>
+                <div class="strat-name">Income Generator</div>
+                <div class="strat-desc">Stabilised hospitality and serviced apartment assets in prime Jeddah Corniche and Riyadh diplomatic quarter locations.</div>
+                <ul class="strat-feats">
+                    <li>Jeddah Corniche hospitality</li>
+                    <li>Riyadh serviced apartments</li>
+                    <li>1–3 year repositioning plays</li>
+                    <li>Monthly income distributions</li>
+                </ul>
+                <a href="#consultation" class="strat-link">Discuss this strategy →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     MARKET INTELLIGENCE
+═══════════════════════════════════════════════════ -->
+<section class="markets" id="market">
+    <div class="container">
+        <span class="section-label bright js-reveal">Market Intelligence Center</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h light js-reveal" style="margin-bottom:20px;">Key Growth<br>Markets</h2>
+        <p class="js-reveal" style="font-family:var(--serif);font-size:clamp(15px,1.4vw,19px);font-style:italic;color:rgba(255,255,255,0.4);max-width:560px;line-height:1.7;margin-bottom:48px;">Real-time intelligence on Saudi Arabia's fastest-growing property markets. Proprietary data updated quarterly.</p>
+        <div class="markets-grid">
+            <div class="mcard js-reveal">
+                <!-- Riyadh financial district skyline night shot — swap for official KAFD aerial -->
+                <img src="https://picsum.photos/seed/saddleriyadh/900/580" alt="Riyadh skyline">
+                <div class="moverlay"></div>
+                <div class="mcontent">
+                    <div class="mgrowth">▲ +45% Growth</div>
+                    <div class="mcity">Riyadh</div>
+                    <div class="minvest">Financial District — Saudi Arabia's Economic Hub</div>
+                    <div class="mdata">
+                        <div class="mdata-item"><span>$850B</span><span>Total Investment</span></div>
+                        <div class="mdata-item"><span>120+</span><span>Active Projects</span></div>
+                        <div class="mdata-item"><span>SAR 8,500</span><span>Avg /sqm</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mcard js-reveal">
+                <!-- Jeddah waterfront coastal city — swap for official Corniche aerial -->
+                <img src="https://picsum.photos/seed/saddlejeddah/900/580" alt="Jeddah waterfront">
+                <div class="moverlay"></div>
+                <div class="mcontent">
+                    <div class="mgrowth">▲ +38% Growth</div>
+                    <div class="mcity">Jeddah</div>
+                    <div class="minvest">Red Sea Gateway — Tourism &amp; Commerce Hub</div>
+                    <div class="mdata">
+                        <div class="mdata-item"><span>$620B</span><span>Total Investment</span></div>
+                        <div class="mdata-item"><span>85+</span><span>Active Projects</span></div>
+                        <div class="mdata-item"><span>SAR 7,200</span><span>Avg /sqm</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     ANALYSIS TABLE
+═══════════════════════════════════════════════════ -->
+<section class="analysis" id="analysis">
+    <div class="container">
+        <span class="section-label bright js-reveal">Market Analysis</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h light js-reveal" style="margin-bottom:40px;">Comparative Market<br>Analysis — Q1 2026</h2>
+        <div class="analysis-table-wrap js-reveal">
+            <table class="analysis-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th class="hl">Riyadh (KAFD)</th>
+                        <th>Jeddah Corniche</th>
+                        <th>NEOM Region</th>
+                        <th>Dubai (comparison)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="row-lbl">YoY Capital Growth</td>
+                        <td class="hl">+45%</td>
+                        <td>+38%</td>
+                        <td>+120%*</td>
+                        <td>+22%</td>
+                    </tr>
+                    <tr>
+                        <td class="row-lbl">Avg Price /sqm (SAR)</td>
+                        <td class="hl">8,500</td>
+                        <td>7,200</td>
+                        <td>12,000*</td>
+                        <td>11,400</td>
+                    </tr>
+                    <tr>
+                        <td class="row-lbl">Gross Rental Yield</td>
+                        <td class="hl">7.8%</td>
+                        <td>7.2%</td>
+                        <td>N/A (dev phase)</td>
+                        <td>5.1%</td>
+                    </tr>
+                    <tr>
+                        <td class="row-lbl">Capital Gains Tax</td>
+                        <td class="hl">0%</td>
+                        <td>0%</td>
+                        <td>0%</td>
+                        <td>0%</td>
+                    </tr>
+                    <tr>
+                        <td class="row-lbl">Transaction Cost</td>
+                        <td class="hl">2.5%</td>
+                        <td>2.5%</td>
+                        <td>2.5%</td>
+                        <td>4.0%</td>
+                    </tr>
+                    <tr>
+                        <td class="row-lbl">Foreign Ownership</td>
+                        <td class="hl">100%</td>
+                        <td>100%</td>
+                        <td>100%</td>
+                        <td>Designated zones</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size:10px;color:rgba(255,255,255,0.3);font-style:italic;margin-bottom:56px;">* NEOM Region estimates based on pre-development land. All data Q1 2026.</p>
+        <div class="analysis-highlights">
+            <div class="ah-card js-reveal">
+                <span class="ah-label">Peak Growth Market</span>
+                <span class="ah-val" data-target="45" data-suffix="%">0%</span>
+                <div class="ah-desc">Riyadh KAFD year-on-year capital appreciation — the highest of any major Gulf city in 2025.</div>
+            </div>
+            <div class="ah-card js-reveal">
+                <span class="ah-label">Best Rental Yield</span>
+                <span class="ah-val">7.8%</span>
+                <div class="ah-desc">Gross rental yield in Riyadh's prime residential zones — 53% above comparable Dubai assets.</div>
+            </div>
+            <div class="ah-card js-reveal">
+                <span class="ah-label">Transaction Cost Advantage</span>
+                <span class="ah-val">2.5%</span>
+                <div class="ah-desc">Saudi Arabia's transfer tax vs 4%+ in Dubai, 5%+ in UK — maximising net returns at entry.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     INVESTMENT CALCULATOR
+═══════════════════════════════════════════════════ -->
+<div class="calc-section" id="calculator">
+    <div class="container">
+        <span class="section-label js-reveal">Return Modelling</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h js-reveal" style="margin-bottom:12px;">Investment<br>Return Calculator</h2>
+        <p class="js-reveal" style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--grey);margin-bottom:48px;line-height:1.6;">Model your potential returns based on Saudi market historical data and your investment parameters.</p>
+        <div class="calc-wrap js-reveal">
+            <div class="calc-inputs">
+                <div class="calc-field">
+                    <label for="calc-inv">Investment Amount (SAR)</label>
+                    <input id="calc-inv" type="number" value="1000000" min="100000" step="100000">
+                </div>
+                <div class="calc-field">
+                    <label for="calc-years">Holding Period (Years)</label>
+                    <input id="calc-years" type="number" value="5" min="1" max="30">
+                </div>
+                <div class="calc-field">
+                    <label for="calc-growth">Expected Annual Growth (%)</label>
+                    <input id="calc-growth" type="number" value="12" min="1" max="50" step="0.5">
+                </div>
+                <div class="calc-field">
+                    <label for="calc-yield">Annual Rental Yield (%)</label>
+                    <input id="calc-yield" type="number" value="7.2" min="0" max="30" step="0.1">
+                </div>
+            </div>
+            <div>
+                <div class="calc-outputs">
+                    <div class="calc-out">
+                        <span class="calc-out-label">Capital Appreciation</span>
+                        <div class="calc-out-val" id="calc-cap">SAR 762K</div>
+                    </div>
+                    <div class="calc-out">
+                        <span class="calc-out-label">Rental Income</span>
+                        <div class="calc-out-val" id="calc-rent">SAR 360K</div>
+                    </div>
+                    <div class="calc-out">
+                        <span class="calc-out-label">Total Return</span>
+                        <div class="calc-out-val" id="calc-total">SAR 1.12M</div>
+                    </div>
+                    <div class="calc-out roi">
+                        <span class="calc-out-label">Total ROI</span>
+                        <div class="calc-out-val" id="calc-roi">112.2%</div>
+                    </div>
+                </div>
+                <p style="font-size:10px;color:var(--grey);margin-top:16px;font-style:italic;line-height:1.5;">* Projections based on historical Saudi market data. Past performance does not guarantee future results.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PORTFOLIO
+═══════════════════════════════════════════════════ -->
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <span class="section-label js-reveal">Selected Work</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h js-reveal">Jeddah &amp; Riyadh<br>Projects</h2>
+        <p class="portfolio-sub js-reveal">Representative engagements across residential, hospitality, and mixed-use asset classes.</p>
+        <div class="portfolio-grid">
+            <a class="proj-card js-reveal" href="#consultation">
+                <div class="proj-tags"><span class="proj-tag">Residential</span><span class="proj-tag">Jeddah</span></div>
+                <div class="proj-title">Al Rawda Boutique Villas</div>
+                <p class="proj-desc">Investor positioning + pricing strategy for a 24-villa launch in North Jeddah.</p>
+                <div class="proj-kpis">
+                    <div class="proj-kpi"><strong>SAR 180M</strong><span>GDV</span></div>
+                    <div class="proj-kpi"><strong>92 days</strong><span>to sell-out</span></div>
+                </div>
+            </a>
+            <a class="proj-card js-reveal" href="#consultation">
+                <div class="proj-tags"><span class="proj-tag">Hospitality</span><span class="proj-tag">Corniche</span></div>
+                <div class="proj-title">Corniche Waterfront Suites</div>
+                <p class="proj-desc">Acquisition thesis + repositioning plan for a serviced-apartment asset on the Jeddah Corniche.</p>
+                <div class="proj-kpis">
+                    <div class="proj-kpi"><strong>11.8%</strong><span>Target IRR</span></div>
+                    <div class="proj-kpi"><strong>SAR 65M</strong><span>Capex Plan</span></div>
+                </div>
+            </a>
+            <a class="proj-card js-reveal" href="#consultation">
+                <div class="proj-tags"><span class="proj-tag">Mixed-Use</span><span class="proj-tag">Obhur</span></div>
+                <div class="proj-title">Obhur Marina District</div>
+                <p class="proj-desc">Development strategy + tenant mix model for a coastal mixed-use block in Obhur Al Shamaliyah.</p>
+                <div class="proj-kpis">
+                    <div class="proj-kpi"><strong>3</strong><span>Phases</span></div>
+                    <div class="proj-kpi"><strong>38k m²</strong><span>GFA</span></div>
+                </div>
+            </a>
+            <a class="proj-card js-reveal" href="#consultation">
+                <div class="proj-tags"><span class="proj-tag">Land</span><span class="proj-tag">NEOM Region</span></div>
+                <div class="proj-title">NEOM Adjacent Land Play</div>
+                <p class="proj-desc">Pre-announcement land acquisition advisory in the Tabuk region — 40% below post-announcement pricing.</p>
+                <div class="proj-kpis">
+                    <div class="proj-kpi"><strong>SAR 12M</strong><span>Acquisition</span></div>
+                    <div class="proj-kpi"><strong>+40%</strong><span>vs. Market Rate</span></div>
+                </div>
+            </a>
+            <a class="proj-card js-reveal" href="#consultation">
+                <div class="proj-tags"><span class="proj-tag">Commercial</span><span class="proj-tag">Riyadh KAFD</span></div>
+                <div class="proj-title">KAFD Office Portfolio</div>
+                <p class="proj-desc">Commercial office acquisition + portfolio structuring for a European family office entering the Riyadh market.</p>
+                <div class="proj-kpis">
+                    <div class="proj-kpi"><strong>SAR 48M</strong><span>Total Investment</span></div>
+                    <div class="proj-kpi"><strong>9.2%</strong><span>Yield Achieved</span></div>
+                </div>
+            </a>
+            <a class="proj-card js-reveal" href="#consultation">
+                <div class="proj-tags"><span class="proj-tag">Residential</span><span class="proj-tag">Riyadh</span></div>
+                <div class="proj-title">Diplomatic Quarter Apartments</div>
+                <p class="proj-desc">Buy-to-let strategy for 12 premium apartments in Riyadh's Diplomatic Quarter targeting corporate tenants.</p>
+                <div class="proj-kpis">
+                    <div class="proj-kpi"><strong>8.4%</strong><span>Net Yield</span></div>
+                    <div class="proj-kpi"><strong>SAR 22M</strong><span>Portfolio Value</span></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SUCCESS STORIES
+═══════════════════════════════════════════════════ -->
+<section class="stories" id="stories">
+    <div class="container">
+        <span class="section-label js-reveal">Client Outcomes</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h js-reveal">What Our Clients Say</h2>
+
+        <div class="story-card js-reveal">
+            <div class="story-quote">Saddlepoint identified a NEOM-adjacent land parcel 18 months before it was publicly marketed. Our acquisition cost was 40% below the post-announcement market price. The guidance on legal structuring was exceptional throughout.</div>
+            <div class="story-meta">
+                <div>
+                    <div class="story-name">David Harrington</div>
+                    <div class="story-role">Family Office · London, UK</div>
+                </div>
+                <div class="story-inv">SAR 12M Land Acquisition · NEOM Region</div>
+            </div>
+        </div>
+
+        <div class="story-card js-reveal">
+            <div class="story-quote">Saddlepoint's market intelligence gave us a competitive edge we simply couldn't have developed independently. Within 14 months, our Jeddah portfolio had outperformed every other asset class in our global allocation by 28 percentage points.</div>
+            <div class="story-meta">
+                <div>
+                    <div class="story-name">Marcus Chen</div>
+                    <div class="story-role">Chief Investment Officer · Singapore Family Office</div>
+                </div>
+                <div class="story-inv">SAR 35M Portfolio · Jeddah &amp; Riyadh</div>
+            </div>
+        </div>
+
+        <div class="story-stats js-reveal">
+            <div class="story-stat">
+                <span class="story-stat-val" data-target="47" data-suffix="+">0</span>
+                <span class="story-stat-lbl">Transactions Advised</span>
+            </div>
+            <div class="story-stat">
+                <span class="story-stat-val">SAR 2.1B</span>
+                <span class="story-stat-lbl">Total Transaction Value</span>
+            </div>
+            <div class="story-stat">
+                <span class="story-stat-val" data-target="38" data-suffix="%">0%</span>
+                <span class="story-stat-lbl">Average Portfolio Growth</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     LEGAL FRAMEWORK
+═══════════════════════════════════════════════════ -->
+<section class="legal" id="legal">
+    <div class="container">
+        <span class="section-label js-reveal">Legal Framework</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h js-reveal">A Secure Legal<br>Foundation</h2>
+        <div class="legal-grid">
+            <div class="legal-card js-reveal">
+                <div class="legal-card-title">Ownership Rights</div>
+                <ul class="legal-list">
+                    <li>100% foreign ownership in approved investment zones</li>
+                    <li>Full freehold title with inheritance rights</li>
+                    <li>No nationality or religion restrictions</li>
+                    <li>Premium Residency linked to property ownership</li>
+                    <li>Digital title deeds — instant verification</li>
+                </ul>
+            </div>
+            <div class="legal-card js-reveal">
+                <div class="legal-card-title">Tax Environment</div>
+                <ul class="legal-list">
+                    <li>Zero capital gains tax on property profits</li>
+                    <li>Zero personal income tax</li>
+                    <li>2.5% transaction (transfer) tax only</li>
+                    <li>15% VAT on commercial — exemptions available</li>
+                    <li>Full remittance rights for income and capital</li>
+                </ul>
+            </div>
+            <div class="legal-card js-reveal">
+                <div class="legal-card-title">Transaction Process</div>
+                <ul class="legal-list">
+                    <li>Fully digital — no physical paperwork</li>
+                    <li>Title transfer within 24–48 hours</li>
+                    <li>English language support throughout</li>
+                    <li>Government-backed escrow protection</li>
+                    <li>Saddlepoint manages the entire process</li>
+                </ul>
+            </div>
+            <div class="legal-card js-reveal">
+                <div class="legal-card-title">Financing Options</div>
+                <ul class="legal-list">
+                    <li>Sharia-compliant Murabaha mortgages available</li>
+                    <li>Up to 70% LTV for qualified foreign investors</li>
+                    <li>Fixed and floating rate structures</li>
+                    <li>Multi-currency transaction support</li>
+                    <li>International banking relationships facilitated</li>
+                </ul>
+            </div>
+        </div>
+        <div class="legal-stats-row js-reveal">
+            <div class="legal-stat">
+                <span class="legal-stat-val">2.5%</span>
+                <span class="legal-stat-lbl">Transfer Tax</span>
+            </div>
+            <div class="legal-stat">
+                <span class="legal-stat-val">24h</span>
+                <span class="legal-stat-lbl">Title Transfer</span>
+            </div>
+            <div class="legal-stat">
+                <span class="legal-stat-val">0%</span>
+                <span class="legal-stat-lbl">Capital Gains Tax</span>
+            </div>
+            <div class="legal-stat">
+                <span class="legal-stat-val">100%</span>
+                <span class="legal-stat-lbl">Foreign Ownership</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     CTA BANNER
+═══════════════════════════════════════════════════ -->
+<section class="cta" id="cta-banner">
+    <div class="cta-wm" aria-hidden="true">SADDLEPOINT</div>
+    <span class="section-label">Limited Consultation Slots Available</span>
+    <h2 class="cta-h js-reveal">Ready to Navigate<br>Saudi Arabia's Opportunity?</h2>
+    <p class="cta-sub js-reveal">Book a private consultation with our expert advisors and discover how to position your capital for Vision 2030's unprecedented growth.</p>
+    <div class="cta-btns js-reveal">
+        <a href="#consultation" class="btn btn-white"><span>Book Private Consultation</span></a>
+        <a href="#strategies" class="btn btn-outline-w"><span>Explore Strategies</span></a>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     CONSULTATION WIZARD
+═══════════════════════════════════════════════════ -->
+<section class="consult" id="consultation">
+    <div class="container">
+        <span class="section-label bright js-reveal">Private Advisory</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h light js-reveal">Book Your<br>Consultation</h2>
+        <div class="wizard-wrap js-reveal">
+            <div class="wizard-progress" id="wiz-progress">
+                <div class="wp-step active" data-step="1"></div>
+                <div class="wp-step" data-step="2"></div>
+                <div class="wp-step" data-step="3"></div>
+                <div class="wp-step" data-step="4"></div>
+                <div class="wp-step" data-step="5"></div>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="wizard-step active" id="ws-1">
+                <div class="ws-title">Your Investor Profile</div>
+                <p class="ws-sub">Help us understand your background so we can tailor our advisory.</p>
+                <div class="ws-field">
+                    <label>Type of investor</label>
+                    <div class="ws-radio-grid">
+                        <label class="ws-radio"><input type="radio" name="inv-type" value="Foreign Individual"><span class="ws-radio-label">Foreign Individual</span></label>
+                        <label class="ws-radio"><input type="radio" name="inv-type" value="Saudi National"><span class="ws-radio-label">Saudi National</span></label>
+                        <label class="ws-radio"><input type="radio" name="inv-type" value="Institutional"><span class="ws-radio-label">Institutional</span></label>
+                        <label class="ws-radio"><input type="radio" name="inv-type" value="Family Office"><span class="ws-radio-label">Family Office</span></label>
+                    </div>
+                </div>
+                <div class="ws-field">
+                    <label>Primary investment goal</label>
+                    <div class="ws-radio-grid">
+                        <label class="ws-radio"><input type="radio" name="inv-goal" value="Capital Growth"><span class="ws-radio-label">Capital Growth</span></label>
+                        <label class="ws-radio"><input type="radio" name="inv-goal" value="Rental Income"><span class="ws-radio-label">Rental Income</span></label>
+                        <label class="ws-radio"><input type="radio" name="inv-goal" value="Both"><span class="ws-radio-label">Both</span></label>
+                        <label class="ws-radio"><input type="radio" name="inv-goal" value="Portfolio Diversification"><span class="ws-radio-label">Diversification</span></label>
+                    </div>
+                </div>
+                <div class="ws-btns"><button class="btn btn-primary" onclick="wizNext(1)"><span>Next Step →</span></button></div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="wizard-step" id="ws-2">
+                <div class="ws-title">Investment Parameters</div>
+                <p class="ws-sub">Define your budget, timeline, and risk tolerance.</p>
+                <div class="ws-field">
+                    <label>Investment Budget</label>
+                    <select id="w-budget">
+                        <option value="">Select budget range</option>
+                        <option>SAR 250k – 500k</option>
+                        <option>SAR 500k – 1M</option>
+                        <option>SAR 1M – 5M</option>
+                        <option>SAR 5M – 20M</option>
+                        <option>SAR 20M+</option>
+                    </select>
+                </div>
+                <div class="ws-row">
+                    <div class="ws-field">
+                        <label>Investment Horizon</label>
+                        <select id="w-horizon">
+                            <option value="">Select timeline</option>
+                            <option>1–2 years</option>
+                            <option>3–5 years</option>
+                            <option>7–10 years</option>
+                            <option>10+ years</option>
+                        </select>
+                    </div>
+                    <div class="ws-field">
+                        <label>Risk Tolerance</label>
+                        <select id="w-risk">
+                            <option value="">Select risk level</option>
+                            <option>Conservative</option>
+                            <option>Moderate</option>
+                            <option>Aggressive</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ws-btns">
+                    <button class="btn btn-ghost" onclick="wizBack(2)"><span>← Back</span></button>
+                    <button class="btn btn-primary" onclick="wizNext(2)"><span>Next Step →</span></button>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="wizard-step" id="ws-3">
+                <div class="ws-title">Property Preferences</div>
+                <p class="ws-sub">Tell us about your ideal investment property.</p>
+                <div class="ws-field">
+                    <label>Property type (select all that apply)</label>
+                    <div class="ws-radio-grid">
+                        <label class="ws-radio" data-multi="true"><input type="checkbox" name="prop-type" value="Residential"><span class="ws-radio-label">Residential</span></label>
+                        <label class="ws-radio" data-multi="true"><input type="checkbox" name="prop-type" value="Commercial"><span class="ws-radio-label">Commercial</span></label>
+                        <label class="ws-radio" data-multi="true"><input type="checkbox" name="prop-type" value="Mixed-Use"><span class="ws-radio-label">Mixed-Use</span></label>
+                        <label class="ws-radio" data-multi="true"><input type="checkbox" name="prop-type" value="Land / Development"><span class="ws-radio-label">Land / Development</span></label>
+                    </div>
+                </div>
+                <div class="ws-field">
+                    <label>Preferred location</label>
+                    <div class="ws-radio-grid">
+                        <label class="ws-radio"><input type="radio" name="location" value="Riyadh"><span class="ws-radio-label">Riyadh</span></label>
+                        <label class="ws-radio"><input type="radio" name="location" value="Jeddah"><span class="ws-radio-label">Jeddah</span></label>
+                        <label class="ws-radio"><input type="radio" name="location" value="NEOM"><span class="ws-radio-label">NEOM</span></label>
+                        <label class="ws-radio"><input type="radio" name="location" value="Red Sea / Other"><span class="ws-radio-label">Red Sea / Other</span></label>
+                    </div>
+                </div>
+                <div class="ws-field">
+                    <label>Additional notes (optional)</label>
+                    <textarea id="w-notes" rows="3" placeholder="Tell us more about your ideal investment…"></textarea>
+                </div>
+                <div class="ws-btns">
+                    <button class="btn btn-ghost" onclick="wizBack(3)"><span>← Back</span></button>
+                    <button class="btn btn-primary" onclick="wizNext(3)"><span>Next Step →</span></button>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="wizard-step" id="ws-4">
+                <div class="ws-title">Your Contact Details</div>
+                <p class="ws-sub">We'll use this to schedule your private consultation.</p>
+                <div class="ws-row">
+                    <div class="ws-field"><label>First Name</label><input type="text" id="w-fname" placeholder="James"></div>
+                    <div class="ws-field"><label>Last Name</label><input type="text" id="w-lname" placeholder="Richardson"></div>
+                </div>
+                <div class="ws-field"><label>Email Address</label><input type="email" id="w-email" placeholder="james@example.com"></div>
+                <div class="ws-field"><label>Phone Number</label><input type="tel" id="w-phone" placeholder="+44 20 7946 0000"></div>
+                <div class="ws-row">
+                    <div class="ws-field">
+                        <label>Country of Residence</label>
+                        <select id="w-country">
+                            <option value="">Select country</option>
+                            <option>United Kingdom</option>
+                            <option>United States</option>
+                            <option>United Arab Emirates</option>
+                            <option>Saudi Arabia</option>
+                            <option>Germany</option>
+                            <option>France</option>
+                            <option>Singapore</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="ws-field"><label>Preferred Consultation Date</label><input type="date" id="w-date"></div>
+                </div>
+                <div class="ws-btns">
+                    <button class="btn btn-ghost" onclick="wizBack(4)"><span>← Back</span></button>
+                    <button class="btn btn-primary" onclick="wizNext(4)"><span>Review Submission →</span></button>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="wizard-step" id="ws-5">
+                <div class="ws-title">Review &amp; Submit</div>
+                <p class="ws-sub">Please confirm your details before submitting.</p>
+                <div class="wizard-summary" id="wiz-summary"></div>
+                <div class="ws-btns">
+                    <button class="btn btn-ghost" onclick="wizBack(5)"><span>← Edit</span></button>
+                    <button class="btn btn-primary" onclick="wizSubmit()"><span>Submit Consultation Request</span></button>
+                </div>
+            </div>
+
+            <!-- Success -->
+            <div class="wizard-success" id="wiz-success">
+                <div class="ws-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <h3 style="font-weight:900;font-size:28px;letter-spacing:-0.03em;text-transform:uppercase;color:var(--white);margin-bottom:12px;">Request Submitted</h3>
+                <p style="font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(255,255,255,0.5);max-width:440px;margin:0 auto;line-height:1.6;">Our advisory team will contact you within 24 hours to schedule your private consultation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FAQ
+═══════════════════════════════════════════════════ -->
+<section class="faq-section" id="faq">
+    <div class="container">
+        <span class="section-label js-reveal">Common Questions</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h js-reveal" style="margin-bottom:48px;">Frequently Asked<br>Questions</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-q">Can foreign nationals own property in Saudi Arabia?</button>
+                <div class="faq-a"><p>Yes. Since 2020, Saudi Arabia allows 100% foreign ownership of property in approved zones with no nationality restrictions. Investors benefit from full freehold title, inheritance rights, and long-term residency eligibility linked to property ownership.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">What is the minimum investment threshold?</button>
+                <div class="faq-a"><p>The minimum threshold varies by property type and location. Residential entry points start from approximately SAR 250,000, while commercial and development opportunities typically begin at SAR 1 million. Our advisors can identify opportunities that match your specific budget.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">How does Vision 2030 impact property values?</button>
+                <div class="faq-a"><p>Vision 2030 is the primary driver of Saudi Arabia's real estate appreciation. The $3.3 trillion investment pipeline, mega-project development, and population growth targets create sustained demand pressure that historically translates to 12–42% capital appreciation across key markets.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">What taxes apply to foreign property investors?</button>
+                <div class="faq-a"><p>Saudi Arabia offers one of the world's most competitive tax environments for property investors. There is zero personal income tax, zero capital gains tax on property, and transaction costs of just 2.5%. A 15% VAT applies to commercial transactions, though exemptions are available in certain structures.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">How long does the property registration process take?</button>
+                <div class="faq-a"><p>Saudi Arabia's electronic deed registration system enables title transfer within 24–48 hours in most cases. The process is fully digital, transparent, and available with English language support. Saddlepoint manages the entire registration process on behalf of our clients.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Can I get residency through property investment?</button>
+                <div class="faq-a"><p>Yes. Saudi Arabia's Premium Residency program offers long-term residency to foreign property investors meeting specific thresholds. This provides visa-free status within the Kingdom, family inclusion, and access to government services.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">What currencies are accepted for property transactions?</button>
+                <div class="faq-a"><p>Property transactions are denominated in Saudi Riyal (SAR), which is pegged to the US Dollar at a fixed rate of 3.75. International investors can transact in USD, GBP, EUR, and other major currencies through approved banking channels, with full remittance rights for rental income and capital returns.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════ -->
+<footer>
+    <div class="container">
+        <div class="footer-top">
+            <div>
+                <span class="fbrand">Saddle<em>point</em></span>
+                <p class="ftagline">Your trusted partner in navigating Saudi Arabia's real estate transformation. Professional advisory for intelligent capital placement aligned with Vision 2030.</p>
+            </div>
+            <div>
+                <span class="fcol-title">On This Page</span>
+                <ul class="flinks">
+                    <li><a href="#why">Why Saudi Arabia</a></li>
+                    <li><a href="#megaprojects">Mega Projects</a></li>
+                    <li><a href="#strategies">Strategies</a></li>
+                    <li><a href="#market">Market Intelligence</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#consultation">Private Consultation</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="fcol-title">Resources</span>
+                <ul class="flinks">
+                    <li><a href="#legal">Legal Framework</a></li>
+                    <li><a href="#analysis">Market Analysis</a></li>
+                    <li><a href="#calculator">Return Calculator</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="/public/reports/saddlepoint-market-report-2026-q1.pdf" download>Q1 2026 Report</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="fcol-title">Company</span>
+                <ul class="flinks">
+                    <li><a href="#">About Saddlepoint</a></li>
+                    <li><a href="#">Advisory Team</a></li>
+                    <li><a href="#stories">Success Stories</a></li>
+                    <li><a href="mailto:hello@saddlepoint.sa">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bot">
+            <span class="fcopy">© 2026 Saddlepoint. All rights reserved.</span>
+            <ul class="flegal">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Cookie Policy</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<!-- THREE.JS -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<!-- Shared JS (cursor, audio, nav, reveals, wizard, calc) -->
+<script src="/js/shared.js"></script>
+
+<!-- THREE.JS HERO (home only) -->
+<script>
+(function () {
+    'use strict';
+    const canvas   = document.getElementById('hero-canvas');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+    renderer.setClearColor(0x020a05, 1);
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    const scene  = new THREE.Scene();
+    scene.fog    = new THREE.Fog(0x020a05, 30, 90);
+    const camera = new THREE.PerspectiveCamera(60, innerWidth / innerHeight, 0.1, 200);
+    camera.position.z = 32;
+    function resize() { renderer.setSize(innerWidth, innerHeight); camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); }
+    resize(); window.addEventListener('resize', resize);
+
+    /* Particle field */
+    const COUNT = 2400, pos = new Float32Array(COUNT * 3);
+    for (let i = 0; i < COUNT; i++) { pos[i*3]=(Math.random()-.5)*110; pos[i*3+1]=(Math.random()-.5)*110; pos[i*3+2]=(Math.random()-.5)*60; }
+    const pGeo = new THREE.BufferGeometry(); pGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    scene.add(new THREE.Points(pGeo, new THREE.PointsMaterial({ color:0x006C35, size:0.22, sizeAttenuation:true, transparent:true, opacity:0.8 })));
+
+    /* Accent particles */
+    const ACNT = 400, aPos = new Float32Array(ACNT * 3);
+    for (let i = 0; i < ACNT; i++) { aPos[i*3]=(Math.random()-.5)*80; aPos[i*3+1]=(Math.random()-.5)*80; aPos[i*3+2]=(Math.random()-.5)*40; }
+    const aGeo = new THREE.BufferGeometry(); aGeo.setAttribute('position', new THREE.BufferAttribute(aPos, 3));
+    scene.add(new THREE.Points(aGeo, new THREE.PointsMaterial({ color:0x00D166, size:0.12, sizeAttenuation:true, transparent:true, opacity:1 })));
+
+    /* Wireframe shapes */
+    const shapes = [];
+    [{ geo:new THREE.IcosahedronGeometry(5,0), x:22, y:10, z:-12, rx:0.003, ry:0.004 },
+     { geo:new THREE.OctahedronGeometry(3.5,0), x:-20, y:-9, z:-6, rx:-0.005, ry:0.003 },
+     { geo:new THREE.TetrahedronGeometry(3,0), x:9, y:-14, z:-9, rx:0.004, ry:-0.005 },
+     { geo:new THREE.IcosahedronGeometry(2.5,0), x:-12, y:14, z:-14, rx:-0.003, ry:-0.004 },
+     { geo:new THREE.OctahedronGeometry(2,0), x:0, y:18, z:-20, rx:0.006, ry:0.002 }
+    ].forEach(d => {
+        const m = new THREE.Mesh(d.geo, new THREE.MeshBasicMaterial({ color:0x006C35, wireframe:true, transparent:true, opacity:0.3 }));
+        m.position.set(d.x, d.y, d.z); m.userData = { rx:d.rx, ry:d.ry }; scene.add(m); shapes.push(m);
+    });
+
+    /* Mouse parallax */
+    let tX=0, tY=0, cX=0, cY=0;
+    document.getElementById('hero').addEventListener('mousemove', e => { tX=(e.clientX/innerWidth-.5)*4; tY=-(e.clientY/innerHeight-.5)*3; });
+
+    const clock = new THREE.Clock();
+    (function animate() {
+        requestAnimationFrame(animate);
+        const t = clock.getElapsedTime();
+        scene.children[0].rotation.y = t * 0.018; scene.children[0].rotation.x = t * 0.009;
+        scene.children[1].rotation.y = -t * 0.012;
+        shapes.forEach(s => { s.rotation.x += s.userData.rx; s.rotation.y += s.userData.ry; });
+        cX += (tX - cX) * 0.04; cY += (tY - cY) * 0.04;
+        camera.position.x = cX; camera.position.y = cY; camera.lookAt(0, 0, 0);
+        renderer.render(scene, camera);
+    })();
+
+    /* Hero text reveal (GSAP already registered by shared.js) */
+    document.querySelectorAll('.hero-heading .line').forEach((line, i) => {
+        gsap.from(line, { yPercent: 120, opacity: 0, duration: 1.3, delay: 0.1 + i * 0.13, ease: 'power4.out' });
+    });
+})();
+</script>
+
+</body>
+</html>
