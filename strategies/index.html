@@ -4,19 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investment Strategies — Saddlepoint</title>
-    <meta name="description" content="Tailored investment strategies for every investor profile — capital growth, rental yield, and hybrid approaches across Saudi Arabia's top real estate markets.">
+    <meta name="description" content="Three sophisticated investment strategies for Saudi Arabia real estate — long-term growth, medium-term value, and short-term yield. Data-driven, Vision 2030 aligned.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
+    <style>
+        .strat-detail { padding: 80px 0; }
+        .strat-detail:nth-child(even) { background: var(--bg); }
+        .strat-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-top: 48px; }
+        .strat-detail-grid.rev { direction: rtl; }
+        .strat-detail-grid.rev > * { direction: ltr; }
+        .strat-detail-visual {
+            background: var(--dark);
+            border-radius: 8px;
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .strat-returns-chart { display: flex; flex-direction: column; gap: 12px; }
+        .strat-bar-row { display: flex; align-items: center; gap: 16px; }
+        .strat-bar-lbl { font-size: 13px; color: rgba(255,255,255,0.5); width: 80px; flex-shrink: 0; }
+        .strat-bar-track { flex: 1; height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; }
+        .strat-bar-fill { height: 100%; border-radius: 4px; width: 0; transition: width 1.4s cubic-bezier(0.22,1,0.36,1); }
+        .strat-bar-val { font-size: 13px; font-weight: 600; color: var(--white); width: 50px; text-align: right; }
+        .strat-detail-title { font-family: var(--serif); font-size: clamp(28px, 3.5vw, 44px); font-weight: 300; line-height: 1.1; margin-bottom: 16px; }
+        .strat-detail-desc { font-size: 16px; line-height: 1.75; color: #555; margin-bottom: 24px; }
+        .strat-detail-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+        .strat-detail-list li { display: flex; gap: 12px; font-size: 14px; line-height: 1.5; color: #444; }
+        .strat-detail-list li::before { content: '→'; color: var(--green); flex-shrink: 0; font-weight: 600; }
+        .strat-kpi-row { display: flex; gap: 0; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-bottom: 32px; }
+        .strat-kpi { flex: 1; padding: 20px; border-right: 1px solid var(--border); text-align: center; }
+        .strat-kpi:last-child { border: none; }
+        .strat-kpi-val { font-family: var(--serif); font-size: 26px; color: var(--black); display: block; }
+        .strat-kpi-lbl { font-size: 11px; color: var(--grey); margin-top: 3px; }
+        .comp-strat-table-wrap { overflow-x: auto; margin-top: 48px; border: 1px solid var(--border); border-radius: 6px; }
+        .comp-strat-table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        .comp-strat-table th { background: var(--black); color: var(--white); padding: 14px 20px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+        .comp-strat-table td { padding: 14px 20px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .comp-strat-table tr:last-child td { border: none; }
+        .comp-strat-table .feat { font-weight: 600; color: var(--black); }
+        .check-yes { color: var(--green); font-weight: 700; }
+        .check-no { color: #ccc; }
+        .check-part { color: #c4a962; }
+        @media(max-width:768px) { .strat-detail-grid, .strat-detail-grid.rev { grid-template-columns: 1fr; direction: ltr; gap: 32px; } }
+    </style>
 </head>
 <body>
 
-<!-- Custom cursor -->
 <div id="cur"></div>
 <div id="cur-f"></div>
-
-<!-- Mute toggle -->
 <button id="mute-btn" title="Toggle ambient audio" aria-label="Toggle audio">
     <svg id="sound-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
@@ -25,238 +61,344 @@
     </svg>
 </button>
 
-<!-- NAV -->
 <nav id="nav">
-    <a href="/" class="nav-logo">Saddlepoint<span class="nav-dot"></span></a>
+    <a href="/" class="nav-logo">Saddle<em style="font-style:italic;color:var(--green-bright)">point</em><span class="nav-dot"></span></a>
     <ul class="nav-links">
         <li><a href="/why-saudi/">Why Saudi</a></li>
         <li><a href="/mega-projects/">Mega Projects</a></li>
         <li><a href="/strategies/">Strategies</a></li>
         <li><a href="/market-intelligence/">Market</a></li>
-        <li><a href="/portfolio/">Portfolio</a></li>
     </ul>
     <div class="nav-right">
-        <a href="/#consultation" class="nav-btn"><span>Book Consultation</span></a>
-        <button class="nav-ham" id="nav-ham" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+        <a href="/#consultation" class="nav-btn">Book Consultation</a>
+        <button class="nav-ham" id="nav-ham" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
 </nav>
-
-<!-- MOBILE NAV DRAWER -->
 <div class="nav-drawer" id="nav-drawer">
     <ul>
-        <li><a href="/why-saudi/">Why Saudi</a></li>
+        <li><a href="/why-saudi/">Why Saudi Arabia</a></li>
         <li><a href="/mega-projects/">Mega Projects</a></li>
-        <li><a href="/strategies/">Strategies</a></li>
+        <li><a href="/strategies/">Investment Strategies</a></li>
         <li><a href="/market-intelligence/">Market Intelligence</a></li>
-        <li><a href="/portfolio/">Portfolio</a></li>
         <li><a href="/#consultation">Book Consultation</a></li>
     </ul>
 </div>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
-    <!-- TODO: Replace with Riyadh financial district / modern architecture image -->
-    <div class="page-hero-bg" style="background-image: url('https://picsum.photos/seed/riyadh-sky/1600/900');"></div>
+    <div class="page-hero-bg" style="background-image:url('https://picsum.photos/seed/riyadh-office/1600/900');"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
-        <div class="page-hero-breadcrumb">
-            <a href="/">Home</a>
-            <span>/</span>
-            <a href="/strategies/">Strategies</a>
-        </div>
-        <span class="page-hero-eyebrow">Tailored for Every Profile</span>
+        <div class="page-hero-breadcrumb"><a href="/">Home</a><span>/</span><span>Investment Strategies</span></div>
+        <span class="page-hero-eyebrow">Strategic Investment Planning</span>
         <h1 class="page-hero-title">Investment<br>Strategies</h1>
-        <p class="page-hero-sub">From capital growth plays in Riyadh's financial district to yield-focused hospitality assets on the Red Sea coast — we craft strategies that match your profile.</p>
+        <p class="page-hero-sub">Three sophisticated approaches to Saudi Arabia real estate — each designed for a distinct investor profile, risk tolerance, and return horizon.</p>
+        <div class="page-hero-stats">
+            <div><span class="page-hero-stat-val">12–30%</span><span class="page-hero-stat-lbl">Annual Return Range</span></div>
+            <div><span class="page-hero-stat-val">1–10yr</span><span class="page-hero-stat-lbl">Investment Horizons</span></div>
+            <div><span class="page-hero-stat-val">0%</span><span class="page-hero-stat-lbl">Capital Gains Tax</span></div>
+        </div>
     </div>
 </div>
 
-<!-- INVESTOR PROFILES -->
-<section class="profiles" id="profiles">
+<!-- STRATEGY CARDS OVERVIEW -->
+<section class="strategies" id="strategies" style="padding:80px 0;">
     <div class="container">
-        <span class="section-label js-reveal">Find Your Pathway</span>
+        <span class="section-label js-reveal">Choose Your Approach</span>
         <div class="green-rule"></div>
-        <h2 class="section-h js-reveal">Select Your<br>Investor Profile</h2>
-        <div class="profiles-grid">
-            <div class="pcard js-reveal" data-tilt>
-                <div class="pcard-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                    </svg>
-                </div>
-                <div class="pcard-title">Foreign Investor</div>
-                <div class="pcard-sub">International capital seeking Saudi market entry</div>
-                <ul class="pfeatures">
-                    <li>100% foreign ownership</li>
-                    <li>Vision 2030 alignment</li>
-                    <li>Legal framework guidance</li>
-                    <li>Market entry support</li>
-                </ul>
-            </div>
-            <div class="pcard js-reveal" data-tilt>
-                <div class="pcard-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                        <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
-                    </svg>
-                </div>
-                <div class="pcard-title">High-Net-Worth Individual</div>
-                <div class="pcard-sub">Sophisticated investors seeking portfolio expansion</div>
-                <ul class="pfeatures">
-                    <li>Institutional-grade advisory</li>
-                    <li>Portfolio diversification</li>
-                    <li>Exclusive off-market opportunities</li>
-                    <li>Long-term partnership</li>
-                </ul>
-            </div>
-            <div class="pcard js-reveal" data-tilt>
-                <div class="pcard-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                    </svg>
-                </div>
-                <div class="pcard-title">Emerging Investor</div>
-                <div class="pcard-sub">Mid-career professionals with investment capital</div>
-                <ul class="pfeatures">
-                    <li>Strategic entry-point guidance</li>
-                    <li>Market education</li>
-                    <li>Risk management</li>
-                    <li>High-growth opportunities</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- STRATEGY CARDS -->
-<section class="strategies" id="strategies">
-    <div class="container">
-        <span class="section-label bright js-reveal">Our Strategies</span>
-        <div class="green-rule"></div>
-        <h2 class="section-h light js-reveal">Three Approaches.<br>One Goal: Returns.</h2>
+        <h2 class="section-h js-reveal">Three Pathways to<br>Saudi Real Estate Returns</h2>
+        <p class="section-intro light js-reveal">Each strategy is built on Vision 2030's multi-phase development cycle. Your optimal entry point depends on capital, timeline, and appetite for active management — not guesswork.</p>
         <div class="strat-grid">
-            <div class="strat-card js-reveal">
-                <span class="strat-tag">Capital Growth</span>
-                <div class="strat-returns">18–42%</div>
-                <span class="strat-period">Capital Appreciation Target</span>
-                <div class="strat-name">Growth Maximiser</div>
-                <div class="strat-desc">High-conviction land and development plays in NEOM-adjacent zones and Riyadh's financial district expansion.</div>
-                <ul class="strat-feats">
-                    <li>NEOM region land acquisition</li>
-                    <li>Riyadh KAFD district plays</li>
-                    <li>5–10 year investment horizon</li>
-                    <li>Higher risk / highest reward</li>
+            <div class="strat-card">
+                <span class="strat-badge badge-low">Conservative · Low Risk</span>
+                <div class="strat-return">12–15%</div>
+                <div class="strat-return-lbl">Expected annual return</div>
+                <div class="strat-title">Long-Term Growth</div>
+                <div class="strat-desc">Early-phase acquisition in Vision 2030 development zones. Land banking, off-plan in mega-project adjacent districts, and infrastructure-aligned assets that appreciate through the 2030 completion cycle.</div>
+                <ul class="strat-features">
+                    <li>Vision 2030 zone early-stage entry</li>
+                    <li>Land banking and off-plan acquisitions</li>
+                    <li>Infrastructure-adjacent positioning</li>
+                    <li>Minimal active management required</li>
+                    <li>Compounding appreciation strategy</li>
+                    <li>Tax-efficient long-hold structures</li>
                 </ul>
-                <a href="/#consultation" class="strat-link">Discuss this strategy →</a>
+                <div class="strat-horizon">
+                    <div class="strat-meta"><div class="strat-meta-lbl">Horizon</div><div class="strat-meta-val">7–10 years</div></div>
+                    <div class="strat-meta"><div class="strat-meta-lbl">Min. Capital</div><div class="strat-meta-val">SAR 5M+</div></div>
+                    <div class="strat-meta"><div class="strat-meta-lbl">Liquidity</div><div class="strat-meta-val">Low</div></div>
+                </div>
             </div>
-            <div class="strat-card featured js-reveal">
-                <span class="strat-tag">Most Popular</span>
-                <div class="strat-returns">12–18%</div>
-                <span class="strat-period">Annual Target Return</span>
-                <div class="strat-name">Growth + Yield Hybrid</div>
-                <div class="strat-desc">Balanced exposure to capital appreciation and rental income across Vision 2030 priority zones in Riyadh and Jeddah.</div>
-                <ul class="strat-feats">
-                    <li>Riyadh &amp; Jeddah markets</li>
-                    <li>3–7 year investment horizon</li>
-                    <li>Mixed residential &amp; commercial</li>
-                    <li>Quarterly income distributions</li>
+            <div class="strat-card featured">
+                <span class="strat-badge badge-med">Most Popular · Balanced</span>
+                <div class="strat-return">18–22%</div>
+                <div class="strat-return-lbl">Expected annual return</div>
+                <div class="strat-title">Medium-Term Value</div>
+                <div class="strat-desc">Dual-income approach combining capital appreciation with active rental yield from established commercial and residential districts. Proven markets with clear exit catalysts and institutional demand.</div>
+                <ul class="strat-features">
+                    <li>KAFD, Diplomatic Quarter, North Riyadh</li>
+                    <li>Dual income: rental + appreciation</li>
+                    <li>Active quarterly portfolio optimisation</li>
+                    <li>Strategic exit planning at 3–5yr mark</li>
+                    <li>Grade A office and prime residential</li>
+                    <li>Institutional-grade due diligence</li>
                 </ul>
-                <a href="/#consultation" class="strat-link">Discuss this strategy →</a>
+                <div class="strat-horizon">
+                    <div class="strat-meta"><div class="strat-meta-lbl">Horizon</div><div class="strat-meta-val">3–5 years</div></div>
+                    <div class="strat-meta"><div class="strat-meta-lbl">Min. Capital</div><div class="strat-meta-val">SAR 3M+</div></div>
+                    <div class="strat-meta"><div class="strat-meta-lbl">Liquidity</div><div class="strat-meta-val">Medium</div></div>
+                </div>
             </div>
-            <div class="strat-card js-reveal">
-                <span class="strat-tag">Yield Focus</span>
-                <div class="strat-returns">7–11%</div>
-                <span class="strat-period">Annual Rental Yield Target</span>
-                <div class="strat-name">Income Generator</div>
-                <div class="strat-desc">Stabilised hospitality and serviced apartment assets in prime Jeddah Corniche and Riyadh diplomatic quarter locations.</div>
-                <ul class="strat-feats">
-                    <li>Jeddah Corniche hospitality</li>
-                    <li>Riyadh serviced apartments</li>
-                    <li>1–3 year repositioning plays</li>
-                    <li>Monthly income distributions</li>
+            <div class="strat-card">
+                <span class="strat-badge badge-high">Aggressive · High Risk</span>
+                <div class="strat-return">25–30%</div>
+                <div class="strat-return-lbl">Expected annual return</div>
+                <div class="strat-title">Short-Term Yield</div>
+                <div class="strat-desc">Maximum income generation through premium furnished short-term rentals, value-add renovations, and tactical entry in areas experiencing mega-project construction spillover and rapid capital flows.</div>
+                <ul class="strat-features">
+                    <li>Premium furnished short-term rentals</li>
+                    <li>Value-add renovation and repositioning</li>
+                    <li>Active market timing expertise</li>
+                    <li>Rapid capital deployment cycles</li>
+                    <li>High liquidity with flexible exits</li>
+                    <li>REGA-compliant rental management</li>
                 </ul>
-                <a href="/#consultation" class="strat-link">Discuss this strategy →</a>
+                <div class="strat-horizon">
+                    <div class="strat-meta"><div class="strat-meta-lbl">Horizon</div><div class="strat-meta-val">1–2 years</div></div>
+                    <div class="strat-meta"><div class="strat-meta-lbl">Min. Capital</div><div class="strat-meta-val">SAR 2M+</div></div>
+                    <div class="strat-meta"><div class="strat-meta-lbl">Liquidity</div><div class="strat-meta-val">High</div></div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- COMPARISON TABLE -->
-<section style="padding:100px 56px; background:var(--bg);" id="comparison">
+<!-- STRATEGY 1 DETAIL -->
+<section class="strat-detail" style="padding:80px 0;background:var(--bg);" id="long-term">
     <div class="container">
-        <span class="section-label js-reveal">Side by Side</span>
+        <div class="strat-detail-grid">
+            <div>
+                <span class="section-label">Strategy 01</span>
+                <div class="green-rule"></div>
+                <div class="strat-detail-title">Long-Term Growth:<br>Enter Before the Market Does</div>
+                <div class="strat-detail-desc">The most powerful returns in real estate come from early positioning in areas of government-committed infrastructure development. Saudi Arabia's Vision 2030 provides a government-published roadmap of where capital is flowing — removing the guesswork that undermines long-term strategies in other markets.</div>
+                <div class="strat-kpi-row">
+                    <div class="strat-kpi"><span class="strat-kpi-val" style="color:var(--green)">12–15%</span><span class="strat-kpi-lbl">Annual Return</span></div>
+                    <div class="strat-kpi"><span class="strat-kpi-val">7–10 yrs</span><span class="strat-kpi-lbl">Horizon</span></div>
+                    <div class="strat-kpi"><span class="strat-kpi-val">SAR 5M+</span><span class="strat-kpi-lbl">Min. Capital</span></div>
+                </div>
+                <ul class="strat-detail-list">
+                    <li>Early-phase acquisition in NEOM, Red Sea, and Qiddiya adjacent areas — before peak demand</li>
+                    <li>Infrastructure-adjacent positioning: assets near Riyadh Metro stations, KAFD, and new road corridors</li>
+                    <li>Land banking in designated development zones with government-backed rezoning upside</li>
+                    <li>Off-plan acquisitions in Vision 2030-branded developments at pre-construction pricing</li>
+                    <li>Minimal active management — structured for passive compound appreciation</li>
+                    <li>Tax-efficient holding structures aligned with Saudi foreign investment regulations</li>
+                </ul>
+                <a href="/#consultation" class="btn btn-primary btn-arrow">Discuss This Strategy</a>
+            </div>
+            <div class="strat-detail-visual">
+                <div style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:24px;">Projected Annual Returns by Year</div>
+                <div class="strat-returns-chart" id="chart-long">
+                    <div class="strat-bar-row"><div class="strat-bar-lbl">Year 1</div><div class="strat-bar-track"><div class="strat-bar-fill" style="background:rgba(0,165,80,0.4);" data-w="40%"></div></div><div class="strat-bar-val">8%</div></div>
+                    <div class="strat-bar-row"><div class="strat-bar-lbl">Year 2</div><div class="strat-bar-track"><div class="strat-bar-fill" style="background:rgba(0,165,80,0.5);" data-w="50%"></div></div><div class="strat-bar-val">10%</div></div>
+                    <div class="strat-bar-row"><div class="strat-bar-lbl">Year 3</div><div class="strat-bar-track"><div class="strat-bar-fill" style="background:rgba(0,165,80,0.6);" data-w="60%"></div></div><div class="strat-bar-val">12%</div></div>
+                    <div class="strat-bar-row"><div class="strat-bar-lbl">Year 5</div><div class="strat-bar-track"><div class="strat-bar-fill" style="background:rgba(0,165,80,0.8);" data-w="70%"></div></div><div class="strat-bar-val">14%</div></div>
+                    <div class="strat-bar-row"><div class="strat-bar-lbl">Year 7+</div><div class="strat-bar-track"><div class="strat-bar-fill" style="background:rgba(0,165,80,1);" data-w="75%"></div></div><div class="strat-bar-val">15%</div></div>
+                </div>
+                <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);">
+                    <div style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:16px;">Example Opportunity Types</div>
+                    <div style="display:flex;flex-direction:column;gap:8px;">
+                        <div style="display:flex;justify-content:space-between;font-size:13px;"><span style="color:rgba(255,255,255,0.5);">NEOM-adjacent land</span><span style="color:var(--green-bright);">High upside</span></div>
+                        <div style="display:flex;justify-content:space-between;font-size:13px;"><span style="color:rgba(255,255,255,0.5);">Red Sea Global off-plan</span><span style="color:var(--green-bright);">Pre-launch pricing</span></div>
+                        <div style="display:flex;justify-content:space-between;font-size:13px;"><span style="color:rgba(255,255,255,0.5);">Qiddiya residential zone</span><span style="color:var(--green-bright);">Infrastructure uplift</span></div>
+                        <div style="display:flex;justify-content:space-between;font-size:13px;"><span style="color:rgba(255,255,255,0.5);">New Murabba district</span><span style="color:var(--green-bright);">Early entry</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STRATEGY 2 DETAIL -->
+<section class="strat-detail" style="padding:80px 0;background:var(--white);" id="medium-term">
+    <div class="container">
+        <div class="strat-detail-grid rev">
+            <div>
+                <span class="section-label">Strategy 02</span>
+                <div class="green-rule"></div>
+                <div class="strat-detail-title">Medium-Term Value:<br>Dual Income with Exit Clarity</div>
+                <div class="strat-detail-desc">The medium-term value strategy captures both rental yield and capital appreciation in Saudi Arabia's most liquid, established districts. It suits investors who want active income during the hold period and a clear, realistically-timed exit at institutional-grade pricing.</div>
+                <div class="strat-kpi-row">
+                    <div class="strat-kpi"><span class="strat-kpi-val" style="color:var(--green)">18–22%</span><span class="strat-kpi-lbl">Annual Return</span></div>
+                    <div class="strat-kpi"><span class="strat-kpi-val">3–5 yrs</span><span class="strat-kpi-lbl">Horizon</span></div>
+                    <div class="strat-kpi"><span class="strat-kpi-val">SAR 3M+</span><span class="strat-kpi-lbl">Min. Capital</span></div>
+                </div>
+                <ul class="strat-detail-list">
+                    <li>King Abdullah Financial District (KAFD): commercial Grade A at 8–10% yield</li>
+                    <li>Riyadh Diplomatic Quarter residential: SAR 7,000–12,000/sqm with strong expat demand</li>
+                    <li>North Riyadh residential corridors: family housing with 6–8% net yield</li>
+                    <li>Jeddah Corniche commercial and serviced apartments: 7–9% yield + appreciation</li>
+                    <li>Quarterly performance reviews and proactive market positioning</li>
+                    <li>Strategic exit aligned with mega-project delivery milestones for maximum value</li>
+                </ul>
+                <a href="/#consultation" class="btn btn-primary btn-arrow">Discuss This Strategy</a>
+            </div>
+            <div class="strat-detail-visual">
+                <div style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:24px;">Income Composition (Typical 5-Year Hold)</div>
+                <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:32px;">
+                    <div>
+                        <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;"><span style="color:rgba(255,255,255,0.5);">Rental Yield (annual)</span><span style="color:var(--green-bright);">7–9%</span></div>
+                        <div style="height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;"><div style="height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--green-bright));border-radius:4px;transition:width 1.4s ease;" data-w="65%"></div></div>
+                    </div>
+                    <div>
+                        <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;"><span style="color:rgba(255,255,255,0.5);">Capital Appreciation (annual)</span><span style="color:var(--green-bright);">10–13%</span></div>
+                        <div style="height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;"><div style="height:100%;width:0;background:linear-gradient(90deg,#c4a962,#e0c050);border-radius:4px;transition:width 1.4s ease 0.2s;" data-w="85%"></div></div>
+                    </div>
+                    <div>
+                        <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px;"><span style="color:rgba(255,255,255,0.5);">Total 5-Year Return (gross)</span><span style="color:white;font-weight:700;">85–110%</span></div>
+                        <div style="height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;"><div style="height:100%;width:0;background:rgba(255,255,255,0.3);border-radius:4px;transition:width 1.4s ease 0.4s;" data-w="100%"></div></div>
+                    </div>
+                </div>
+                <div style="padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);">
+                    <div style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:16px;">Target Districts</div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                        <div style="background:rgba(0,165,80,0.1);border-radius:4px;padding:10px 14px;font-size:13px;color:rgba(255,255,255,0.7);">KAFD — Riyadh</div>
+                        <div style="background:rgba(0,165,80,0.1);border-radius:4px;padding:10px 14px;font-size:13px;color:rgba(255,255,255,0.7);">Diplomatic Quarter</div>
+                        <div style="background:rgba(0,165,80,0.1);border-radius:4px;padding:10px 14px;font-size:13px;color:rgba(255,255,255,0.7);">North Riyadh</div>
+                        <div style="background:rgba(0,165,80,0.1);border-radius:4px;padding:10px 14px;font-size:13px;color:rgba(255,255,255,0.7);">Jeddah Corniche</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STRATEGY 3 DETAIL -->
+<section class="strat-detail" style="padding:80px 0;background:var(--bg);" id="short-term">
+    <div class="container">
+        <div class="strat-detail-grid">
+            <div>
+                <span class="section-label">Strategy 03</span>
+                <div class="green-rule"></div>
+                <div class="strat-detail-title">Short-Term Yield:<br>Maximum Income, Active Management</div>
+                <div class="strat-detail-desc">For investors with active management capacity and short capital deployment cycles, Saudi Arabia's premium furnished rental market and value-add renovation landscape offer the highest potential returns — particularly in construction-adjacent districts experiencing demand surges from Vision 2030 workers and executives.</div>
+                <div class="strat-kpi-row">
+                    <div class="strat-kpi"><span class="strat-kpi-val" style="color:var(--green)">25–30%</span><span class="strat-kpi-lbl">Annual Return</span></div>
+                    <div class="strat-kpi"><span class="strat-kpi-val">1–2 yrs</span><span class="strat-kpi-lbl">Horizon</span></div>
+                    <div class="strat-kpi"><span class="strat-kpi-val">SAR 2M+</span><span class="strat-kpi-lbl">Min. Capital</span></div>
+                </div>
+                <ul class="strat-detail-list">
+                    <li>Premium furnished apartments in Riyadh North, KAFD, and Al Olaya: SAR 150–350/night average</li>
+                    <li>Value-add renovations in underpriced units in high-demand corridors — 20–40% value uplift</li>
+                    <li>Short-term furnished rental for Vision 2030 project executives and relocating expats</li>
+                    <li>REGA-compliant rental management structure — no unlicensed short-term letting risks</li>
+                    <li>Active market timing using quarterly REGA pricing data and construction completion schedules</li>
+                    <li>Rapid exit cycles: 12–24 months, reinvest or exit as market conditions evolve</li>
+                </ul>
+                <a href="/#consultation" class="btn btn-primary btn-arrow">Discuss This Strategy</a>
+            </div>
+            <div class="strat-detail-visual">
+                <div style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:24px;">Return Drivers — Short-Term Strategy</div>
+                <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:32px;">
+                    <div style="background:rgba(255,255,255,0.04);border-radius:6px;padding:16px;">
+                        <div style="font-size:14px;font-weight:600;color:var(--white);margin-bottom:6px;">Furnished Rental Premium</div>
+                        <div style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;">Furnished short-term rentals in prime Riyadh command 60–120% premium over unfurnished long-term equivalents. Corporate demand from Vision 2030 project teams drives near-permanent occupancy in target districts.</div>
+                        <div style="margin-top:10px;font-size:13px;color:var(--green-bright);font-weight:600;">+60–120% vs. long-term rates</div>
+                    </div>
+                    <div style="background:rgba(255,255,255,0.04);border-radius:6px;padding:16px;">
+                        <div style="font-size:14px;font-weight:600;color:var(--white);margin-bottom:6px;">Value-Add Margin</div>
+                        <div style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;">Strategic renovation of below-market assets in high-demand locations delivers 20–40% value uplift on typical refurbishment budgets of SAR 150–300K, with rapid resale in liquid markets.</div>
+                        <div style="margin-top:10px;font-size:13px;color:var(--green-bright);font-weight:600;">20–40% value uplift typical</div>
+                    </div>
+                    <div style="background:rgba(255,255,255,0.04);border-radius:6px;padding:16px;">
+                        <div style="font-size:14px;font-weight:600;color:var(--white);margin-bottom:6px;">Market Momentum</div>
+                        <div style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;">REGA data shows Riyadh residential transaction volumes up 45%+ year-over-year, with absorption rates in prime districts exceeding 85%. Short-term holders benefit from strong exit liquidity.</div>
+                        <div style="margin-top:10px;font-size:13px;color:var(--green-bright);font-weight:600;">45%+ transaction volume growth</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STRATEGY COMPARISON TABLE -->
+<section style="padding:80px 0;background:var(--white);" id="comparison">
+    <div class="container">
+        <span class="section-label js-reveal">Side-by-Side Comparison</span>
         <div class="green-rule"></div>
-        <h2 class="section-h js-reveal" style="margin-bottom:48px;">Strategy Comparison</h2>
-        <div class="analysis-table-wrap js-reveal">
-            <table class="analysis-table">
+        <h2 class="section-h js-reveal">Compare All<br>Three Strategies</h2>
+        <div class="comp-strat-table-wrap">
+            <table class="comp-strat-table">
                 <thead>
                     <tr>
-                        <th>Parameter</th>
-                        <th>Growth Maximiser</th>
-                        <th class="hl">Hybrid (Recommended)</th>
-                        <th>Income Generator</th>
+                        <th>Factor</th>
+                        <th>Long-Term Growth</th>
+                        <th>Medium-Term Value</th>
+                        <th>Short-Term Yield</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="row-lbl">Target Return</td>
-                        <td>18–42% capital gain</td>
-                        <td class="hl">12–18% total return</td>
-                        <td>7–11% rental yield</td>
-                    </tr>
-                    <tr>
-                        <td class="row-lbl">Investment Horizon</td>
-                        <td>5–10 years</td>
-                        <td class="hl">3–7 years</td>
-                        <td>1–3 years</td>
-                    </tr>
-                    <tr>
-                        <td class="row-lbl">Minimum Entry</td>
-                        <td>SAR 5M+</td>
-                        <td class="hl">SAR 1M+</td>
-                        <td>SAR 500K+</td>
-                    </tr>
-                    <tr>
-                        <td class="row-lbl">Risk Profile</td>
-                        <td>High</td>
-                        <td class="hl">Moderate</td>
-                        <td>Conservative</td>
-                    </tr>
-                    <tr>
-                        <td class="row-lbl">Income Frequency</td>
-                        <td>On exit</td>
-                        <td class="hl">Quarterly</td>
-                        <td>Monthly</td>
-                    </tr>
-                    <tr>
-                        <td class="row-lbl">Primary Markets</td>
-                        <td>NEOM, Riyadh KAFD</td>
-                        <td class="hl">Riyadh, Jeddah</td>
-                        <td>Jeddah Corniche</td>
-                    </tr>
-                    <tr>
-                        <td class="row-lbl">Best For</td>
-                        <td>HNWI, Family Office</td>
-                        <td class="hl">All investor types</td>
-                        <td>Income-seeking investors</td>
-                    </tr>
+                    <tr><td class="feat">Expected Annual Return</td><td>12–15%</td><td><strong>18–22%</strong></td><td>25–30%</td></tr>
+                    <tr><td class="feat">Investment Horizon</td><td>7–10 years</td><td>3–5 years</td><td>1–2 years</td></tr>
+                    <tr><td class="feat">Risk Level</td><td>Low</td><td>Medium</td><td>High</td></tr>
+                    <tr><td class="feat">Minimum Capital</td><td>SAR 5M+</td><td>SAR 3M+</td><td>SAR 2M+</td></tr>
+                    <tr><td class="feat">Liquidity</td><td>Low</td><td>Medium</td><td>High</td></tr>
+                    <tr><td class="feat">Management Intensity</td><td>Passive</td><td>Moderate</td><td>Active</td></tr>
+                    <tr><td class="feat">Rental Income</td><td class="check-no">Minimal</td><td class="check-part">Yes — balanced</td><td class="check-yes">Primary focus</td></tr>
+                    <tr><td class="feat">Capital Appreciation</td><td class="check-yes">Primary focus</td><td class="check-yes">Strong</td><td class="check-part">Secondary</td></tr>
+                    <tr><td class="feat">Vision 2030 Zone Focus</td><td class="check-yes">✓ Core strategy</td><td class="check-part">✓ Established markets</td><td class="check-part">✓ Spillover zones</td></tr>
+                    <tr><td class="feat">Suitable for Foreign Investors</td><td class="check-yes">✓ Ideal</td><td class="check-yes">✓ Ideal</td><td class="check-part">Requires management</td></tr>
+                    <tr><td class="feat">REGA Rental Compliance</td><td class="check-no">N/A</td><td class="check-yes">✓ Managed</td><td class="check-yes">✓ Required — managed by Saddlepoint</td></tr>
+                    <tr><td class="feat">Exit Strategy Complexity</td><td>Low</td><td>Medium</td><td>Low (high liquidity)</td></tr>
                 </tbody>
             </table>
         </div>
     </div>
 </section>
 
-<!-- CTA BANNER -->
+<!-- FAQ -->
+<section class="faq-section" id="faq" style="padding:80px 0;">
+    <div class="container">
+        <span class="section-label js-reveal">Strategy Questions</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h js-reveal" style="margin-bottom:48px;">Frequently Asked<br>Questions</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-q">How do you determine which strategy is right for my situation?</button>
+                <div class="faq-a"><p>Our advisory process begins with a 60-minute private consultation to understand your capital, timeline, tax position, existing portfolio, and risk tolerance. We then map this profile to the most aligned strategy and identify specific opportunities within it. The consultation is complimentary and zero-obligation.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Can I combine elements of more than one strategy?</button>
+                <div class="faq-a"><p>Absolutely — and for investors with larger capital positions, a portfolio approach is often the most sophisticated solution. For example: 60% medium-term value assets for steady income, 30% long-term land positioning in NEOM-adjacent zones, and 10% short-term furnished rentals for cash flow. We design and manage these hybrid allocations for clients as a portfolio management service.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Are the return projections guaranteed?</button>
+                <div class="faq-a"><p>No investment return is guaranteed. The ranges provided (12–15%, 18–22%, 25–30%) are Saddlepoint's assessments based on historical REGA market data, current transaction volumes, Vision 2030 project timelines, and comparable investment outcomes in Saudi Arabia's market between 2020–2025. Real estate investment involves risk, including market downturns, regulatory changes, and project delays. Our role is to identify the highest-conviction opportunities and manage risk proactively — not to guarantee outcomes.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Do I need to be physically present in Saudi Arabia to invest?</button>
+                <div class="faq-a"><p>No. Saddlepoint manages the complete advisory, due diligence, legal, registration, and property management process on behalf of remote investors. Saudi Arabia's Ministry of Justice electronic deed system enables title transfers without physical presence. For MISA licensing for business structures, limited physical presence may be required at certain stages — we advise on this based on your chosen structure. Many of our clients complete their first Saudi investment entirely remotely.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">What happens if a mega-project is delayed?</button>
+                <div class="faq-a"><p>Mega-project delays are a legitimate risk factor in any Saudi real estate strategy. However, the investment case for Saudi Arabia is broader than any single project — it is driven by government capital deployment, population growth, homeownership targets, FDI inflows, and market liberalisation. Our strategies are designed around multiple demand drivers, not singular project dependency. We track PIF project milestones, REGA market data, and government budget allocations quarterly to identify any material changes to our investment thesis and advise clients proactively.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
 <section class="cta">
-    <div class="cta-wm" aria-hidden="true">SADDLEPOINT</div>
-    <span class="section-label">Personalised Advisory</span>
-    <h2 class="cta-h js-reveal">Which Strategy<br>Is Right for You?</h2>
-    <p class="cta-sub js-reveal">Book a private consultation. Our advisors will assess your profile, goals, and timeline — then recommend the optimal strategy for your capital.</p>
-    <div class="cta-btns js-reveal">
-        <a href="/#consultation" class="btn btn-white"><span>Book Private Consultation</span></a>
-        <a href="/market-intelligence/" class="btn btn-outline-w"><span>View Market Intelligence</span></a>
+    <div class="cta-wm" aria-hidden="true">STRATEGY</div>
+    <div class="container" style="position:relative;z-index:2;text-align:center;">
+        <span class="section-label">Build Your Strategy</span>
+        <h2 class="cta-h js-reveal">Ready to Define<br>Your Investment Approach?</h2>
+        <p class="cta-sub js-reveal">Book a private consultation with our advisory team to develop a customised strategy built on your capital, timeline, and return objectives. Complimentary. No obligation.</p>
+        <div class="cta-btns js-reveal">
+            <a href="/#consultation" class="btn btn-white btn-arrow">Book Private Consultation</a>
+            <a href="/market-intelligence/" class="btn btn-outline-w">Market Intelligence</a>
+        </div>
     </div>
 </section>
 
@@ -266,54 +408,58 @@
         <div class="footer-top">
             <div>
                 <span class="fbrand">Saddle<em>point</em></span>
-                <p class="ftagline">Your trusted partner in navigating Saudi Arabia's real estate transformation. Professional advisory for intelligent capital placement aligned with Vision 2030.</p>
+                <p class="ftagline">Professional advisory for intelligent capital placement in Saudi Arabia's Vision 2030 transformation.</p>
             </div>
             <div>
-                <span class="fcol-title">Investment Services</span>
+                <span class="fcol-title">Strategies</span>
+                <ul class="flinks">
+                    <li><a href="/strategies/#long-term">Long-Term Growth</a></li>
+                    <li><a href="/strategies/#medium-term">Medium-Term Value</a></li>
+                    <li><a href="/strategies/#short-term">Short-Term Yield</a></li>
+                    <li><a href="/strategies/#comparison">Strategy Comparison</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="fcol-title">Investment Intelligence</span>
                 <ul class="flinks">
                     <li><a href="/why-saudi/">Why Saudi Arabia</a></li>
                     <li><a href="/mega-projects/">Mega Projects</a></li>
-                    <li><a href="/strategies/">Strategies</a></li>
-                    <li><a href="/market-intelligence/">Market Intelligence</a></li>
-                    <li><a href="/portfolio/">Portfolio</a></li>
-                    <li><a href="/#consultation">Private Consultation</a></li>
+                    <li><a href="/market-intelligence/">Market Data</a></li>
+                    <li><a href="/market-intelligence/#calculator">ROI Calculator</a></li>
                 </ul>
             </div>
             <div>
-                <span class="fcol-title">Resources</span>
+                <span class="fcol-title">Contact</span>
                 <ul class="flinks">
-                    <li><a href="/why-saudi/#legal">Legal Framework Guide</a></li>
-                    <li><a href="/market-intelligence/#analysis">Market Analysis</a></li>
-                    <li><a href="/market-intelligence/#calculator">Investment Calculator</a></li>
+                    <li><a href="/#consultation">Book Consultation</a></li>
+                    <li><a href="mailto:hello@saddlepoint.sa">hello@saddlepoint.sa</a></li>
+                    <li><a href="/why-saudi/#legal">Legal Framework</a></li>
                     <li><a href="/why-saudi/#faq">FAQ</a></li>
-                </ul>
-            </div>
-            <div>
-                <span class="fcol-title">Company</span>
-                <ul class="flinks">
-                    <li><a href="#">About Saddlepoint</a></li>
-                    <li><a href="#">Advisory Team</a></li>
-                    <li><a href="/portfolio/">Success Stories</a></li>
-                    <li><a href="mailto:hello@saddlepoint.sa">Contact Us</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bot">
-            <span class="fcopy">© 2026 Saddlepoint. All rights reserved.</span>
-            <ul class="flegal">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Cookie Policy</a></li>
-            </ul>
+            <span class="fcopy">© 2026 Saddlepoint. All rights reserved. Return projections are estimates based on market data and are not guaranteed.</span>
+            <ul class="flegal"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms</a></li></ul>
         </div>
     </div>
 </footer>
 
-<!-- GSAP + ScrollTrigger -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<!-- Shared JS -->
 <script src="/js/shared.js"></script>
-
+<script>
+// Animate strategy bars on scroll
+if (typeof IntersectionObserver !== 'undefined') {
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (!e.isIntersecting) return;
+            e.target.querySelectorAll('[data-w]').forEach(b => { b.style.width = b.dataset.w; });
+            obs.unobserve(e.target);
+        });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.strat-detail-visual, .strat-detail-grid').forEach(el => obs.observe(el));
+}
+</script>
 </body>
 </html>

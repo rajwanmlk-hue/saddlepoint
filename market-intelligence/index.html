@@ -4,19 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Market Intelligence — Saddlepoint</title>
-    <meta name="description" content="Real-time intelligence on Saudi Arabia's fastest-growing property markets. Riyadh, Jeddah, and NEOM data — updated quarterly. Plus our investment return calculator.">
+    <meta name="description" content="Real-time market intelligence on Saudi Arabia's fastest-growing property markets. Riyadh, Jeddah data, price trends, rental yields, and an interactive investment ROI calculator.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 
-<!-- Custom cursor -->
 <div id="cur"></div>
 <div id="cur-f"></div>
-
-<!-- Mute toggle -->
 <button id="mute-btn" title="Toggle ambient audio" aria-label="Toggle audio">
     <svg id="sound-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
@@ -25,247 +22,379 @@
     </svg>
 </button>
 
-<!-- NAV -->
 <nav id="nav">
-    <a href="/" class="nav-logo">Saddlepoint<span class="nav-dot"></span></a>
+    <a href="/" class="nav-logo">Saddle<em style="font-style:italic;color:var(--green-bright)">point</em><span class="nav-dot"></span></a>
     <ul class="nav-links">
         <li><a href="/why-saudi/">Why Saudi</a></li>
         <li><a href="/mega-projects/">Mega Projects</a></li>
         <li><a href="/strategies/">Strategies</a></li>
         <li><a href="/market-intelligence/">Market</a></li>
-        <li><a href="/portfolio/">Portfolio</a></li>
     </ul>
     <div class="nav-right">
-        <a href="/#consultation" class="nav-btn"><span>Book Consultation</span></a>
-        <button class="nav-ham" id="nav-ham" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+        <a href="/#consultation" class="nav-btn">Book Consultation</a>
+        <button class="nav-ham" id="nav-ham" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
 </nav>
-
-<!-- MOBILE NAV DRAWER -->
 <div class="nav-drawer" id="nav-drawer">
     <ul>
-        <li><a href="/why-saudi/">Why Saudi</a></li>
+        <li><a href="/why-saudi/">Why Saudi Arabia</a></li>
         <li><a href="/mega-projects/">Mega Projects</a></li>
-        <li><a href="/strategies/">Strategies</a></li>
+        <li><a href="/strategies/">Investment Strategies</a></li>
         <li><a href="/market-intelligence/">Market Intelligence</a></li>
-        <li><a href="/portfolio/">Portfolio</a></li>
         <li><a href="/#consultation">Book Consultation</a></li>
     </ul>
 </div>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
-    <!-- TODO: Replace with Jeddah waterfront / Red Sea coast aerial image -->
-    <div class="page-hero-bg" style="background-image: url('https://picsum.photos/seed/jeddah-coast/1600/900');"></div>
+    <div class="page-hero-bg" style="background-image:url('https://picsum.photos/seed/riyadh-market/1600/900');"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
-        <div class="page-hero-breadcrumb">
-            <a href="/">Home</a>
-            <span>/</span>
-            <a href="/market-intelligence/">Market Intelligence</a>
-        </div>
-        <span class="page-hero-eyebrow">Proprietary Data · Updated Q1 2026</span>
+        <div class="page-hero-breadcrumb"><a href="/">Home</a><span>/</span><span>Market Intelligence</span></div>
+        <span class="page-hero-eyebrow">Live Market Data · Updated Q1 2026</span>
         <h1 class="page-hero-title">Market<br>Intelligence</h1>
-        <p class="page-hero-sub">Real-time intelligence on Saudi Arabia's fastest-growing property markets. Proprietary data on Riyadh, Jeddah, and NEOM — updated quarterly.</p>
+        <p class="page-hero-sub">Price trends, rental yields, and transaction data for Saudi Arabia's fastest-growing real estate markets — plus our interactive investment return calculator.</p>
+        <div class="page-hero-stats">
+            <div><span class="page-hero-stat-val">+12.5%</span><span class="page-hero-stat-lbl">Riyadh Annual Growth</span></div>
+            <div><span class="page-hero-stat-val">SAR 8,500</span><span class="page-hero-stat-lbl">Riyadh Prime /sqm</span></div>
+            <div><span class="page-hero-stat-val">7.2%</span><span class="page-hero-stat-lbl">Average Rental Yield</span></div>
+        </div>
     </div>
 </div>
 
-<!-- MARKET CARDS -->
-<section class="markets" id="market">
+<!-- STATS BAR -->
+<div class="sbar">
+    <div class="sitem"><span class="snum">+12.5%</span><div class="stitle">Riyadh Annual Growth</div><div class="sdesc">Residential prime market · 2024 data</div></div>
+    <div class="sitem"><span class="snum">+9.8%</span><div class="stitle">Jeddah Annual Growth</div><div class="sdesc">Prime residential average · 2024 data</div></div>
+    <div class="sitem"><span class="snum">7.2%</span><div class="stitle">Avg Rental Yield (RUH)</div><div class="sdesc">Residential prime districts · gross</div></div>
+    <div class="sitem"><span class="snum">85%+</span><div class="stitle">Office Occupancy</div><div class="sdesc">Grade A commercial in KAFD</div></div>
+    <div class="sitem"><span class="snum">45%</span><div class="stitle">FDI Growth (YoY)</div><div class="sdesc">International capital inflows · 2024</div></div>
+</div>
+
+<!-- CITY MARKET OVERVIEW -->
+<section class="mi-overview" id="overview">
     <div class="container">
-        <span class="section-label bright js-reveal">Key Growth Markets</span>
+        <span class="section-label js-reveal">City Overviews</span>
         <div class="green-rule"></div>
-        <h2 class="section-h light js-reveal" style="margin-bottom:20px;">Key Growth<br>Markets</h2>
-        <p class="js-reveal" style="font-family:var(--serif);font-size:clamp(15px,1.4vw,19px);font-style:italic;color:rgba(255,255,255,0.4);max-width:560px;line-height:1.7;margin-bottom:48px;">Real-time intelligence on Saudi Arabia's fastest-growing property markets. Proprietary data updated quarterly.</p>
-        <div class="markets-grid">
-            <div class="mcard js-reveal">
-                <!-- TODO: Replace with Riyadh skyline / King Abdullah Financial District image -->
-                <img src="https://picsum.photos/seed/riyadh-sky/900/580" alt="Riyadh skyline">
-                <div class="moverlay"></div>
-                <div class="mcontent">
-                    <div class="mgrowth">▲ +45% Growth</div>
-                    <div class="mcity">Riyadh</div>
-                    <div class="minvest">Financial District — Saudi Arabia's Economic Hub</div>
-                    <div class="mdata">
-                        <div class="mdata-item"><span>$850B</span><span>Total Investment</span></div>
-                        <div class="mdata-item"><span>120+</span><span>Active Projects</span></div>
-                        <div class="mdata-item"><span>SAR 8,500</span><span>Avg /sqm</span></div>
-                    </div>
+        <h2 class="section-h js-reveal">Prime Market<br>Snapshots</h2>
+        <p class="section-intro js-reveal" style="max-width:580px;">Key metrics for Saudi Arabia's two largest investment markets — Riyadh and Jeddah — based on REGA data and independent market research as of Q1 2026.</p>
+
+        <div class="mi-city-tabs">
+            <button class="mi-tab active" data-city="riyadh">
+                <span class="mi-tab-city">Riyadh</span>
+                <span class="mi-tab-growth">+12.5% annual growth</span>
+            </button>
+            <button class="mi-tab" data-city="jeddah">
+                <span class="mi-tab-city">Jeddah</span>
+                <span class="mi-tab-growth">+9.8% annual growth</span>
+            </button>
+        </div>
+
+        <!-- Riyadh Panel -->
+        <div class="mi-panel active" id="panel-riyadh">
+            <div class="mi-panel-grid">
+                <div>
+                    <span class="mi-stat-val">SAR 8,500</span>
+                    <span class="mi-stat-lbl">Avg. Price / sqm (Prime)</span>
+                    <span class="mi-stat-chg">↑ +12.5% YoY</span>
+                </div>
+                <div>
+                    <span class="mi-stat-val">7.2%</span>
+                    <span class="mi-stat-lbl">Average Rental Yield</span>
+                    <span class="mi-stat-chg">↑ Grade A commercial: 9–10%</span>
+                </div>
+                <div>
+                    <span class="mi-stat-val">120+</span>
+                    <span class="mi-stat-lbl">Active Development Projects</span>
+                    <span class="mi-stat-chg">Government-backed pipeline</span>
+                </div>
+                <div>
+                    <span class="mi-stat-val">85%+</span>
+                    <span class="mi-stat-lbl">KAFD Office Occupancy</span>
+                    <span class="mi-stat-chg">Grade A commercial demand</span>
                 </div>
             </div>
-            <div class="mcard js-reveal">
-                <!-- TODO: Replace with Jeddah Corniche waterfront / new development image -->
-                <img src="https://picsum.photos/seed/jeddah-coast/900/580" alt="Jeddah waterfront">
-                <div class="moverlay"></div>
-                <div class="mcontent">
-                    <div class="mgrowth">▲ +38% Growth</div>
-                    <div class="mcity">Jeddah</div>
-                    <div class="minvest">Red Sea Gateway — Tourism &amp; Commerce Hub</div>
-                    <div class="mdata">
-                        <div class="mdata-item"><span>$620B</span><span>Total Investment</span></div>
-                        <div class="mdata-item"><span>85+</span><span>Active Projects</span></div>
-                        <div class="mdata-item"><span>SAR 7,200</span><span>Avg /sqm</span></div>
-                    </div>
+            <div class="mi-highlights">
+                <div class="mi-highlights-title">Key Growth Catalysts</div>
+                <div class="mi-highlights-list">
+                    <span class="mi-highlight-item">King Abdullah Financial District (KAFD) — 1.6M sqm commercial hub</span>
+                    <span class="mi-highlight-item">King Salman Park — World's largest urban park (13.4 km²)</span>
+                    <span class="mi-highlight-item">Riyadh Metro — 6 lines, 176km, operational since 2024</span>
+                    <span class="mi-highlight-item">New Murabba — 19 km² new downtown with THE MUKAAB cube</span>
+                    <span class="mi-highlight-item">Diriyah Gate — $20B UNESCO heritage development, 12km from CBD</span>
+                    <span class="mi-highlight-item">FIFA World Cup 2034 — infrastructure legacy commitment</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jeddah Panel -->
+        <div class="mi-panel" id="panel-jeddah">
+            <div class="mi-panel-grid">
+                <div>
+                    <span class="mi-stat-val">SAR 7,200</span>
+                    <span class="mi-stat-lbl">Avg. Price / sqm (Prime)</span>
+                    <span class="mi-stat-chg">↑ +9.8% YoY</span>
+                </div>
+                <div>
+                    <span class="mi-stat-val">6.5%</span>
+                    <span class="mi-stat-lbl">Average Rental Yield</span>
+                    <span class="mi-stat-chg">↑ Corniche commercial: 8–9%</span>
+                </div>
+                <div>
+                    <span class="mi-stat-val">85+</span>
+                    <span class="mi-stat-lbl">Active Development Projects</span>
+                    <span class="mi-stat-chg">Coastal and urban pipeline</span>
+                </div>
+                <div>
+                    <span class="mi-stat-val">$620B</span>
+                    <span class="mi-stat-lbl">Total Investment Pipeline</span>
+                    <span class="mi-stat-chg">Multi-year development</span>
+                </div>
+            </div>
+            <div class="mi-highlights">
+                <div class="mi-highlights-title">Key Growth Catalysts</div>
+                <div class="mi-highlights-list">
+                    <span class="mi-highlight-item">Jeddah Central — 5.7M sqm mixed-use mega-project by the sea</span>
+                    <span class="mi-highlight-item">Jeddah Tower — World's tallest skyscraper (1,000m+) under construction</span>
+                    <span class="mi-highlight-item">Corniche waterfront development and hotel pipeline expansion</span>
+                    <span class="mi-highlight-item">Red Sea Cruise Port expansion — gateway for Saudi tourism</span>
+                    <span class="mi-highlight-item">Al Balad UNESCO Heritage District — tourism and hospitality growth</span>
+                    <span class="mi-highlight-item">King Abdulaziz International Airport expansion</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ANALYSIS TABLE -->
-<section class="analysis" id="analysis">
+<!-- CHARTS -->
+<section class="chart-section" id="analysis">
     <div class="container">
-        <span class="section-label bright js-reveal">Market Analysis</span>
+        <span class="section-label js-reveal">Market Data Visualised</span>
         <div class="green-rule"></div>
-        <h2 class="section-h light js-reveal" style="margin-bottom:40px;">Comparative Market<br>Analysis — Q1 2026</h2>
-        <div class="analysis-table-wrap js-reveal">
-            <table class="analysis-table">
-                <thead>
-                    <tr>
-                        <th>Metric</th>
-                        <th class="hl">Riyadh (KAFD)</th>
-                        <th>Jeddah Corniche</th>
-                        <th>NEOM Region</th>
-                        <th>Dubai (comparison)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="row-lbl">YoY Capital Growth</td>
-                        <td class="hl">+45%</td>
-                        <td>+38%</td>
-                        <td>+120%*</td>
-                        <td>+22%</td>
-                    </tr>
-                    <tr>
-                        <td class="row-lbl">Avg Price /sqm (SAR)</td>
-                        <td class="hl">8,500</td>
-                        <td>7,200</td>
-                        <td>12,000*</td>
-                        <td>11,400</td>
-                    </tr>
-                    <tr>
-                        <td class="row-lbl">Gross Rental Yield</td>
-                        <td class="hl">7.8%</td>
-                        <td>7.2%</td>
-                        <td>N/A (dev phase)</td>
-                        <td>5.1%</td>
-                    </tr>
-                    <tr>
-                        <td class="row-lbl">Capital Gains Tax</td>
-                        <td class="hl">0%</td>
-                        <td>0%</td>
-                        <td>0%</td>
-                        <td>0%</td>
-                    </tr>
-                    <tr>
-                        <td class="row-lbl">Transaction Cost</td>
-                        <td class="hl">2.5%</td>
-                        <td>2.5%</td>
-                        <td>2.5%</td>
-                        <td>4.0%</td>
-                    </tr>
-                    <tr>
-                        <td class="row-lbl">Foreign Ownership</td>
-                        <td class="hl">100%</td>
-                        <td>100%</td>
-                        <td>100%</td>
-                        <td>Designated zones</td>
-                    </tr>
-                    <tr>
-                        <td class="row-lbl">Currency Stability</td>
-                        <td class="hl">USD Pegged</td>
-                        <td>USD Pegged</td>
-                        <td>USD Pegged</td>
-                        <td>USD Pegged</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <p style="font-size:10px;color:rgba(255,255,255,0.3);font-style:italic;margin-bottom:56px;">* NEOM Region estimates based on pre-development land; subject to regulatory developments. All data Q1 2026.</p>
+        <h2 class="section-h js-reveal">Saudi Arabia vs.<br>Global Real Estate Markets</h2>
+        <p class="section-intro js-reveal">Interactive market data — compare rental yields, capital appreciation, and historical price trends across Saudi Arabia's prime markets and global peers.</p>
 
-        <div class="analysis-highlights">
-            <div class="ah-card js-reveal">
-                <span class="ah-label">Peak Growth Market</span>
-                <span class="ah-val" data-target="45" data-suffix="%">0%</span>
-                <div class="ah-desc">Riyadh KAFD year-on-year capital appreciation — the highest of any major Gulf city in 2025.</div>
+        <div class="chart-tabs" style="margin-bottom:40px;">
+            <button class="chart-tab active" data-group="main" data-target="yield" onclick="switchChart('yield')">Rental Yields</button>
+            <button class="chart-tab" data-group="main" data-target="cap" onclick="switchChart('cap')">Capital Appreciation</button>
+            <button class="chart-tab" data-group="main" data-target="trends" onclick="switchChart('trends')">Price Trends 2019–2025</button>
+        </div>
+
+        <div id="chart-yield-wrap" data-chartpanel="yield">
+            <div class="chart-wrap"><canvas id="chart-yield"></canvas></div>
+            <div class="chart-legend">
+                <div class="chart-legend-item"><div class="legend-dot" style="background:rgba(0,165,80,0.85);"></div>Saudi Arabia — Highest Yield Market</div>
+                <div class="chart-legend-item"><div class="legend-dot" style="background:rgba(0,165,80,0.35);"></div>Peer Markets</div>
             </div>
-            <div class="ah-card js-reveal">
-                <span class="ah-label">Best Rental Yield</span>
-                <span class="ah-val">7.8%</span>
-                <div class="ah-desc">Gross rental yield in Riyadh's prime residential zones — 53% above comparable Dubai assets.</div>
+            <p style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:16px;">Source: JLL Global Real Estate Transparency Index, REGA Annual Report 2024. Residential prime market averages.</p>
+        </div>
+
+        <div id="chart-cap-wrap" data-chartpanel="cap" style="display:none;">
+            <div class="chart-wrap"><canvas id="chart-cap"></canvas></div>
+            <div class="chart-legend">
+                <div class="chart-legend-item"><div class="legend-dot" style="background:rgba(0,165,80,0.85);"></div>Saudi Arabia — 5-Year Appreciation</div>
+                <div class="chart-legend-item"><div class="legend-dot" style="background:rgba(0,165,80,0.35);"></div>Peer Markets</div>
             </div>
-            <div class="ah-card js-reveal">
-                <span class="ah-label">Transaction Cost Advantage</span>
-                <span class="ah-val">2.5%</span>
-                <div class="ah-desc">Saudi Arabia's transfer tax vs 4%+ in Dubai, 5%+ in UK, and 7%+ in Singapore — maximising net returns.</div>
+            <p style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:16px;">Source: Knight Frank, REGA 2024, JLL 2024. Prime residential market 5-year capital appreciation.</p>
+        </div>
+
+        <div id="chart-trends-wrap" data-chartpanel="trends" style="display:none;">
+            <div class="chart-wrap"><canvas id="chart-trends"></canvas></div>
+            <div class="chart-legend">
+                <div class="chart-legend-item"><div class="legend-dot" style="background:rgba(0,165,80,1);"></div>Riyadh — Prime Residential (SAR/sqm)</div>
+                <div class="chart-legend-item"><div class="legend-dot" style="background:rgba(196,169,98,1);"></div>Jeddah — Prime Residential (SAR/sqm)</div>
+            </div>
+            <p style="font-size:12px;color:rgba(255,255,255,0.3);margin-top:16px;">Source: REGA Real Estate Price Index 2019–2025, Ministry of Justice transaction records. Prime residential average price per sqm.</p>
+        </div>
+    </div>
+</section>
+
+<!-- MARKET INSIGHT CARDS -->
+<section style="padding:80px 0;background:var(--bg);">
+    <div class="container">
+        <span class="section-label js-reveal">Key Insights</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h js-reveal">What the Data<br>Is Telling Us</h2>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;">
+            <div class="insight-card js-reveal" style="background:var(--white);border:1px solid var(--border);padding:36px;border-top:3px solid var(--green);transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94),box-shadow 0.4s;" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(0,0,0,0.08)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--green);margin-bottom:14px;">Capital Appreciation</div>
+                <div style="font-family:var(--serif);font-size:40px;font-weight:300;color:var(--black);line-height:1;margin-bottom:12px;">+42%</div>
+                <div style="font-family:var(--serif);font-size:15px;font-style:italic;line-height:1.7;color:#555;">Riyadh prime residential has appreciated over 42% between 2020 and 2025, driven by Vision 2030 infrastructure investment, Metro network completion, and population growth. The appreciation trajectory remains structurally supported through 2030.</div>
+            </div>
+            <div class="insight-card js-reveal" style="background:var(--white);border:1px solid var(--border);padding:36px;border-top:3px solid var(--green);transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94),box-shadow 0.4s;" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(0,0,0,0.08)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--green);margin-bottom:14px;">Transaction Volume</div>
+                <div style="font-family:var(--serif);font-size:40px;font-weight:300;color:var(--black);line-height:1;margin-bottom:12px;">+45% YoY</div>
+                <div style="font-family:var(--serif);font-size:15px;font-style:italic;line-height:1.7;color:#555;">Real estate transaction volumes in Riyadh increased 45% year-over-year in 2024, according to REGA data. International capital inflows grew faster than domestic — institutional investors from the US, UK, and Asia Pacific are driving commercial sector demand.</div>
+            </div>
+            <div class="insight-card js-reveal" style="background:var(--white);border:1px solid var(--border);padding:36px;border-top:3px solid var(--green);transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94),box-shadow 0.4s;" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(0,0,0,0.08)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--green);margin-bottom:14px;">Supply Gap</div>
+                <div style="font-family:var(--serif);font-size:40px;font-weight:300;color:var(--black);line-height:1;margin-bottom:12px;">1.5M Homes</div>
+                <div style="font-family:var(--serif);font-size:15px;font-style:italic;line-height:1.7;color:#555;">Vision 2030's homeownership target of 70% requires an estimated 1.5 million new residential units by 2030. Current supply delivery rates are tracking below this need — creating a structural supply gap that underpins residential pricing across all market segments.</div>
+            </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px;">
+            <div class="insight-card js-reveal" style="background:var(--white);border:1px solid var(--border);padding:36px;border-top:3px solid #c4a962;transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94),box-shadow 0.4s;" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(0,0,0,0.08)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#c4a962;margin-bottom:14px;">Commercial Real Estate</div>
+                <div style="font-family:var(--serif);font-size:40px;font-weight:300;color:var(--black);line-height:1;margin-bottom:12px;">85%+ Occupancy</div>
+                <div style="font-family:var(--serif);font-size:15px;font-style:italic;line-height:1.7;color:#555;">Grade A office occupancy in KAFD (King Abdullah Financial District) exceeds 85%, with major multinationals establishing regional HQ in Riyadh ahead of Saudi Arabia's 2024 requirement for regional HQ presence as a prerequisite for government contracts.</div>
+            </div>
+            <div class="insight-card js-reveal" style="background:var(--white);border:1px solid var(--border);padding:36px;border-top:3px solid #c4a962;transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94),box-shadow 0.4s;" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(0,0,0,0.08)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#c4a962;margin-bottom:14px;">Hospitality Sector</div>
+                <div style="font-family:var(--serif);font-size:40px;font-weight:300;color:var(--black);line-height:1;margin-bottom:12px;">100M Visitors</div>
+                <div style="font-family:var(--serif);font-size:15px;font-style:italic;line-height:1.7;color:#555;">Saudi Arabia welcomed 100 million visitors in 2023, meeting the Vision 2030 target seven years early. The government has now raised the target to 150 million annually by 2030 — representing a massive pipeline demand for hotel keys, serviced apartments, and hospitality real estate.</div>
+            </div>
+            <div class="insight-card js-reveal" style="background:var(--white);border:1px solid var(--border);padding:36px;border-top:3px solid #c4a962;transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94),box-shadow 0.4s;" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(0,0,0,0.08)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#c4a962;margin-bottom:14px;">Rental Market</div>
+                <div style="font-family:var(--serif);font-size:40px;font-weight:300;color:var(--black);line-height:1;margin-bottom:12px;">60–120% Premium</div>
+                <div style="font-family:var(--serif);font-size:15px;font-style:italic;line-height:1.7;color:#555;">Premium furnished short-term rentals in prime Riyadh districts command 60–120% above long-term equivalents. Corporate demand from Vision 2030 project teams, international executives, and relocating expats drives near-permanent occupancy in KAFD, North Riyadh, and Al Olaya.</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- INVESTMENT CALCULATOR -->
-<div class="calc-section" id="calculator">
+<!-- ROI CALCULATOR -->
+<section class="calc-section" id="calculator">
     <div class="container">
-        <span class="section-label js-reveal">Return Modelling</span>
+        <span class="section-label js-reveal">Investment Calculator</span>
         <div class="green-rule"></div>
-        <h2 class="section-h js-reveal" style="margin-bottom:12px;">Investment<br>Return Calculator</h2>
-        <p class="js-reveal" style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--grey);margin-bottom:48px;line-height:1.6;">Model your potential returns based on Saudi market historical data and your investment parameters.</p>
-        <div class="calc-wrap js-reveal">
+        <h2 class="section-h js-reveal">Model Your<br>Saudi Investment Returns</h2>
+        <p class="section-intro js-reveal">Adjust the inputs below to model projected returns for your Saudi Arabia investment. Results are estimates based on current market data from REGA and are not guaranteed investment advice.</p>
+        <div class="calc-grid">
             <div class="calc-inputs">
                 <div class="calc-field">
-                    <label for="calc-inv">Investment Amount (SAR)</label>
-                    <input id="calc-inv" type="number" value="1000000" min="100000" step="100000">
+                    <label>Investment Amount <span class="val-display" id="calc-inv-display">SAR 1.00M</span></label>
+                    <input type="range" id="calc-inv" min="500000" max="50000000" step="500000" value="1000000">
                 </div>
                 <div class="calc-field">
-                    <label for="calc-years">Holding Period (Years)</label>
-                    <input id="calc-years" type="number" value="5" min="1" max="30">
+                    <label>Holding Period <span class="val-display" id="calc-years-display">5 yrs</span></label>
+                    <input type="range" id="calc-years" min="1" max="10" step="1" value="5">
                 </div>
                 <div class="calc-field">
-                    <label for="calc-growth">Expected Annual Growth (%)</label>
-                    <input id="calc-growth" type="number" value="12" min="1" max="50" step="0.5">
+                    <label>Annual Capital Growth <span class="val-display" id="calc-growth-display">12%</span></label>
+                    <input type="range" id="calc-growth" min="4" max="25" step="0.5" value="12">
+                    <div style="display:flex;justify-content:space-between;font-size:11px;color:#aaa;margin-top:4px;">
+                        <span>Conservative (4%)</span><span>Market avg (12%)</span><span>High growth (25%)</span>
+                    </div>
                 </div>
                 <div class="calc-field">
-                    <label for="calc-yield">Annual Rental Yield (%)</label>
-                    <input id="calc-yield" type="number" value="7.2" min="0" max="30" step="0.1">
+                    <label>Annual Rental Yield <span class="val-display" id="calc-yield-display">7.2%</span></label>
+                    <input type="range" id="calc-yield" min="3" max="12" step="0.1" value="7.2">
+                    <div style="display:flex;justify-content:space-between;font-size:11px;color:#aaa;margin-top:4px;">
+                        <span>Low (3%)</span><span>Market avg (7.2%)</span><span>Prime commercial (12%)</span>
+                    </div>
+                </div>
+                <div style="background:var(--green-light);padding:24px 28px;border-left:3px solid var(--green);">
+                    <div style="font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:12px;">REGA Market Benchmarks — Q1 2026</div>
+                    <div style="font-family:var(--serif);font-size:14px;font-style:italic;line-height:2;color:#444;">
+                        <strong style="font-style:normal;font-weight:700;font-family:var(--sans);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;">Riyadh prime residential:</strong> SAR 8,000–12,000/sqm · 7–9% yield<br>
+                        <strong style="font-style:normal;font-weight:700;font-family:var(--sans);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;">Riyadh commercial (KAFD):</strong> SAR 3,000–5,000/sqm/yr · 9–11% yield<br>
+                        <strong style="font-style:normal;font-weight:700;font-family:var(--sans);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;">Jeddah prime residential:</strong> SAR 5,000–9,000/sqm · 6–8% yield<br>
+                        <strong style="font-style:normal;font-weight:700;font-family:var(--sans);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;">5-year appreciation:</strong> 35–45% (prime Riyadh residential)
+                    </div>
                 </div>
             </div>
-            <div>
-                <div class="calc-outputs">
-                    <div class="calc-out">
-                        <span class="calc-out-label">Capital Appreciation</span>
-                        <div class="calc-out-val" id="calc-cap">SAR 762K</div>
-                    </div>
-                    <div class="calc-out">
-                        <span class="calc-out-label">Rental Income</span>
-                        <div class="calc-out-val" id="calc-rent">SAR 360K</div>
-                    </div>
-                    <div class="calc-out">
-                        <span class="calc-out-label">Total Return</span>
-                        <div class="calc-out-val" id="calc-total">SAR 1.12M</div>
-                    </div>
-                    <div class="calc-out roi">
-                        <span class="calc-out-label">Total ROI</span>
-                        <div class="calc-out-val" id="calc-roi">112.2%</div>
+            <div class="calc-results">
+                <div class="calc-result-title">Your Projected Returns</div>
+                <div class="calc-roi-ring" id="calc-roi-ring">
+                    <div class="calc-roi-text">
+                        <span class="calc-roi-pct" id="calc-roi">72.0%</span>
+                        <span class="calc-roi-sub">Total ROI</span>
                     </div>
                 </div>
-                <p style="font-size:10px;color:var(--grey);margin-top:16px;font-style:italic;line-height:1.5;">* Projections based on historical Saudi market data. Past performance does not guarantee future results. Consult an advisor before investing.</p>
+                <div class="calc-result-row">
+                    <span class="calc-lbl">Capital Appreciation</span>
+                    <span class="calc-val" id="calc-cap">SAR 762.3K</span>
+                </div>
+                <div class="calc-result-row">
+                    <span class="calc-lbl">Cumulative Rental Income</span>
+                    <span class="calc-val" id="calc-rent">SAR 360.0K</span>
+                </div>
+                <div class="calc-result-row total">
+                    <span class="calc-lbl" style="color:rgba(255,255,255,0.7);font-weight:600;">Total Gross Return</span>
+                    <span class="calc-val green" id="calc-total">SAR 1.12M</span>
+                </div>
+                <div style="margin-top:24px;padding:16px;background:rgba(0,165,80,0.1);border-radius:4px;border:1px solid rgba(0,165,80,0.2);">
+                    <div style="font-size:12px;color:rgba(255,255,255,0.5);line-height:1.7;">⚠ Projections are gross estimates based on market inputs. Transaction costs (2.5% RETT), management fees, and financing costs are not deducted. Not financial advice. Consult a qualified advisor.</div>
+                </div>
+                <a href="/#consultation" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:20px;display:flex;">Get a Personalised Analysis</a>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<!-- CTA BANNER -->
+<!-- SECTOR BREAKDOWN -->
+<section style="padding:80px 0;background:var(--dark);" id="sectors">
+    <div class="container">
+        <span class="section-label js-reveal" style="color:var(--green-bright)">Sector Analysis</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h js-reveal" style="color:var(--white);">Performance by<br>Asset Class</h2>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.06);margin-top:48px;">
+            <div class="js-reveal" style="background:var(--dark);padding:36px 28px;transition:background 0.3s;" onmouseenter="this.style.background='#222'" onmouseleave="this.style.background='var(--dark)'">
+                <div style="font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:20px;">Residential</div>
+                <div style="font-family:var(--serif);font-size:44px;font-weight:300;color:var(--white);line-height:1;margin-bottom:6px;">6–9%</div>
+                <div style="font-size:11px;color:var(--green-bright);font-weight:700;letter-spacing:0.08em;margin-bottom:16px;">↑ Rental Yield</div>
+                <div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(255,255,255,0.5);line-height:1.7;">Strong demand from expatriate executives and Vision 2030 workforce influx. Riyadh prime: SAR 8,000–12,000/sqm. High absorption in North Riyadh and KAFD districts.</div>
+            </div>
+            <div class="js-reveal" style="background:var(--dark);padding:36px 28px;transition:background 0.3s;" onmouseenter="this.style.background='#222'" onmouseleave="this.style.background='var(--dark)'">
+                <div style="font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:20px;">Commercial Office</div>
+                <div style="font-family:var(--serif);font-size:44px;font-weight:300;color:var(--white);line-height:1;margin-bottom:6px;">8–11%</div>
+                <div style="font-size:11px;color:var(--green-bright);font-weight:700;letter-spacing:0.08em;margin-bottom:16px;">↑ Rental Yield</div>
+                <div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(255,255,255,0.5);line-height:1.7;">Government mandate for multinational regional HQ drove 85%+ KAFD occupancy. Grade A office demand significantly outpacing supply. SAR 3,500–5,000/sqm annual rent.</div>
+            </div>
+            <div class="js-reveal" style="background:var(--dark);padding:36px 28px;transition:background 0.3s;" onmouseenter="this.style.background='#222'" onmouseleave="this.style.background='var(--dark)'">
+                <div style="font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:20px;">Hospitality</div>
+                <div style="font-family:var(--serif);font-size:44px;font-weight:300;color:var(--white);line-height:1;margin-bottom:6px;">9–14%</div>
+                <div style="font-size:11px;color:var(--green-bright);font-weight:700;letter-spacing:0.08em;margin-bottom:16px;">↑ Gross Yield</div>
+                <div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(255,255,255,0.5);line-height:1.7;">100M visitors achieved in 2023 — target raised to 150M by 2030. Hotel key pipeline cannot meet demand. Riyadh RevPAR up 28% in 2024. Resort market commanded by Red Sea Global luxury assets.</div>
+            </div>
+            <div class="js-reveal" style="background:var(--dark);padding:36px 28px;transition:background 0.3s;" onmouseenter="this.style.background='#222'" onmouseleave="this.style.background='var(--dark)'">
+                <div style="font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:20px;">Industrial &amp; Logistics</div>
+                <div style="font-family:var(--serif);font-size:44px;font-weight:300;color:var(--white);line-height:1;margin-bottom:6px;">7–10%</div>
+                <div style="font-size:11px;color:var(--green-bright);font-weight:700;letter-spacing:0.08em;margin-bottom:16px;">↑ Rental Yield</div>
+                <div style="font-family:var(--serif);font-size:14px;font-style:italic;color:rgba(255,255,255,0.5);line-height:1.7;">E-commerce growth, NEOM Oxagon industrial port, and Vision 2030 supply chain localisation driving modern logistics demand. Special Economic Zones offer additional incentives for industrial assets.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" style="padding:80px 0;">
+    <div class="container">
+        <span class="section-label js-reveal">Market Questions</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h js-reveal" style="margin-bottom:48px;">Data &amp; Market<br>Questions</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-q">Where does your market data come from?</button>
+                <div class="faq-a"><p>Our market intelligence is compiled from official Saudi government sources including: REGA (Real Estate General Authority) — the primary real estate regulator's price indices and transaction data; Ministry of Justice property registration records; MISA (Ministry of Investment) FDI data; ZATCA tax authority transaction data. We supplement this with reports from JLL, Knight Frank, Savills, and CBRE who cover the Saudi market. Data is updated quarterly. Where specific data points are estimates or ranges, we clearly note the source and methodology.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">How accurate are the rental yield figures?</button>
+                <div class="faq-a"><p>The rental yield figures (e.g. 7.2% for Riyadh prime residential) represent gross average yields based on REGA rental index data and market-observed transaction prices for Q4 2024 / Q1 2025. Gross yield = annual rent / purchase price. Net yield (after management fees of 5–10% and maintenance allowances) would typically be 1–2 percentage points lower. Prime commercial assets in KAFD can exceed 9–10% gross. Individual property yields vary significantly by location, condition, tenant quality, and lease terms. Saddlepoint provides property-specific yield analysis during the advisory process.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">Is the Saudi real estate market at risk of a correction?</button>
+                <div class="faq-a"><p>No market is without risk of correction. The structural case for Saudi Arabia's real estate market is unusually well-supported by factors that insulate it from typical correction triggers: (1) Government capital deployment is committed and budgeted — PIF's $925B+ AUM directly funds mega-project demand. (2) Supply is structurally short — the 1.5M home deficit means organic demand exceeds supply. (3) There is no sub-prime lending risk — Murabaha mortgage LTVs are capped and underwriting is conservative. (4) The SAR/USD peg eliminates currency devaluation risk. The primary risks are oil price shock reducing government spending capacity and mega-project delivery delays — both are legitimate risk factors we monitor actively for clients.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">How does the Saudi market compare to Dubai?</button>
+                <div class="faq-a"><p>Both markets offer 0% capital gains tax and 100% foreign ownership in designated zones. Saudi Arabia's advantages: (1) Higher average rental yields (7.2% vs. Dubai's 5.8%); (2) Stronger 5-year capital appreciation (42% vs. 28%); (3) Larger domestic demand base — Saudi's 35.8M population vs. UAE's 9.9M; (4) $3.3T government investment pipeline vs. Dubai's smaller but also substantial pipeline; (5) Dollar peg equally stable (UAE peg since 1997, KSA since 1986). Dubai's advantage: more mature, internationally liquid market with a longer track record and greater resale velocity. We advise clients considering both markets and can structure a dual-market portfolio approach.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
 <section class="cta">
-    <div class="cta-wm" aria-hidden="true">SADDLEPOINT</div>
-    <span class="section-label">Private Briefing</span>
-    <h2 class="cta-h js-reveal">Get a Full Market<br>Intelligence Report</h2>
-    <p class="cta-sub js-reveal">Our quarterly market report includes proprietary transaction data, project timelines, and our top investment picks. Exclusively for clients.</p>
-    <div class="cta-btns js-reveal">
-        <a href="/#consultation" class="btn btn-white"><span>Book Market Briefing</span></a>
-        <a href="/public/reports/saddlepoint-market-report-2026-q1.pdf" download target="_blank" class="btn btn-outline-w"><span>Download Q1 2026 Report</span></a>
+    <div class="cta-wm" aria-hidden="true">INTELLIGENCE</div>
+    <div class="container" style="position:relative;z-index:2;text-align:center;">
+        <span class="section-label">Custom Market Analysis</span>
+        <h2 class="cta-h js-reveal">Need Analysis<br>Tailored to Your Goals?</h2>
+        <p class="cta-sub js-reveal">Our intelligence team provides bespoke market analysis tailored to your specific capital, geography, strategy, and return requirements. Request your custom briefing.</p>
+        <div class="cta-btns js-reveal">
+            <a href="/#consultation" class="btn btn-white btn-arrow">Request Custom Analysis</a>
+            <a href="/strategies/" class="btn btn-outline-w">Investment Strategies</a>
+        </div>
     </div>
 </section>
 
@@ -275,54 +404,55 @@
         <div class="footer-top">
             <div>
                 <span class="fbrand">Saddle<em>point</em></span>
-                <p class="ftagline">Your trusted partner in navigating Saudi Arabia's real estate transformation. Professional advisory for intelligent capital placement aligned with Vision 2030.</p>
+                <p class="ftagline">Professional advisory for intelligent capital placement in Saudi Arabia's Vision 2030 transformation.</p>
             </div>
             <div>
-                <span class="fcol-title">Investment Services</span>
+                <span class="fcol-title">Market Data</span>
                 <ul class="flinks">
-                    <li><a href="/why-saudi/">Why Saudi Arabia</a></li>
-                    <li><a href="/mega-projects/">Mega Projects</a></li>
-                    <li><a href="/strategies/">Strategies</a></li>
-                    <li><a href="/market-intelligence/">Market Intelligence</a></li>
-                    <li><a href="/portfolio/">Portfolio</a></li>
-                    <li><a href="/#consultation">Private Consultation</a></li>
+                    <li><a href="/market-intelligence/#overview">City Overviews</a></li>
+                    <li><a href="/market-intelligence/#analysis">Market Charts</a></li>
+                    <li><a href="/market-intelligence/#calculator">ROI Calculator</a></li>
+                    <li><a href="/market-intelligence/#sectors">Sector Analysis</a></li>
                 </ul>
             </div>
             <div>
                 <span class="fcol-title">Resources</span>
                 <ul class="flinks">
-                    <li><a href="/why-saudi/#legal">Legal Framework Guide</a></li>
-                    <li><a href="/market-intelligence/#analysis">Market Analysis</a></li>
-                    <li><a href="/market-intelligence/#calculator">Investment Calculator</a></li>
-                    <li><a href="/why-saudi/#faq">FAQ</a></li>
+                    <li><a href="/why-saudi/">Why Saudi Arabia</a></li>
+                    <li><a href="/why-saudi/#legal">Legal Framework</a></li>
+                    <li><a href="/strategies/">Investment Strategies</a></li>
+                    <li><a href="/mega-projects/">Mega Projects</a></li>
                 </ul>
             </div>
             <div>
-                <span class="fcol-title">Company</span>
+                <span class="fcol-title">Contact</span>
                 <ul class="flinks">
-                    <li><a href="#">About Saddlepoint</a></li>
-                    <li><a href="#">Advisory Team</a></li>
-                    <li><a href="/portfolio/">Success Stories</a></li>
-                    <li><a href="mailto:hello@saddlepoint.sa">Contact Us</a></li>
+                    <li><a href="/#consultation">Book Consultation</a></li>
+                    <li><a href="mailto:hello@saddlepoint.sa">hello@saddlepoint.sa</a></li>
+                    <li><a href="/why-saudi/#faq">FAQ</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bot">
-            <span class="fcopy">© 2026 Saddlepoint. All rights reserved.</span>
-            <ul class="flegal">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Cookie Policy</a></li>
-            </ul>
+            <span class="fcopy">© 2026 Saddlepoint. Market data sourced from REGA, MISA, JLL, Knight Frank. Not financial advice.</span>
+            <ul class="flegal"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms</a></li></ul>
         </div>
     </div>
 </footer>
 
-<!-- GSAP + ScrollTrigger -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<!-- Shared JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
 <script src="/js/shared.js"></script>
-
+<script>
+function switchChart(target) {
+    document.querySelectorAll('[data-chartpanel]').forEach(p => {
+        p.style.display = p.dataset.chartpanel === target ? 'block' : 'none';
+    });
+    document.querySelectorAll('.chart-tab').forEach(t => {
+        t.classList.toggle('active', t.getAttribute('onclick') === `switchChart('${target}')`);
+    });
+}
+</script>
 </body>
 </html>

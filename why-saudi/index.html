@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Why Saudi Arabia — Saddlepoint</title>
-    <meta name="description" content="Discover why Saudi Arabia is the world's most compelling real estate investment market. Vision 2030, zero capital gains tax, 100% foreign ownership.">
+    <meta name="description" content="Discover why Saudi Arabia is the world's most compelling real estate investment market. Vision 2030, zero capital gains tax, 100% foreign ownership, dollar-pegged currency.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
@@ -16,7 +16,6 @@
 <div id="cur"></div>
 <div id="cur-f"></div>
 
-<!-- Mute toggle -->
 <button id="mute-btn" title="Toggle ambient audio" aria-label="Toggle audio">
     <svg id="sound-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
@@ -27,73 +26,55 @@
 
 <!-- NAV -->
 <nav id="nav">
-    <a href="/" class="nav-logo">Saddlepoint<span class="nav-dot"></span></a>
+    <a href="/" class="nav-logo">Saddle<em style="font-style:italic;color:var(--green-bright)">point</em><span class="nav-dot"></span></a>
     <ul class="nav-links">
         <li><a href="/why-saudi/">Why Saudi</a></li>
         <li><a href="/mega-projects/">Mega Projects</a></li>
         <li><a href="/strategies/">Strategies</a></li>
         <li><a href="/market-intelligence/">Market</a></li>
-        <li><a href="/portfolio/">Portfolio</a></li>
     </ul>
     <div class="nav-right">
-        <a href="/#consultation" class="nav-btn"><span>Book Consultation</span></a>
+        <a href="/#consultation" class="nav-btn">Book Consultation</a>
         <button class="nav-ham" id="nav-ham" aria-label="Menu">
             <span></span><span></span><span></span>
         </button>
     </div>
 </nav>
-
-<!-- MOBILE NAV DRAWER -->
 <div class="nav-drawer" id="nav-drawer">
     <ul>
-        <li><a href="/why-saudi/">Why Saudi</a></li>
+        <li><a href="/why-saudi/">Why Saudi Arabia</a></li>
         <li><a href="/mega-projects/">Mega Projects</a></li>
-        <li><a href="/strategies/">Strategies</a></li>
+        <li><a href="/strategies/">Investment Strategies</a></li>
         <li><a href="/market-intelligence/">Market Intelligence</a></li>
-        <li><a href="/portfolio/">Portfolio</a></li>
         <li><a href="/#consultation">Book Consultation</a></li>
     </ul>
 </div>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
-    <!-- TODO: Replace with aerial Riyadh skyline / King Abdullah Financial District image -->
-    <div class="page-hero-bg" style="background-image: url('https://picsum.photos/seed/riyadh-sky/1600/900');"></div>
-    <div class="page-hero-overlay"></div>
+    <div class="page-hero-bg" style="background-image:url('/why saudi.png');opacity:0.52;"></div>
+    <div class="page-hero-overlay" style="background:linear-gradient(135deg, rgba(2,10,5,0.88) 0%, rgba(0,60,28,0.35) 60%, rgba(0,108,53,0.18) 100%);"></div>
     <div class="page-hero-content">
-        <div class="page-hero-breadcrumb">
-            <a href="/">Home</a>
-            <span>/</span>
-            <a href="/why-saudi/">Why Saudi Arabia</a>
-        </div>
+        <div class="page-hero-breadcrumb"><a href="/">Home</a><span>/</span><span>Why Saudi Arabia</span></div>
         <span class="page-hero-eyebrow">The Investment Case</span>
         <h1 class="page-hero-title">Why Saudi<br>Arabia</h1>
-        <p class="page-hero-sub">The world's most dynamic emerging market — driven by $3.3 trillion in government-backed investment and a young, growing population of 35 million.</p>
+        <p class="page-hero-sub">The world's most dynamic emerging market — powered by $3.3 trillion in government investment, 100% foreign ownership, and a structural demand surge no other market can replicate.</p>
+        <div class="page-hero-stats">
+            <div><span class="page-hero-stat-val">0%</span><span class="page-hero-stat-lbl">Capital Gains Tax</span></div>
+            <div><span class="page-hero-stat-val">$3.3T</span><span class="page-hero-stat-lbl">Investment Pipeline</span></div>
+            <div><span class="page-hero-stat-val">100%</span><span class="page-hero-stat-lbl">Foreign Ownership</span></div>
+            <div><span class="page-hero-stat-val">3.75</span><span class="page-hero-stat-lbl">SAR/USD Fixed Peg</span></div>
+        </div>
     </div>
 </div>
 
 <!-- SERVICES BAR -->
 <div class="sbar">
-    <div class="sitem">
-        <span class="snum">0%</span>
-        <div class="stitle">Capital Gains Tax</div>
-        <div class="sdesc">Zero tax on property profits for foreign investors</div>
-    </div>
-    <div class="sitem">
-        <span class="snum">100%</span>
-        <div class="stitle">Foreign Ownership</div>
-        <div class="sdesc">Full freehold title since 2020 reforms</div>
-    </div>
-    <div class="sitem">
-        <span class="snum">+45%</span>
-        <div class="stitle">Riyadh Growth</div>
-        <div class="sdesc">Capital appreciation in the financial district</div>
-    </div>
-    <div class="sitem">
-        <span class="snum">$3.3T</span>
-        <div class="stitle">Pipeline</div>
-        <div class="sdesc">Government-backed Vision 2030 projects</div>
-    </div>
+    <div class="sitem"><span class="snum">0%</span><div class="stitle">Capital Gains Tax</div><div class="sdesc">Zero CGT on property — domestic or foreign investor</div></div>
+    <div class="sitem"><span class="snum">100%</span><div class="stitle">Foreign Ownership</div><div class="sdesc">Full freehold title since 2020 in approved zones</div></div>
+    <div class="sitem"><span class="snum">3.75</span><div class="stitle">SAR/USD Peg</div><div class="sdesc">Fixed since 1986 — zero currency volatility risk</div></div>
+    <div class="sitem"><span class="snum">2.5%</span><div class="stitle">Transfer Tax (RETT)</div><div class="sdesc">Only tax on property transactions — lowest in region</div></div>
+    <div class="sitem"><span class="snum">24h</span><div class="stitle">Title Transfer</div><div class="sdesc">Fully digital — Ministry of Justice e-deed system</div></div>
 </div>
 
 <!-- WHY SAUDI GRID -->
@@ -101,43 +82,43 @@
     <div class="container">
         <span class="section-label js-reveal">The Investment Case</span>
         <div class="green-rule"></div>
-        <h2 class="section-h js-reveal">Six Reasons to<br>Invest in Saudi Arabia</h2>
+        <h2 class="section-h js-reveal">Six Structural Advantages<br>No Other Market Offers</h2>
         <div class="why-grid">
-            <div class="why-item js-reveal">
+            <div class="why-item">
                 <span class="why-num">$3.3T</span>
                 <span class="why-highlight">Total Investment Pipeline</span>
-                <div class="why-title">Unprecedented Capital Deployment</div>
-                <div class="why-desc">The Saudi government is deploying $3.3 trillion across infrastructure, tourism, tech, and real estate — creating demand far exceeding current supply in every major city.</div>
+                <div class="why-title">Government Capital Creating Demand at Scale</div>
+                <div class="why-desc">The Saudi government is deploying $3.3 trillion across infrastructure, tourism, technology, entertainment, and real estate. This isn't a market cycle — it's a structural transformation funded by sovereign capital that creates demand for housing, offices, hospitality, and logistics far beyond current supply.</div>
             </div>
-            <div class="why-item js-reveal">
+            <div class="why-item">
                 <span class="why-num">0%</span>
-                <span class="why-highlight">Capital Gains Tax</span>
-                <div class="why-title">One of the World's Most Competitive Tax Environments</div>
-                <div class="why-desc">No personal income tax. No capital gains tax on property. Transaction costs of just 2.5%. Saudi Arabia offers foreign investors exceptional after-tax returns unavailable in most Western markets.</div>
+                <span class="why-highlight">Capital Gains Tax on Property</span>
+                <div class="why-title">The World's Most Competitive Tax Regime</div>
+                <div class="why-desc">No personal income tax. No capital gains tax on property profits. The Real Estate Transaction Tax (RETT) of just 2.5% is the only levy on property sales. Compare this to the UK (28% CGT), Australia (up to 47%), or Germany (25%+) — the after-tax advantage of Saudi Arabia is extraordinary for international investors.</div>
             </div>
-            <div class="why-item js-reveal">
+            <div class="why-item">
                 <span class="why-num">100%</span>
-                <span class="why-highlight">Foreign Ownership Rights</span>
-                <div class="why-title">Full Freehold Title Available</div>
-                <div class="why-desc">Since 2020 reforms, foreign nationals can own property outright in approved zones with no nationality restrictions, full inheritance rights, and long-term residency eligibility.</div>
+                <span class="why-highlight">Foreign Ownership Since 2020</span>
+                <div class="why-title">Full Freehold — No Local Partner Required</div>
+                <div class="why-desc">Under the Law of Real Estate Ownership and Investment by Non-Saudis (amended 2020), foreign nationals can hold 100% freehold title in designated investment zones. No local sponsor. No minority partnership. Full inheritance rights. Eligibility for Saudi Premium Residency linked to qualifying property ownership.</div>
             </div>
-            <div class="why-item js-reveal">
-                <span class="why-num">35M</span>
-                <span class="why-highlight">Population</span>
-                <div class="why-title">Young, Growing Population Driving Demand</div>
-                <div class="why-desc">With 70% of Saudis under 35 and a rapidly growing urban middle class, residential and hospitality demand is structurally rising. Vision 2030's tourism targets add 100M+ visitors annually.</div>
-            </div>
-            <div class="why-item js-reveal">
+            <div class="why-item">
                 <span class="why-num">3.75</span>
-                <span class="why-highlight">SAR/USD Fixed Rate</span>
-                <div class="why-title">Dollar-Pegged Currency Stability</div>
-                <div class="why-desc">The Saudi Riyal has been pegged to the US Dollar since 1986. Investors face no currency volatility risk — a rare advantage for international capital deployment in emerging markets.</div>
+                <span class="why-highlight">SAR/USD Fixed Exchange Rate</span>
+                <div class="why-title">Dollar Peg Since 1986 — Structural Currency Safety</div>
+                <div class="why-desc">The Saudi Riyal has maintained a fixed peg to the US Dollar at SAR 3.75 since 1986, backed by the Saudi Arabian Monetary Authority (SAMA) and the world's largest sovereign wealth fund (PIF — Public Investment Fund). Investors face zero currency volatility — a critical advantage in emerging market exposure.</div>
             </div>
-            <div class="why-item js-reveal">
+            <div class="why-item">
+                <span class="why-num">35.8M</span>
+                <span class="why-highlight">Population — 70% Under 35</span>
+                <div class="why-title">Structural Demographics Driving Demand</div>
+                <div class="why-desc">Saudi Arabia's 35.8 million residents (2024 estimate) include a young, increasingly affluent population with 70% under 35 and a rapidly expanding urban middle class. Vision 2030 targets 70% homeownership (from ~62% in 2020) and is attracting skilled expatriate workers — both drivers create sustained, structural residential demand at every price point.</div>
+            </div>
+            <div class="why-item">
                 <span class="why-num">24h</span>
-                <span class="why-highlight">Title Transfer</span>
-                <div class="why-title">World-Class Digital Infrastructure</div>
-                <div class="why-desc">Saudi Arabia's fully digital deed registration system enables title transfer within 24–48 hours. Transparent, efficient, and supported in English — among the fastest in the world.</div>
+                <span class="why-highlight">Electronic Title Registration</span>
+                <div class="why-title">World-Class Digital Property Infrastructure</div>
+                <div class="why-desc">Saudi Arabia's Ministry of Justice digital deed platform (Notary Public Digital Platform) enables property title transfer within 24–48 hours — among the fastest in the world. Fully digital, transparent fee structure, English-language support available. Saddlepoint manages the entire process end-to-end for clients.</div>
             </div>
         </div>
     </div>
@@ -149,31 +130,45 @@
         <span class="section-label js-reveal">Vision 2030</span>
         <div class="green-rule"></div>
         <h2 class="section-h js-reveal">The Transformation<br>Blueprint</h2>
-        <p class="vision-intro js-reveal">Vision 2030 is Saudi Arabia's national transformation plan — the most ambitious economic diversification programme in the Arab world. Every pillar creates direct real estate demand.</p>
+        <p class="section-intro light js-reveal">
+            Announced by Crown Prince HRH Mohammed bin Salman on April 25, 2016, Vision 2030 is Saudi Arabia's national transformation programme — the most comprehensive economic diversification initiative in the Arab world's history. Every pillar generates direct, durable demand for real estate.
+        </p>
         <div class="vision-grid">
-            <div class="vcard js-reveal">
+            <div class="vcard">
                 <span class="vcard-num">01 · Economic Diversification</span>
-                <div class="vcard-title">Non-Oil GDP to 50%</div>
-                <div class="vcard-desc">Reducing oil dependence drives massive investment in finance, tourism, manufacturing, and entertainment — all requiring commercial and mixed-use real estate at scale.</div>
-                <span class="vcard-stat">Target: SAR 1.7T non-oil GDP by 2030</span>
+                <div class="vcard-title">Non-Oil GDP Target: 50% by 2030</div>
+                <div class="vcard-desc">Reducing oil dependency drives massive investment in finance, tourism, manufacturing, technology, and entertainment — all sectors requiring commercial, mixed-use, and hospitality real estate at scale. The non-oil private sector is the fastest-growing component of Saudi GDP.</div>
+                <span class="vcard-stat">Target: Non-oil GDP contribution of 50% by 2030</span>
             </div>
-            <div class="vcard js-reveal">
+            <div class="vcard">
                 <span class="vcard-num">02 · Tourism &amp; Entertainment</span>
-                <div class="vcard-title">100 Million Visitors Annually</div>
-                <div class="vcard-desc">From virtually zero tourist visas in 2018 to a target of 100M annual visitors, hospitality demand across the Kingdom is undergoing structural transformation.</div>
-                <span class="vcard-stat">150+ new tourism destinations planned</span>
+                <div class="vcard-title">100 Million Visitors Annually by 2030</div>
+                <div class="vcard-desc">From a near-zero tourism base in 2018 to an e-visa launch in September 2019, Saudi Arabia now targets 100 million annual visitors by 2030. The Tourism Development Fund supports 150+ new tourism destinations. Hospitality demand is undergoing structural transformation across the Kingdom.</div>
+                <span class="vcard-stat">150+ new tourism destinations · $148B tourism sector target</span>
             </div>
-            <div class="vcard js-reveal">
-                <span class="vcard-num">03 · Urban Development</span>
-                <div class="vcard-title">New Cities &amp; Districts</div>
-                <div class="vcard-desc">NEOM, Red Sea Project, Qiddiya, and Diriyah Gate represent $1 trillion+ in entirely new urban environments, each requiring integrated real estate ecosystems from scratch.</div>
-                <span class="vcard-stat">$1T+ in mega-project real estate</span>
+            <div class="vcard">
+                <span class="vcard-num">03 · Mega Infrastructure</span>
+                <div class="vcard-title">NEOM · Red Sea · Qiddiya · Diriyah</div>
+                <div class="vcard-desc">The four flagship mega-projects alone represent over $545 billion in committed investment, creating entirely new urban environments from scratch. Each project generates demand for the entire real estate spectrum — from affordable worker accommodation to ultra-luxury branded residences.</div>
+                <span class="vcard-stat">$545B+ in flagship mega-project investment</span>
             </div>
-            <div class="vcard js-reveal">
-                <span class="vcard-num">04 · Population Growth</span>
-                <div class="vcard-title">Urbanisation &amp; Housing Demand</div>
-                <div class="vcard-desc">Vision 2030 targets 70% homeownership rates and is attracting skilled expatriate workers. Both drivers create sustained residential demand across all price points.</div>
-                <span class="vcard-stat">1.5M new homes needed by 2030</span>
+            <div class="vcard">
+                <span class="vcard-num">04 · Housing &amp; Urban Development</span>
+                <div class="vcard-title">70% Homeownership + 1.5M New Homes</div>
+                <div class="vcard-desc">Vision 2030 explicitly targets 70% homeownership rates (from ~62% in 2020), requiring an estimated 1.5 million new homes. Real Estate General Authority (REGA) oversees the framework, while SABIC and the Housing Programme fund affordable supply — creating pricing pressure on the market.</div>
+                <span class="vcard-stat">1.5M new homes needed by 2030 · 70% ownership target</span>
+            </div>
+            <div class="vcard">
+                <span class="vcard-num">05 · Foreign Direct Investment</span>
+                <div class="vcard-title">SAR 388B Annual FDI Target</div>
+                <div class="vcard-desc">Saudi Arabia's FDI target is SAR 388 billion (~$100B USD) annually by 2030, up from approximately $20B in 2020. MISA (Ministry of Investment of Saudi Arabia) has streamlined licensing, reduced sector restrictions, and introduced 100% foreign ownership in new verticals to attract global capital.</div>
+                <span class="vcard-stat">FDI target: SAR 388B ($100B USD) by 2030</span>
+            </div>
+            <div class="vcard">
+                <span class="vcard-num">06 · Public Investment Fund</span>
+                <div class="vcard-title">$925B Sovereign Wealth Fund Backing</div>
+                <div class="vcard-desc">The Public Investment Fund (PIF) — Saudi Arabia's sovereign wealth fund — has grown to $925 billion in assets (2024) and directly owns or co-invests in every major Vision 2030 project. PIF's domestic mandate ensures mega-project capital is committed and insulated from economic cycles.</div>
+                <span class="vcard-stat">PIF AUM: $925B+ · Largest sovereign investor in Vision 2030</span>
             </div>
         </div>
     </div>
@@ -182,39 +177,76 @@
 <!-- TIMELINE -->
 <section class="timeline" id="timeline">
     <div class="container">
-        <span class="section-label bright js-reveal">Milestones</span>
+        <span class="section-label bright js-reveal">Vision 2030 Milestones</span>
         <div class="green-rule"></div>
-        <h2 class="section-h light js-reveal">Vision 2030 Timeline</h2>
+        <h2 class="section-h light js-reveal">The Transformation Timeline</h2>
+        <p class="section-intro light js-reveal" style="max-width:520px;margin-bottom:48px;">Key regulatory, infrastructure, and investment milestones — scroll to explore the full journey from announcement to 2030 realisation.</p>
         <div class="timeline-track">
-            <div class="t-node">
+            <div class="t-node active">
                 <div class="t-dot"></div>
                 <div class="t-year">2016</div>
                 <div class="t-label">Vision 2030 Announced</div>
+                <div class="t-sub">April 25 — Crown Prince MBS</div>
             </div>
-            <div class="t-node">
+            <div class="t-node active">
+                <div class="t-dot"></div>
+                <div class="t-year">2017</div>
+                <div class="t-label">NEOM Announced</div>
+                <div class="t-sub">$500B investment commitment</div>
+            </div>
+            <div class="t-node active">
                 <div class="t-dot"></div>
                 <div class="t-year">2018</div>
-                <div class="t-label">Tourist Visas Opened</div>
+                <div class="t-label">Red Sea Project &amp; Qiddiya Launched</div>
+                <div class="t-sub">Entertainment sector opens</div>
             </div>
-            <div class="t-node">
+            <div class="t-node active">
+                <div class="t-dot"></div>
+                <div class="t-year">2019</div>
+                <div class="t-label">Tourist e-Visas Launched</div>
+                <div class="t-sub">Sept 27 — 49 countries eligible · Premium Residency launched</div>
+            </div>
+            <div class="t-node active">
                 <div class="t-dot"></div>
                 <div class="t-year">2020</div>
                 <div class="t-label">100% Foreign Property Ownership</div>
+                <div class="t-sub">Law of Real Estate Ownership reformed · 15% VAT introduced</div>
             </div>
-            <div class="t-node">
+            <div class="t-node active">
+                <div class="t-dot"></div>
+                <div class="t-year">2021</div>
+                <div class="t-label">ZATCA Established</div>
+                <div class="t-sub">Zakat, Tax and Customs Authority merges GAZT</div>
+            </div>
+            <div class="t-node active">
                 <div class="t-dot"></div>
                 <div class="t-year">2023</div>
-                <div class="t-label">NEOM Phase 1 Construction</div>
+                <div class="t-label">NEOM Construction Accelerates</div>
+                <div class="t-sub">THE LINE, Sindalah · Red Sea first resorts open</div>
+            </div>
+            <div class="t-node active">
+                <div class="t-dot"></div>
+                <div class="t-year">2024</div>
+                <div class="t-label">Riyadh Metro Completes</div>
+                <div class="t-sub">6-line, 176km network · FIFA 2034 awarded</div>
             </div>
             <div class="t-node">
                 <div class="t-dot"></div>
-                <div class="t-year">2025</div>
-                <div class="t-label">Red Sea Resort Opens</div>
+                <div class="t-year">2026</div>
+                <div class="t-label">Qiddiya Phase 1 Opening</div>
+                <div class="t-sub">Six Flags, entertainment venues launch</div>
             </div>
             <div class="t-node">
                 <div class="t-dot"></div>
                 <div class="t-year">2030</div>
                 <div class="t-label">Vision 2030 Target Year</div>
+                <div class="t-sub">100M visitors · 70% homeownership · Non-oil GDP 50%</div>
+            </div>
+            <div class="t-node">
+                <div class="t-dot"></div>
+                <div class="t-year">2034</div>
+                <div class="t-label">FIFA World Cup</div>
+                <div class="t-sub">Sustained infrastructure and hospitality legacy</div>
             </div>
         </div>
     </div>
@@ -225,76 +257,172 @@
     <div class="container">
         <span class="section-label js-reveal">Legal Framework</span>
         <div class="green-rule"></div>
-        <h2 class="section-h js-reveal">A Secure Legal<br>Foundation</h2>
+        <h2 class="section-h js-reveal">A Secure Legal<br>Foundation for Foreign Capital</h2>
+        <p class="section-intro js-reveal">Saudi Arabia has established one of the most investor-friendly legal and regulatory frameworks in the Middle East. Here is exactly what foreign investors are entitled to.</p>
         <div class="legal-grid">
             <div class="legal-card js-reveal">
                 <div class="legal-card-title">Ownership Rights</div>
                 <ul class="legal-list">
-                    <li>100% foreign ownership in approved investment zones</li>
-                    <li>Full freehold title with inheritance rights</li>
-                    <li>No nationality or religion restrictions</li>
-                    <li>Premium Residency linked to property ownership</li>
-                    <li>Digital title deeds — instant verification</li>
+                    <li>100% foreign ownership in approved investment zones (no local partner)</li>
+                    <li>Full freehold title with inheritance rights — Law of Real Estate Ownership</li>
+                    <li>No nationality or religion restrictions in designated areas</li>
+                    <li>Saudi Premium Residency linked to qualifying property investment</li>
+                    <li>Electronic title deeds — instant verification via Ministry of Justice portal</li>
                 </ul>
             </div>
             <div class="legal-card js-reveal">
-                <div class="legal-card-title">Tax Environment</div>
+                <div class="legal-card-title">Tax &amp; Cost Environment</div>
                 <ul class="legal-list">
-                    <li>Zero capital gains tax on property profits</li>
-                    <li>Zero personal income tax</li>
-                    <li>2.5% transaction (transfer) tax only</li>
-                    <li>15% VAT on commercial — exemptions available</li>
-                    <li>Full remittance rights for income and capital</li>
+                    <li>Zero capital gains tax on property profits for individuals</li>
+                    <li>Zero personal income tax — no tax on rental income</li>
+                    <li>Real Estate Transaction Tax (RETT): 2.5% of property value</li>
+                    <li>15% VAT applies to commercial transactions (not residential resale)</li>
+                    <li>Full repatriation rights: rental income and sale proceeds can leave KSA freely</li>
                 </ul>
             </div>
             <div class="legal-card js-reveal">
-                <div class="legal-card-title">Transaction Process</div>
+                <div class="legal-card-title">Regulatory Authorities</div>
                 <ul class="legal-list">
-                    <li>Fully digital — no physical paperwork required</li>
-                    <li>Title transfer within 24–48 hours</li>
-                    <li>English language support throughout</li>
-                    <li>Government-backed escrow protection</li>
-                    <li>Saddlepoint manages the entire process</li>
+                    <li>MISA — Ministry of Investment of Saudi Arabia: licensing and FDI oversight</li>
+                    <li>REGA — Real Estate General Authority: property market regulation</li>
+                    <li>ZATCA — Zakat, Tax and Customs Authority: tax and customs compliance</li>
+                    <li>Ministry of Justice: title registration and notary services</li>
+                    <li>SAMA — Saudi Central Bank: financial system and banking oversight</li>
                 </ul>
             </div>
             <div class="legal-card js-reveal">
-                <div class="legal-card-title">Financing Options</div>
+                <div class="legal-card-title">Transaction &amp; Financing</div>
                 <ul class="legal-list">
-                    <li>Sharia-compliant Murabaha mortgages available</li>
-                    <li>Up to 70% LTV for qualified foreign investors</li>
-                    <li>Fixed and floating rate structures</li>
-                    <li>Multi-currency transaction support</li>
-                    <li>International banking relationships facilitated</li>
+                    <li>Fully digital title transfer — 24–48 hours via Ministry of Justice platform</li>
+                    <li>Sharia-compliant Murabaha financing available (up to 70% LTV)</li>
+                    <li>English-language support throughout registration process</li>
+                    <li>Multi-currency transactions supported via SAMA-licensed banks</li>
+                    <li>Saddlepoint manages the entire process end-to-end for clients</li>
                 </ul>
             </div>
         </div>
-
         <div class="legal-cta-box js-reveal">
             <div class="legal-cta-text">
                 <p>Ready to navigate the legal process?</p>
-                <p>Our advisors will guide you from due diligence to title transfer — fully managed.</p>
+                <p>Our advisors guide you from MISA licensing through RETT registration to digital title transfer — fully managed.</p>
             </div>
-            <a href="/#consultation" class="btn btn-primary"><span>Book a Legal Framework Briefing</span></a>
+            <a href="/#consultation" class="btn btn-primary">Book a Legal Framework Briefing</a>
         </div>
-
         <div class="legal-stats-row">
-            <div class="legal-stat">
-                <span class="legal-stat-val">2.5%</span>
-                <span class="legal-stat-lbl">Transfer Tax</span>
+            <div class="legal-stat"><span class="legal-stat-val">2.5%</span><span class="legal-stat-lbl">Transfer Tax (RETT)</span></div>
+            <div class="legal-stat"><span class="legal-stat-val">24h</span><span class="legal-stat-lbl">Title Transfer Speed</span></div>
+            <div class="legal-stat"><span class="legal-stat-val">0%</span><span class="legal-stat-lbl">Capital Gains Tax</span></div>
+            <div class="legal-stat"><span class="legal-stat-val">100%</span><span class="legal-stat-lbl">Foreign Ownership</span></div>
+            <div class="legal-stat"><span class="legal-stat-val">3.75</span><span class="legal-stat-lbl">SAR/USD Fixed</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- MARKET COMPARISON TABLE -->
+<section class="comp-section" id="comparison">
+    <div class="container">
+        <span class="section-label js-reveal">Market Comparison</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h js-reveal">Saudi Arabia vs.<br>Global Real Estate Markets</h2>
+        <p class="section-intro js-reveal">How Saudi Arabia's investment metrics compare to the world's leading real estate markets — on the fundamentals that determine investor returns.</p>
+        <div class="comp-table-wrap">
+            <table class="comp-table">
+                <thead>
+                    <tr>
+                        <th>Investment Metric</th>
+                        <th class="hl">Saudi Arabia</th>
+                        <th>Dubai (UAE)</th>
+                        <th>London (UK)</th>
+                        <th>Singapore</th>
+                        <th>New York (USA)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="metric">Average Rental Yield</td>
+                        <td class="hl-col"><div class="comp-bar-wrap"><span class="comp-win">7.2%</span><div class="comp-bar-track"><div class="comp-bar-fill" data-w="100%"></div></div></div></td>
+                        <td><div class="comp-bar-wrap">5.8%<div class="comp-bar-track"><div class="comp-bar-fill" data-w="81%"></div></div></div></td>
+                        <td><div class="comp-bar-wrap">3.5%<div class="comp-bar-track"><div class="comp-bar-fill" data-w="49%"></div></div></div></td>
+                        <td><div class="comp-bar-wrap">3.2%<div class="comp-bar-track"><div class="comp-bar-fill" data-w="44%"></div></div></div></td>
+                        <td><div class="comp-bar-wrap">4.1%<div class="comp-bar-track"><div class="comp-bar-fill" data-w="57%"></div></div></div></td>
+                    </tr>
+                    <tr>
+                        <td class="metric">Capital Appreciation (5yr)</td>
+                        <td class="hl-col"><div class="comp-bar-wrap"><span class="comp-win">+42%</span><div class="comp-bar-track"><div class="comp-bar-fill" data-w="100%"></div></div></div></td>
+                        <td><div class="comp-bar-wrap">+28%<div class="comp-bar-track"><div class="comp-bar-fill" data-w="67%"></div></div></div></td>
+                        <td><div class="comp-bar-wrap">+18%<div class="comp-bar-track"><div class="comp-bar-fill" data-w="43%"></div></div></div></td>
+                        <td><div class="comp-bar-wrap">+22%<div class="comp-bar-track"><div class="comp-bar-fill" data-w="52%"></div></div></div></td>
+                        <td><div class="comp-bar-wrap">+24%<div class="comp-bar-track"><div class="comp-bar-fill" data-w="57%"></div></div></div></td>
+                    </tr>
+                    <tr>
+                        <td class="metric">Foreign Ownership</td>
+                        <td class="hl-col"><span class="comp-win">100% (approved zones)</span></td>
+                        <td>100% (freehold zones)</td>
+                        <td>100% unrestricted</td>
+                        <td>Restricted (ABSD 60%+)</td>
+                        <td>100% with FIRPTA</td>
+                    </tr>
+                    <tr>
+                        <td class="metric">Capital Gains Tax</td>
+                        <td class="hl-col"><span class="comp-win">0%</span></td>
+                        <td>0%</td>
+                        <td>Up to 28%</td>
+                        <td>0% (individual)</td>
+                        <td>Up to 37%</td>
+                    </tr>
+                    <tr>
+                        <td class="metric">Income / Rental Tax</td>
+                        <td class="hl-col"><span class="comp-win">0% personal</span></td>
+                        <td>0%</td>
+                        <td>Up to 45%</td>
+                        <td>Up to 22%</td>
+                        <td>Up to 37%</td>
+                    </tr>
+                    <tr>
+                        <td class="metric">Transaction Costs</td>
+                        <td class="hl-col"><span class="comp-win">2.5% RETT</span></td>
+                        <td>4% DLD fee</td>
+                        <td>5–12% SDLT + costs</td>
+                        <td>Up to 64% ABSD + BSD</td>
+                        <td>1.4–2.5% transfer tax</td>
+                    </tr>
+                    <tr>
+                        <td class="metric">Currency Stability</td>
+                        <td class="hl-col"><span class="comp-win">USD peg since 1986</span></td>
+                        <td>USD peg since 1997</td>
+                        <td>Floating GBP</td>
+                        <td>Managed SGD float</td>
+                        <td>USD (base currency)</td>
+                    </tr>
+                    <tr>
+                        <td class="metric">GDP Growth (2024)</td>
+                        <td class="hl-col"><span class="comp-win">~3.4% (IMF est.)</span></td>
+                        <td>~3.5%</td>
+                        <td>~0.9%</td>
+                        <td>~2.8%</td>
+                        <td>~2.5%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div style="display:flex;gap:24px;margin-top:40px;flex-wrap:wrap;">
+            <div class="js-reveal" style="flex:1;min-width:220px;padding:32px 28px;background:var(--green-light);border-left:3px solid var(--green);transition:transform 0.3s,box-shadow 0.3s;" onmouseenter="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 32px rgba(0,108,53,0.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+                <div style="font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:12px;">Highest Yields</div>
+                <div style="font-family:var(--serif);font-size:26px;font-weight:300;color:var(--black);margin-bottom:8px;">7.2% Average Rental Yield</div>
+                <div style="font-family:var(--serif);font-size:14px;font-style:italic;color:#555;line-height:1.7;">Saudi Arabia offers the highest average property yields among all compared markets. Prime commercial assets exceed 9%.</div>
             </div>
-            <div class="legal-stat">
-                <span class="legal-stat-val">24h</span>
-                <span class="legal-stat-lbl">Title Transfer</span>
+            <div class="js-reveal" style="flex:1;min-width:220px;padding:32px 28px;background:var(--green-light);border-left:3px solid var(--green);transition:transform 0.3s,box-shadow 0.3s;" onmouseenter="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 32px rgba(0,108,53,0.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+                <div style="font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:12px;">Strongest Appreciation</div>
+                <div style="font-family:var(--serif);font-size:26px;font-weight:300;color:var(--black);margin-bottom:8px;">+42% in 5 Years</div>
+                <div style="font-family:var(--serif);font-size:14px;font-style:italic;color:#555;line-height:1.7;">Capital appreciation over five years that outperforms all compared markets — driven by government-backed demand creation.</div>
             </div>
-            <div class="legal-stat">
-                <span class="legal-stat-val">0%</span>
-                <span class="legal-stat-lbl">Capital Gains Tax</span>
-            </div>
-            <div class="legal-stat">
-                <span class="legal-stat-val">100%</span>
-                <span class="legal-stat-lbl">Foreign Ownership</span>
+            <div class="js-reveal" style="flex:1;min-width:220px;padding:32px 28px;background:var(--green-light);border-left:3px solid var(--green);transition:transform 0.3s,box-shadow 0.3s;" onmouseenter="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 32px rgba(0,108,53,0.1)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+                <div style="font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--green);margin-bottom:12px;">Lowest Tax Burden</div>
+                <div style="font-family:var(--serif);font-size:26px;font-weight:300;color:var(--black);margin-bottom:8px;">0% CGT + 0% Income Tax</div>
+                <div style="font-family:var(--serif);font-size:14px;font-style:italic;color:#555;line-height:1.7;">The combination of zero CGT and zero personal income tax — with only a 2.5% RETT — is unmatched among major global investment destinations.</div>
             </div>
         </div>
+        <div style="margin-top:12px;font-size:12px;color:#999;line-height:1.6;">* Comparison is illustrative based on general market conditions as of 2024–2025. Tax rates vary by investor structure, treaty, and jurisdiction. Singapore ABSD applies to foreign buyers. Consult a qualified advisor for your specific position. Sources: REGA, MISA, IMF, JLL, Knight Frank.</div>
     </div>
 </section>
 
@@ -307,45 +435,51 @@
         <div class="faq-list">
             <div class="faq-item">
                 <button class="faq-q">Can foreign nationals own property in Saudi Arabia?</button>
-                <div class="faq-a"><p>Yes. Since 2020, Saudi Arabia allows 100% foreign ownership of property in approved zones with no nationality restrictions. Investors benefit from full freehold title, inheritance rights, and long-term residency eligibility linked to property ownership.</p></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-q">What is the minimum investment threshold?</button>
-                <div class="faq-a"><p>The minimum threshold varies by property type and location. Residential entry points start from approximately SAR 250,000, while commercial and development opportunities typically begin at SAR 1 million. Our advisors can identify opportunities that match your specific budget.</p></div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-q">How does Vision 2030 impact property values?</button>
-                <div class="faq-a"><p>Vision 2030 is the primary driver of Saudi Arabia's real estate appreciation. The $3.3 trillion investment pipeline, mega-project development, and population growth targets create sustained demand pressure that historically translates to 12–42% capital appreciation across key markets.</p></div>
+                <div class="faq-a"><p>Yes. Under the Law of Real Estate Ownership and Investment by Non-Saudis (as amended in 2020), foreign nationals can hold 100% freehold property title in approved investment zones with no local partner requirement. There are no nationality or religion restrictions in these zones. Investors benefit from full freehold title, inheritance rights, and eligibility for Saudi Premium Residency linked to qualifying property ownership. Note: certain areas (e.g. Mecca and Medina) remain restricted to non-Muslims under Saudi law.</p></div>
             </div>
             <div class="faq-item">
                 <button class="faq-q">What taxes apply to foreign property investors?</button>
-                <div class="faq-a"><p>Saudi Arabia offers one of the world's most competitive tax environments for property investors. There is zero personal income tax, zero capital gains tax on property, and transaction costs of just 2.5%. A 15% VAT applies to commercial transactions, though exemptions are available in certain structures.</p></div>
+                <div class="faq-a"><p>Saudi Arabia's tax regime for real estate investors is among the most competitive globally: (1) Zero personal income tax — no tax on rental income received by individuals. (2) Zero capital gains tax on property profits for individuals. (3) Real Estate Transaction Tax (RETT) of 2.5% on property sales — the only levy on transactions. (4) 15% VAT applies to some commercial property services and first-time commercial sales, but not to residential property resales. Corporate investors may be subject to 20% income tax on Saudi-source income depending on their structure. Zakat (2.5% annual levy) applies to Muslim investors. We recommend structuring advice from a qualified Saudi tax professional.</p></div>
             </div>
             <div class="faq-item">
-                <button class="faq-q">How long does the property registration process take?</button>
-                <div class="faq-a"><p>Saudi Arabia's electronic deed registration system enables title transfer within 24–48 hours in most cases. The process is fully digital, transparent, and available with English language support. Saddlepoint manages the entire registration process on behalf of our clients.</p></div>
+                <button class="faq-q">How does Vision 2030 impact property values?</button>
+                <div class="faq-a"><p>Vision 2030 is the primary structural driver of Saudi Arabia's real estate appreciation. The $3.3 trillion investment pipeline creates demand across all asset classes — residential, commercial, hospitality, and industrial. Riyadh residential values have appreciated approximately 35–50% between 2020 and 2025, driven by infrastructure spending (Riyadh Metro, King Salman Park, KAFD expansion) and population growth. The mega-project cycle is still in early-to-mid execution, meaning investors entering now are positioned to capture appreciation through the 2030 delivery phase.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">What is the RETT and how does it work?</button>
+                <div class="faq-a"><p>The Real Estate Transaction Tax (RETT) is a 2.5% tax levied on the value of real estate transactions in Saudi Arabia, administered by ZATCA (Zakat, Tax and Customs Authority). It replaced VAT on property transactions in 2020. RETT applies to residential and commercial property sales and is typically paid by the buyer. It is calculated on the agreed transaction value and must be settled before the title transfer can be completed at the Ministry of Justice. RETT represents the only property transaction cost in Saudi Arabia beyond professional fees — there is no stamp duty, property purchase tax, or additional levy beyond the 2.5%.</p></div>
             </div>
             <div class="faq-item">
                 <button class="faq-q">Can I get residency through property investment?</button>
-                <div class="faq-a"><p>Yes. Saudi Arabia's Premium Residency program offers long-term residency to foreign property investors meeting specific thresholds. This provides visa-free status within the Kingdom, family inclusion, and access to government services. Our advisory team can guide you through the eligibility criteria and application process.</p></div>
+                <div class="faq-a"><p>Yes. Saudi Arabia's Premium Residency programme, launched in August 2019, offers long-term residency to qualifying investors. The Premium Residency can be obtained via two routes: (1) A one-time fee of SAR 800,000 (~$213,000 USD) for permanent Premium Residency. (2) An annual fee of SAR 100,000 (~$26,700 USD) for renewable Premium Residency. Property investment is one of the qualifying criteria for certain Premium Residency categories. Premium Residency includes the right to live, work, and invest in Saudi Arabia without a local sponsor, family sponsorship rights, and access to government services. Our advisory team can guide you through the eligibility criteria.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">What is the minimum investment threshold?</button>
+                <div class="faq-a"><p>Minimum thresholds vary significantly by asset type, city, and district. Residential apartments in secondary Riyadh districts start from approximately SAR 350,000–500,000. Prime residential in KAFD or Diplomatic Quarter: SAR 2M–8M+. Commercial units in Grade A office buildings: SAR 1M–5M. Our advisory engagement begins at SAR 1M for residential and SAR 3M for commercial strategies. For institutional or JV structures, we work across any scale. Contact us and we will identify the highest-conviction opportunities that match your specific capital position.</p></div>
             </div>
             <div class="faq-item">
                 <button class="faq-q">What currencies are accepted for property transactions?</button>
-                <div class="faq-a"><p>Property transactions are denominated in Saudi Riyal (SAR), which is pegged to the US Dollar at a fixed rate of 3.75. International investors can transact in USD, GBP, EUR, and other major currencies through approved banking channels, with full remittance rights for rental income and capital returns.</p></div>
+                <div class="faq-a"><p>Property transactions in Saudi Arabia are denominated in Saudi Riyal (SAR). However, given the SAR's fixed peg to the US Dollar at 3.75 since 1986, USD-equivalent pricing is widely used. International investors can transact through SAMA-licensed Saudi banks that support USD, GBP, EUR, and other major currency transfers. Full repatriation rights are guaranteed — rental income, sale proceeds, and capital can be transferred out of Saudi Arabia freely through the banking system. There are no capital controls or restrictions on foreign exchange repatriation.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-q">What is MISA and why does it matter?</button>
+                <div class="faq-a"><p>MISA (Ministry of Investment of Saudi Arabia) is the principal government body responsible for attracting, facilitating, and regulating foreign investment in the Kingdom. Previously known as SAGIA (Saudi Arabian General Investment Authority), it was rebranded in 2020. For foreign investors establishing a business entity in Saudi Arabia, MISA issues the Investment Licence — the foundation of all subsequent regulatory registrations. MISA also maintains a portal for foreign ownership applications, sector-specific licensing, and investment incentives. Saddlepoint helps clients navigate MISA requirements end-to-end.</p></div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CTA BANNER -->
+<!-- CTA -->
 <section class="cta">
     <div class="cta-wm" aria-hidden="true">SADDLEPOINT</div>
-    <span class="section-label">Limited Consultation Slots Available</span>
-    <h2 class="cta-h js-reveal">Ready to Enter<br>the Saudi Market?</h2>
-    <p class="cta-sub js-reveal">Book a private consultation and receive a tailored market entry strategy aligned with your investment profile and timeline.</p>
-    <div class="cta-btns js-reveal">
-        <a href="/#consultation" class="btn btn-white"><span>Book Private Consultation</span></a>
-        <a href="/mega-projects/" class="btn btn-outline-w"><span>Explore Mega Projects</span></a>
+    <div class="container" style="position:relative;z-index:2;text-align:center;">
+        <span class="section-label">Ready to Enter the Market?</span>
+        <h2 class="cta-h js-reveal">Position Your Capital<br>Before 2030 Completes</h2>
+        <p class="cta-sub js-reveal">Saudi Arabia's mega-project cycle is in its most active delivery phase. Investors who enter during infrastructure build-out consistently capture the strongest appreciation — ahead of 2030 completion milestones.</p>
+        <div class="cta-btns js-reveal">
+            <a href="/#consultation" class="btn btn-white btn-arrow">Book Private Consultation</a>
+            <a href="/mega-projects/" class="btn btn-outline-w">Explore Mega Projects</a>
+        </div>
     </div>
 </section>
 
@@ -364,45 +498,37 @@
                     <li><a href="/mega-projects/">Mega Projects</a></li>
                     <li><a href="/strategies/">Strategies</a></li>
                     <li><a href="/market-intelligence/">Market Intelligence</a></li>
-                    <li><a href="/portfolio/">Portfolio</a></li>
                     <li><a href="/#consultation">Private Consultation</a></li>
                 </ul>
             </div>
             <div>
                 <span class="fcol-title">Resources</span>
                 <ul class="flinks">
-                    <li><a href="/why-saudi/#legal">Legal Framework Guide</a></li>
-                    <li><a href="/market-intelligence/#analysis">Market Analysis</a></li>
-                    <li><a href="/market-intelligence/#calculator">Investment Calculator</a></li>
+                    <li><a href="/why-saudi/#legal">Legal Framework</a></li>
+                    <li><a href="/why-saudi/#comparison">Market Comparison</a></li>
+                    <li><a href="/market-intelligence/#calculator">ROI Calculator</a></li>
                     <li><a href="/why-saudi/#faq">FAQ</a></li>
                 </ul>
             </div>
             <div>
-                <span class="fcol-title">Company</span>
+                <span class="fcol-title">Regulatory</span>
                 <ul class="flinks">
-                    <li><a href="#">About Saddlepoint</a></li>
-                    <li><a href="#">Advisory Team</a></li>
-                    <li><a href="/portfolio/">Success Stories</a></li>
-                    <li><a href="mailto:hello@saddlepoint.sa">Contact Us</a></li>
+                    <li><a href="#">MISA Guidance</a></li>
+                    <li><a href="#">REGA Framework</a></li>
+                    <li><a href="#">ZATCA — Tax Authority</a></li>
+                    <li><a href="mailto:hello@saddlepoint.sa">hello@saddlepoint.sa</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bot">
-            <span class="fcopy">© 2026 Saddlepoint. All rights reserved.</span>
-            <ul class="flegal">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Cookie Policy</a></li>
-            </ul>
+            <span class="fcopy">© 2026 Saddlepoint. All rights reserved. Advisory services only. Not a licensed property broker or financial advisor.</span>
+            <ul class="flegal"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul>
         </div>
     </div>
 </footer>
 
-<!-- GSAP + ScrollTrigger -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<!-- Shared JS -->
 <script src="/js/shared.js"></script>
-
 </body>
 </html>

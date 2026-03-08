@@ -4,19 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mega Projects — Saddlepoint</title>
-    <meta name="description" content="Explore Saudi Arabia's $1 trillion mega projects — NEOM, Red Sea, Qiddiya, and Diriyah Gate. Investment opportunities within Vision 2030's transformative developments.">
+    <meta name="description" content="Explore Saudi Arabia's transformational mega-projects — NEOM ($500B), Red Sea Global ($28B+), Qiddiya ($8B), Diriyah Gate ($20B). Investment opportunities aligned with Vision 2030.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
+    <style>
+        .project-section {
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .project-section:last-of-type { border: none; }
+        .project-section:nth-child(even) { background: var(--bg); }
+        .project-section:nth-child(odd) { background: var(--white); }
+        .proj-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+        .proj-hero-grid.rev { direction: rtl; }
+        .proj-hero-grid.rev > * { direction: ltr; }
+        .proj-img-full {
+            border-radius: 8px; overflow: hidden;
+            position: relative; height: 440px;
+            background-size: cover; background-position: center;
+        }
+        .proj-img-full-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 60%);
+        }
+        .proj-img-label {
+            position: absolute; bottom: 24px; left: 24px;
+            font-family: var(--serif); font-size: 32px; font-weight: 300;
+            color: var(--white);
+        }
+        .proj-img-tag {
+            position: absolute; top: 20px; left: 20px;
+            padding: 6px 16px; border-radius: 100px;
+            background: rgba(0,108,53,0.88); backdrop-filter: blur(8px);
+            font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+            color: var(--white); text-transform: uppercase;
+        }
+        .proj-eyebrow {
+            font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+            text-transform: uppercase; color: var(--green);
+            margin-bottom: 10px; display: block;
+        }
+        .proj-title {
+            font-family: var(--serif);
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 300; line-height: 1.05;
+            margin-bottom: 8px; color: var(--black);
+        }
+        .proj-subtitle { font-size: 16px; color: var(--grey); margin-bottom: 24px; line-height: 1.6; }
+        .proj-kpi-row { display: flex; gap: 0; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin-bottom: 28px; }
+        .proj-kpi { flex: 1; padding: 18px 16px; border-right: 1px solid var(--border); }
+        .proj-kpi:last-child { border: none; }
+        .proj-kpi-val { font-family: var(--serif); font-size: 22px; color: var(--black); display: block; font-weight: 400; }
+        .proj-kpi-lbl { font-size: 11px; color: var(--grey); margin-top: 2px; letter-spacing: 0.04em; }
+        .proj-body-text { font-size: 15px; line-height: 1.8; color: #444; margin-bottom: 24px; }
+        .proj-components { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+        .proj-components li { font-size: 14px; color: #444; display: flex; gap: 12px; line-height: 1.5; }
+        .proj-components li::before { content: '→'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+        .proj-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+        .proj-tag-item { padding: 5px 14px; background: var(--green-light); border-radius: 100px; font-size: 12px; color: var(--green-dim); font-weight: 500; }
+        .sub-projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 28px; }
+        .sub-project { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 20px; }
+        .sub-project-name { font-family: var(--serif); font-size: 18px; margin-bottom: 6px; }
+        .sub-project-desc { font-size: 13px; line-height: 1.6; color: #666; }
+        @media(max-width:768px) {
+            .proj-hero-grid, .proj-hero-grid.rev { grid-template-columns: 1fr; direction: ltr; gap: 32px; }
+            .proj-img-full { height: 280px; }
+            .sub-projects { grid-template-columns: 1fr; }
+            .proj-kpi-row { flex-wrap: wrap; }
+        }
+    </style>
 </head>
 <body>
 
-<!-- Custom cursor -->
 <div id="cur"></div>
 <div id="cur-f"></div>
-
-<!-- Mute toggle -->
 <button id="mute-btn" title="Toggle ambient audio" aria-label="Toggle audio">
     <svg id="sound-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
@@ -25,117 +88,130 @@
     </svg>
 </button>
 
-<!-- NAV -->
 <nav id="nav">
-    <a href="/" class="nav-logo">Saddlepoint<span class="nav-dot"></span></a>
+    <a href="/" class="nav-logo">Saddle<em style="font-style:italic;color:var(--green-bright)">point</em><span class="nav-dot"></span></a>
     <ul class="nav-links">
         <li><a href="/why-saudi/">Why Saudi</a></li>
         <li><a href="/mega-projects/">Mega Projects</a></li>
         <li><a href="/strategies/">Strategies</a></li>
         <li><a href="/market-intelligence/">Market</a></li>
-        <li><a href="/portfolio/">Portfolio</a></li>
     </ul>
     <div class="nav-right">
-        <a href="/#consultation" class="nav-btn"><span>Book Consultation</span></a>
-        <button class="nav-ham" id="nav-ham" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+        <a href="/#consultation" class="nav-btn">Book Consultation</a>
+        <button class="nav-ham" id="nav-ham" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
 </nav>
-
-<!-- MOBILE NAV DRAWER -->
 <div class="nav-drawer" id="nav-drawer">
     <ul>
-        <li><a href="/why-saudi/">Why Saudi</a></li>
+        <li><a href="/why-saudi/">Why Saudi Arabia</a></li>
         <li><a href="/mega-projects/">Mega Projects</a></li>
-        <li><a href="/strategies/">Strategies</a></li>
+        <li><a href="/strategies/">Investment Strategies</a></li>
         <li><a href="/market-intelligence/">Market Intelligence</a></li>
-        <li><a href="/portfolio/">Portfolio</a></li>
         <li><a href="/#consultation">Book Consultation</a></li>
     </ul>
 </div>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
-    <!-- TODO: Replace with NEOM / The Line aerial construction image -->
-    <div class="page-hero-bg" style="background-image: url('https://picsum.photos/seed/neom-future/1600/900');"></div>
+    <div class="page-hero-bg" style="background-image:url('/neom.jpg');"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
-        <div class="page-hero-breadcrumb">
-            <a href="/">Home</a>
-            <span>/</span>
-            <a href="/mega-projects/">Mega Projects</a>
-        </div>
-        <span class="page-hero-eyebrow">$1 Trillion in Transformative Projects</span>
+        <div class="page-hero-breadcrumb"><a href="/">Home</a><span>/</span><span>Mega Projects</span></div>
+        <span class="page-hero-eyebrow">Vision 2030 Flagship Developments</span>
         <h1 class="page-hero-title">Mega<br>Projects</h1>
-        <p class="page-hero-sub">Saudi Arabia's giga-projects are redefining what's possible. Four transformative developments that create once-in-a-generation investment opportunities.</p>
+        <p class="page-hero-sub">Four government-backed mega-projects representing over $545 billion in committed investment — creating entirely new urban environments and unprecedented real estate opportunities.</p>
+        <div class="page-hero-stats">
+            <div><span class="page-hero-stat-val">$545B+</span><span class="page-hero-stat-lbl">Total Combined Investment</span></div>
+            <div><span class="page-hero-stat-val">4</span><span class="page-hero-stat-lbl">Flagship Projects</span></div>
+            <div><span class="page-hero-stat-val">53M+</span><span class="page-hero-stat-lbl">Annual Visitor Targets</span></div>
+        </div>
     </div>
 </div>
 
-<!-- MEGA PROJECTS GRID -->
-<section class="megaprojects" id="megaprojects">
+<!-- PROJECTS NAV BAR -->
+<div class="sbar">
+    <a href="#neom" class="sitem" style="cursor:pointer;text-decoration:none;display:block;">
+        <span class="snum">$500B</span>
+        <div class="stitle">NEOM</div>
+        <div class="sdesc">Smart mega-city · 26,500 km²</div>
+    </a>
+    <a href="#red-sea" class="sitem" style="cursor:pointer;text-decoration:none;display:block;">
+        <span class="snum">$28B+</span>
+        <div class="stitle">Red Sea Global</div>
+        <div class="sdesc">Luxury tourism · 90+ islands</div>
+    </a>
+    <a href="#qiddiya" class="sitem" style="cursor:pointer;text-decoration:none;display:block;">
+        <span class="snum">$8B</span>
+        <div class="stitle">Qiddiya</div>
+        <div class="sdesc">Entertainment capital · 334 km²</div>
+    </a>
+    <a href="#diriyah" class="sitem" style="cursor:pointer;text-decoration:none;display:block;">
+        <span class="snum">$20B</span>
+        <div class="stitle">Diriyah Gate</div>
+        <div class="sdesc">UNESCO heritage · luxury hotels</div>
+    </a>
+</div>
+
+<!-- ═══ NEOM ═══ -->
+<section class="project-section" id="neom">
     <div class="container">
-        <span class="section-label bright js-reveal">Active Developments</span>
-        <div class="green-rule"></div>
-        <h2 class="section-h light js-reveal">Four Projects.<br>$1 Trillion.<br>Infinite Opportunity.</h2>
-        <div class="mega-grid">
-            <div class="mega-card js-reveal">
-                <!-- TODO: Replace with NEOM The Line architectural render or aerial shot -->
-                <img src="https://picsum.photos/seed/neom-future/900/580" alt="NEOM — The Line">
-                <div class="mega-overlay"></div>
-                <div class="mega-content">
-                    <span class="mega-phase">Active · Phase 1 Construction</span>
-                    <div class="mega-name">NEOM</div>
-                    <div class="mega-desc">A $500B cognitive city in the northwest, including The Line, Sindalah island, Oxagon floating port, and Trojena mountain resort.</div>
-                    <div class="mega-stats">
-                        <div class="mega-stat"><span>$500B</span><span>Project Value</span></div>
-                        <div class="mega-stat"><span>170km</span><span>The Line Length</span></div>
-                        <div class="mega-stat"><span>9M</span><span>Future Residents</span></div>
-                    </div>
+        <div class="proj-hero-grid">
+            <div>
+                <span class="proj-eyebrow">Project 01 · Under Construction</span>
+                <div class="proj-title">NEOM</div>
+                <div class="proj-subtitle">A $500 billion smart mega-city on Saudi Arabia's northwestern coast — the most ambitious urban development project in human history</div>
+                <div class="proj-kpi-row">
+                    <div class="proj-kpi"><span class="proj-kpi-val">$500B</span><span class="proj-kpi-lbl">Total Budget</span></div>
+                    <div class="proj-kpi"><span class="proj-kpi-val">26,500 km²</span><span class="proj-kpi-lbl">Total Area</span></div>
+                    <div class="proj-kpi"><span class="proj-kpi-val">9M</span><span class="proj-kpi-lbl">Residents by 2045</span></div>
+                    <div class="proj-kpi"><span class="proj-kpi-val">100%</span><span class="proj-kpi-lbl">Renewable Energy</span></div>
+                </div>
+                <p class="proj-body-text">NEOM is a $500 billion smart city project spanning 26,500 km² in the Tabuk region of northwestern Saudi Arabia, announced by Crown Prince HRH Mohammed bin Salman in October 2017. The project is owned 100% by the Public Investment Fund (PIF) and governed by the NEOM Company. It encompasses four distinct sub-projects, each representing a different model of future urban living — from a zero-carbon linear city to an industrial port-city and a mountain ski resort.</p>
+                <p class="proj-body-text">NEOM is powered entirely by renewable energy (solar and wind) and governed by a special regulatory framework separate from Saudi Arabia's standard legal system. Artificial intelligence governs city operations, mobility, and infrastructure management. THE LINE is already under construction with tens of thousands of workers on-site; Sindalah island resort is the first segment targeting completion in 2024–2025.</p>
+                <ul class="proj-components">
+                    <li><strong>THE LINE:</strong> A 170km linear city, 500m tall, 200m wide — housing 9 million residents by 2045 with no roads, no cars, and 20-minute end-to-end transit. Construction underway.</li>
+                    <li><strong>Oxagon:</strong> The world's largest floating industrial complex, located at the mouth of the Gulf of Aqaba — positioning NEOM as a global maritime and industrial hub.</li>
+                    <li><strong>Sindalah:</strong> A luxury island yacht and tourism resort in the Red Sea, accessible from THE LINE — targeting high-net-worth tourism from 2025–2026. Partially open.</li>
+                    <li><strong>Trojena:</strong> A mountain destination featuring the region's first outdoor ski slope, extreme sports facilities, a freshwater lake, and year-round temperate climate at altitude.</li>
+                </ul>
+                <div class="proj-tags">
+                    <span class="proj-tag-item">Smart City</span>
+                    <span class="proj-tag-item">100% Renewables</span>
+                    <span class="proj-tag-item">Luxury Residential</span>
+                    <span class="proj-tag-item">Industrial Port</span>
+                    <span class="proj-tag-item">Tourism</span>
+                    <span class="proj-tag-item">PIF-Owned</span>
                 </div>
             </div>
-            <div class="mega-card js-reveal">
-                <!-- TODO: Replace with Red Sea Project island/resort aerial image -->
-                <img src="https://picsum.photos/seed/redsea-resort/900/580" alt="Red Sea Project">
-                <div class="mega-overlay"></div>
-                <div class="mega-content">
-                    <span class="mega-phase">Active · Phase 1 Open 2025</span>
-                    <div class="mega-name">Red Sea Project</div>
-                    <div class="mega-desc">A $28B luxury tourism destination across 22 pristine islands and six inland sites, with 50 hotels and a private airport — all renewable-energy powered.</div>
-                    <div class="mega-stats">
-                        <div class="mega-stat"><span>$28B</span><span>Project Value</span></div>
-                        <div class="mega-stat"><span>22</span><span>Islands</span></div>
-                        <div class="mega-stat"><span>50</span><span>Planned Hotels</span></div>
-                    </div>
+            <div>
+                <div class="proj-img-full" style="background-image:url('/neom.jpg');">
+                    <div class="proj-img-full-overlay"></div>
+                    <span class="proj-img-tag">Active Construction</span>
+                    <div class="proj-img-label">NEOM — The Future</div>
                 </div>
-            </div>
-            <div class="mega-card js-reveal">
-                <!-- TODO: Replace with Qiddiya entertainment district render -->
-                <img src="https://picsum.photos/seed/qiddiya-park/900/580" alt="Qiddiya">
-                <div class="mega-overlay"></div>
-                <div class="mega-content">
-                    <span class="mega-phase">Active · Opening 2027</span>
-                    <div class="mega-name">Qiddiya</div>
-                    <div class="mega-desc">A $8B entertainment and sports mega-city 45km from Riyadh, featuring Formula E circuit, Six Flags, water theme park, and a 185,000-seat stadium.</div>
-                    <div class="mega-stats">
-                        <div class="mega-stat"><span>$8B</span><span>Project Value</span></div>
-                        <div class="mega-stat"><span>334km²</span><span>Total Area</span></div>
-                        <div class="mega-stat"><span>2027</span><span>Opening Year</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="mega-card js-reveal">
-                <!-- TODO: Replace with Diriyah Gate mud-brick heritage architecture image -->
-                <img src="https://picsum.photos/seed/diriyah-heritage/900/580" alt="Diriyah Gate">
-                <div class="mega-overlay"></div>
-                <div class="mega-content">
-                    <span class="mega-phase">Active · Phased Opening 2025–2030</span>
-                    <div class="mega-name">Diriyah Gate</div>
-                    <div class="mega-desc">A $20B cultural tourism destination transforming the birthplace of Saudi Arabia into a UNESCO-linked heritage and luxury district with museums and 100,000 sqm of retail.</div>
-                    <div class="mega-stats">
-                        <div class="mega-stat"><span>$20B</span><span>Project Value</span></div>
-                        <div class="mega-stat"><span>7km²</span><span>Total Area</span></div>
-                        <div class="mega-stat"><span>100K</span><span>Sqm Retail</span></div>
+                <div style="background:var(--dark);border-radius:6px;padding:28px;margin-top:20px;">
+                    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:20px;">Investment Opportunity Context</div>
+                    <div style="display:flex;flex-direction:column;gap:14px;">
+                        <div style="display:flex;justify-content:space-between;font-size:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                            <span style="color:rgba(255,255,255,0.5);">Project Announced</span>
+                            <span style="color:var(--white);font-weight:600;">October 2017</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;font-size:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                            <span style="color:rgba(255,255,255,0.5);">First Completion</span>
+                            <span style="color:var(--white);font-weight:600;">Sindalah: 2025</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;font-size:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                            <span style="color:rgba(255,255,255,0.5);">Regulatory Zone</span>
+                            <span style="color:var(--white);font-weight:600;">NEOM Special Zone</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;font-size:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                            <span style="color:rgba(255,255,255,0.5);">Ownership Allowed</span>
+                            <span style="color:var(--green-bright);font-weight:600;">100% Foreign</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;font-size:14px;">
+                            <span style="color:rgba(255,255,255,0.5);">Investment Routes</span>
+                            <span style="color:var(--white);font-weight:600;">Off-plan · JV · Adjacent</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -143,52 +219,254 @@
     </div>
 </section>
 
-<!-- SUCCESS STORIES -->
-<section class="stories" id="stories">
+<!-- ═══ RED SEA GLOBAL ═══ -->
+<section class="project-section" id="red-sea">
     <div class="container">
-        <span class="section-label js-reveal">Investor Experiences</span>
-        <div class="green-rule"></div>
-        <h2 class="section-h js-reveal">Success Stories</h2>
-
-        <div class="story-card js-reveal">
-            <div class="story-quote">
-                Saddlepoint identified a NEOM-adjacent land parcel 18 months before it was publicly marketed. Our acquisition cost was 40% below the post-announcement market price. The guidance on legal structuring was exceptional throughout.
-            </div>
-            <div class="story-meta">
-                <div>
-                    <div class="story-name">David Harrington</div>
-                    <div class="story-role">Family Office · London, UK</div>
+        <div class="proj-hero-grid rev">
+            <div>
+                <span class="proj-eyebrow">Project 02 · First Resorts Open</span>
+                <div class="proj-title">Red Sea Global</div>
+                <div class="proj-subtitle">Luxury regenerative tourism destination spanning 90+ pristine Red Sea islands — a new global standard for high-end sustainable hospitality</div>
+                <div class="proj-kpi-row">
+                    <div class="proj-kpi"><span class="proj-kpi-val">$28B+</span><span class="proj-kpi-lbl">Total Investment</span></div>
+                    <div class="proj-kpi"><span class="proj-kpi-val">90+ Islands</span><span class="proj-kpi-lbl">Pristine Archipelago</span></div>
+                    <div class="proj-kpi"><span class="proj-kpi-val">50 Resorts</span><span class="proj-kpi-lbl">Target by 2030</span></div>
+                    <div class="proj-kpi"><span class="proj-kpi-val">1M+</span><span class="proj-kpi-lbl">Annual Visitors</span></div>
                 </div>
-                <div class="story-inv">SAR 12M Land Acquisition · NEOM Region</div>
+                <p class="proj-body-text">Red Sea Global (RSG) is the developer behind two of Saudi Arabia's largest tourism projects: The Red Sea and Amaala. The Red Sea project — spanning a pristine archipelago of 90+ uninhabited islands off the northwest Saudi coast — is the flagship, with first luxury resorts opened to guests in 2023. It is positioned as the world's most ambitious regenerative tourism destination, designed from scratch to have net positive environmental and social impact.</p>
+                <p class="proj-body-text">The project targets 50 resorts, 8,000 hotel keys, residential communities, a golf course, and an international airport (Red Sea International Airport — already operational) by 2030. All energy is renewable, single-use plastics are banned, and 75% of the destination is protected conservation area. RSG also develops Amaala — an ultra-luxury destination on the Triple Bay site offering wellness, arts, and mega-yacht hospitality. Amaala targets ultra-HNWI visitors.</p>
+                <ul class="proj-components">
+                    <li><strong>The Red Sea (RSG flagship):</strong> 90+ islands, 50 resorts, 8,000+ keys, luxury residential community. First resorts open: Six Senses Southern Dunes (2023), Nujuma (2023).</li>
+                    <li><strong>Amaala:</strong> Ultra-luxury wellness and arts destination at Triple Bay on the Red Sea coast — targeting ultra-high-net-worth international guests. Phase 1 under construction.</li>
+                    <li><strong>Red Sea International Airport:</strong> Operational since 2024 — providing critical infrastructure to support tourism inflow and resort supply chains.</li>
+                    <li><strong>Residential component:</strong> Beachfront and island residential properties within the development — some available to qualifying investors through RSG's residential programme.</li>
+                </ul>
+                <div class="proj-tags">
+                    <span class="proj-tag-item">Luxury Tourism</span>
+                    <span class="proj-tag-item">Eco-Certified</span>
+                    <span class="proj-tag-item">Branded Residences</span>
+                    <span class="proj-tag-item">Island Resorts</span>
+                    <span class="proj-tag-item">Airport Operational</span>
+                </div>
             </div>
-        </div>
-
-        <div class="story-stats js-reveal">
-            <div class="story-stat">
-                <span class="story-stat-val">4</span>
-                <span class="story-stat-lbl">Mega Projects Covered</span>
-            </div>
-            <div class="story-stat">
-                <span class="story-stat-val">$1T+</span>
-                <span class="story-stat-lbl">Project Pipeline Monitored</span>
-            </div>
-            <div class="story-stat">
-                <span class="story-stat-val" data-target="38" data-suffix="%">0%</span>
-                <span class="story-stat-lbl">Avg Client Portfolio Growth</span>
+            <div>
+                <div class="proj-img-full" style="background-image:url('/red sea project.jpg');">
+                    <div class="proj-img-full-overlay"></div>
+                    <span class="proj-img-tag">Resorts Open 2023</span>
+                    <div class="proj-img-label">Red Sea Global</div>
+                </div>
+                <div style="background:var(--dark);border-radius:6px;padding:28px;margin-top:20px;">
+                    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:20px;">Open Resorts (2025)</div>
+                    <div style="display:flex;flex-direction:column;gap:12px;">
+                        <div style="background:rgba(0,165,80,0.08);border-radius:4px;padding:14px;border-left:2px solid var(--green);">
+                            <div style="font-size:14px;font-weight:600;color:var(--white);">Six Senses Southern Dunes</div>
+                            <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px;">First resort open · desert dune landscape · Six Senses brand</div>
+                        </div>
+                        <div style="background:rgba(0,165,80,0.08);border-radius:4px;padding:14px;border-left:2px solid var(--green);">
+                            <div style="font-size:14px;font-weight:600;color:var(--white);">Nujuma, a Ritz-Carlton Reserve</div>
+                            <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px;">Overwater villas · private island · Ritz-Carlton Reserve brand</div>
+                        </div>
+                        <div style="background:rgba(0,165,80,0.05);border-radius:4px;padding:14px;border-left:2px solid rgba(255,255,255,0.12);">
+                            <div style="font-size:14px;font-weight:600;color:rgba(255,255,255,0.6);">45+ Resorts Under Development</div>
+                            <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:2px;">Multiple international brands secured · rolling openings through 2030</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- CTA BANNER -->
+<!-- ═══ QIDDIYA ═══ -->
+<section class="project-section" id="qiddiya">
+    <div class="container">
+        <div class="proj-hero-grid">
+            <div>
+                <span class="proj-eyebrow">Project 03 · Phase 1 Under Construction</span>
+                <div class="proj-title">Qiddiya</div>
+                <div class="proj-subtitle">Saudi Arabia's capital of entertainment, sports, and arts — 45km west of Riyadh, spanning 334 km² of dramatic terrain</div>
+                <div class="proj-kpi-row">
+                    <div class="proj-kpi"><span class="proj-kpi-val">$8B</span><span class="proj-kpi-lbl">Phase 1 Investment</span></div>
+                    <div class="proj-kpi"><span class="proj-kpi-val">334 km²</span><span class="proj-kpi-lbl">Total Area</span></div>
+                    <div class="proj-kpi"><span class="proj-kpi-val">17M</span><span class="proj-kpi-lbl">Visitor Target (2030)</span></div>
+                    <div class="proj-kpi"><span class="proj-kpi-val">2M+</span><span class="proj-kpi-lbl">Residents Nearby</span></div>
+                </div>
+                <p class="proj-body-text">Qiddiya Investment Company (QIC) — majority owned by PIF — is developing Qiddiya as Saudi Arabia's premier entertainment, sports, and leisure destination. Located 45km west of Riyadh on dramatically rugged terrain, the 334 km² development spans six distinct themed zones and will include residential communities for 100,000+ residents alongside entertainment, sports, education, and hospitality uses.</p>
+                <p class="proj-body-text">Phase 1 construction is underway, with the Formula E street circuit operational, Six Flags Qiddiya theme park (the world's largest Six Flags park) expected to open in 2025, and the Qiddiya Stadium (20,000 capacity) under construction. The project is strategically positioned to serve Riyadh's 7.5 million metropolitan population — creating a catchment area of 25+ million within the broader Saudi population — and to attract international visitors.</p>
+                <ul class="proj-components">
+                    <li><strong>Six Flags Qiddiya:</strong> World's largest Six Flags theme park · first-of-its-kind roller coasters and attractions. Opening: 2025–2026.</li>
+                    <li><strong>Qiddiya Stadium:</strong> 20,000-seat multi-purpose arena for concerts, e-sports, and events · under construction.</li>
+                    <li><strong>Formula E Circuit:</strong> First street circuit in Saudi Arabia operational in Qiddiya precinct — hosting Formula E races.</li>
+                    <li><strong>Water & Aqua parks:</strong> Themed water parks and family entertainment zones integrated into natural terrain.</li>
+                    <li><strong>Residential Communities:</strong> 100,000+ planned residents with mixed-income housing, serviced apartments, and villa communities embedded within the entertainment zones.</li>
+                    <li><strong>Speed Peak:</strong> A motorsport and adventure zone on dramatic cliff-edge terrain — one of the world's most extreme entertainment environments.</li>
+                </ul>
+                <div class="proj-tags">
+                    <span class="proj-tag-item">Entertainment</span>
+                    <span class="proj-tag-item">Sports</span>
+                    <span class="proj-tag-item">Theme Parks</span>
+                    <span class="proj-tag-item">Residential</span>
+                    <span class="proj-tag-item">E-Sports</span>
+                    <span class="proj-tag-item">PIF-Backed</span>
+                </div>
+            </div>
+            <div>
+                <div class="proj-img-full" style="background-image:url('/qidiyya.jpg');">
+                    <div class="proj-img-full-overlay"></div>
+                    <span class="proj-img-tag">Phase 1 Active</span>
+                    <div class="proj-img-label">Qiddiya</div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;">
+                    <div style="background:var(--dark);border-radius:6px;padding:24px;text-align:center;">
+                        <div style="font-family:var(--serif);font-size:28px;color:var(--green-bright);">25M+</div>
+                        <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;">Catchment Population</div>
+                    </div>
+                    <div style="background:var(--dark);border-radius:6px;padding:24px;text-align:center;">
+                        <div style="font-family:var(--serif);font-size:28px;color:var(--green-bright);">6</div>
+                        <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;">Themed Zones</div>
+                    </div>
+                    <div style="background:var(--dark);border-radius:6px;padding:24px;text-align:center;">
+                        <div style="font-family:var(--serif);font-size:28px;color:var(--green-bright);">100K+</div>
+                        <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;">Planned Residents</div>
+                    </div>
+                    <div style="background:var(--dark);border-radius:6px;padding:24px;text-align:center;">
+                        <div style="font-family:var(--serif);font-size:28px;color:var(--green-bright);">45km</div>
+                        <div style="font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;">From Riyadh CBD</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ DIRIYAH GATE ═══ -->
+<section class="project-section" id="diriyah">
+    <div class="container">
+        <div class="proj-hero-grid rev">
+            <div>
+                <span class="proj-eyebrow">Project 04 · Open to Visitors</span>
+                <div class="proj-title">Diriyah Gate</div>
+                <div class="proj-subtitle">The $20 billion restoration of Diriyah — birthplace of the Saudi state and UNESCO World Heritage Site — into a world-class cultural and heritage destination</div>
+                <div class="proj-kpi-row">
+                    <div class="proj-kpi"><span class="proj-kpi-val">$20B</span><span class="proj-kpi-lbl">Total Investment</span></div>
+                    <div class="proj-kpi"><span class="proj-kpi-val">UNESCO</span><span class="proj-kpi-lbl">World Heritage Site</span></div>
+                    <div class="proj-kpi"><span class="proj-kpi-val">600+</span><span class="proj-kpi-lbl">Restored Structures</span></div>
+                    <div class="proj-kpi"><span class="proj-kpi-val">27M</span><span class="proj-kpi-lbl">Visitor Target 2030</span></div>
+                </div>
+                <p class="proj-body-text">Diriyah Gate Development Authority (DGDA) is the entity responsible for developing and managing the Diriyah historical area — the At-Turaif district designated as a UNESCO World Heritage Site in 2010. Located just 12km northwest of Riyadh's city centre, Diriyah is the birthplace of the first Saudi state (1744) and home to over 600 Najdi-style mud-brick structures of historic and architectural significance.</p>
+                <p class="proj-body-text">The $20 billion development restores and activates historic Diriyah while adding new luxury hotels, restaurants, museums, retail, a polo club, art galleries, and residential communities — all built in traditional Najdi architectural style. Diriyah is already open to visitors, with the Bujairi Terrace dining and cultural district operational since 2022 attracting substantial visitor numbers. Multiple luxury hotels are under construction including Bab Samhan (a luxury Heritage Collection resort) and several internationally-branded properties.</p>
+                <ul class="proj-components">
+                    <li><strong>At-Turaif District:</strong> UNESCO World Heritage Site — restored 18th-century Najdi mud-brick palace complex. Open to visitors.</li>
+                    <li><strong>Bujairi Terrace:</strong> Premium dining and cultural destination adjacent to At-Turaif — operational since 2022. Multiple international restaurant brands.</li>
+                    <li><strong>Luxury Hotel Pipeline:</strong> 38+ hotels planned within Diriyah, including Bab Samhan (heritage luxury resort), Four Seasons, and other international brands.</li>
+                    <li><strong>Diriyah Season:</strong> Annual cultural and entertainment festival in Diriyah attracting hundreds of thousands of visitors — anchoring year-round demand.</li>
+                    <li><strong>Residential Communities:</strong> Traditional Najdi-style villa and apartment communities for sale within the development perimeter.</li>
+                    <li><strong>Diriyah Arts Dakira:</strong> New arts and culture museum district celebrating Saudi Arabia's rich cultural heritage and contemporary arts.</li>
+                </ul>
+                <div class="proj-tags">
+                    <span class="proj-tag-item">UNESCO Heritage</span>
+                    <span class="proj-tag-item">Cultural Tourism</span>
+                    <span class="proj-tag-item">Luxury Hotels</span>
+                    <span class="proj-tag-item">Dining & Retail</span>
+                    <span class="proj-tag-item">Residential</span>
+                    <span class="proj-tag-item">12km from Riyadh</span>
+                </div>
+            </div>
+            <div>
+                <div class="proj-img-full" style="background-image:url('/diriyah gate.jpg');">
+                    <div class="proj-img-full-overlay"></div>
+                    <span class="proj-img-tag">Open to Visitors</span>
+                    <div class="proj-img-label">Diriyah Gate</div>
+                </div>
+                <div style="background:var(--dark);border-radius:6px;padding:28px;margin-top:20px;">
+                    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:20px;">Key Facts</div>
+                    <div style="display:flex;flex-direction:column;gap:14px;">
+                        <div style="display:flex;justify-content:space-between;font-size:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                            <span style="color:rgba(255,255,255,0.5);">UNESCO Status</span>
+                            <span style="color:var(--green-bright);font-weight:600;">World Heritage Site (2010)</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;font-size:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                            <span style="color:rgba(255,255,255,0.5);">Founded</span>
+                            <span style="color:var(--white);font-weight:600;">1744 — First Saudi State</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;font-size:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                            <span style="color:rgba(255,255,255,0.5);">Hotels Planned</span>
+                            <span style="color:var(--white);font-weight:600;">38+ Luxury Properties</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;font-size:14px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                            <span style="color:rgba(255,255,255,0.5);">Distance to Riyadh</span>
+                            <span style="color:var(--white);font-weight:600;">12km from City Centre</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;font-size:14px;">
+                            <span style="color:rgba(255,255,255,0.5);">Current Status</span>
+                            <span style="color:var(--green-bright);font-weight:600;">Open · Expanding</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ADDITIONAL PROJECTS -->
+<section style="padding:80px 0;background:var(--dark);">
+    <div class="container">
+        <span class="section-label js-reveal" style="color:var(--green-bright);">Also Noteworthy</span>
+        <div class="green-rule"></div>
+        <h2 class="section-h js-reveal" style="color:var(--white);">Beyond the Big Four</h2>
+        <p class="section-intro light js-reveal">Saudi Arabia's pipeline extends well beyond the four flagship projects. These significant developments also represent major opportunity within Saddlepoint's market coverage.</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;" class="additional-grid">
+            <div class="js-reveal" style="background:#1c1c1c;border:1px solid rgba(255,255,255,0.08);padding:32px;transition:border-color 0.3s,background 0.3s;" onmouseenter="this.style.borderColor='rgba(0,165,80,0.3)';this.style.background='#222'" onmouseleave="this.style.borderColor='rgba(255,255,255,0.08)';this.style.background='#1c1c1c'">
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--green-bright);margin-bottom:12px;">King Abdullah Financial District</div>
+                <div style="font-family:var(--serif);font-size:22px;color:var(--white);margin-bottom:10px;">KAFD</div>
+                <div style="font-size:13px;line-height:1.7;color:rgba(255,255,255,0.5);">1.6M sqm of Grade A commercial space in North Riyadh's financial hub — 85%+ occupied by multinational regional HQs. Ongoing expansion phase with residential towers and hospitality adding to the district.</div>
+                <div style="margin-top:14px;font-size:12px;color:var(--green-bright);font-weight:600;">9–11% commercial yield · Grade A offices</div>
+            </div>
+            <div class="js-reveal" style="background:#1c1c1c;border:1px solid rgba(255,255,255,0.08);padding:32px;transition:border-color 0.3s,background 0.3s;" onmouseenter="this.style.borderColor='rgba(0,165,80,0.3)';this.style.background='#222'" onmouseleave="this.style.borderColor='rgba(255,255,255,0.08)';this.style.background='#1c1c1c'">
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--green-bright);margin-bottom:12px;">Riyadh</div>
+                <div style="font-family:var(--serif);font-size:22px;color:var(--white);margin-bottom:10px;">New Murabba</div>
+                <div style="font-family:var(--serif);font-size:14px;font-style:italic;line-height:1.7;color:rgba(255,255,255,0.5);">A 19 km² new downtown development centred on THE MUKAAB — a massive cube-shaped immersive entertainment structure. New Murabba Development Company (PIF-owned) is creating a walkable, transit-connected urban district adjacent to Riyadh's historic core.</div>
+                <div style="margin-top:14px;font-size:12px;color:var(--green-bright);font-weight:600;">Early acquisition phase · strong appreciation outlook</div>
+            </div>
+            <div class="js-reveal" style="background:#1c1c1c;border:1px solid rgba(255,255,255,0.08);padding:32px;transition:border-color 0.3s,background 0.3s;" onmouseenter="this.style.borderColor='rgba(0,165,80,0.3)';this.style.background='#222'" onmouseleave="this.style.borderColor='rgba(255,255,255,0.08)';this.style.background='#1c1c1c'">
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--green-bright);margin-bottom:12px;">Riyadh</div>
+                <div style="font-family:var(--serif);font-size:22px;color:var(--white);margin-bottom:10px;">King Salman Park</div>
+                <div style="font-family:var(--serif);font-size:14px;font-style:italic;line-height:1.7;color:rgba(255,255,255,0.5);">The world's largest urban park at 13.4 km² within Riyadh's city fabric — featuring performing arts venues, museums, gardens, a sports complex, and an aviation museum. Surrounding residential and commercial real estate is appreciating strongly on park-proximity premium.</div>
+                <div style="margin-top:14px;font-size:12px;color:var(--green-bright);font-weight:600;">Park proximity premium · residential and mixed-use</div>
+            </div>
+            <div class="js-reveal" style="background:#1c1c1c;border:1px solid rgba(255,255,255,0.08);padding:32px;transition:border-color 0.3s,background 0.3s;" onmouseenter="this.style.borderColor='rgba(0,165,80,0.3)';this.style.background='#222'" onmouseleave="this.style.borderColor='rgba(255,255,255,0.08)';this.style.background='#1c1c1c'">
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--green-bright);margin-bottom:12px;">Jeddah</div>
+                <div style="font-family:var(--serif);font-size:22px;color:var(--white);margin-bottom:10px;">Jeddah Central</div>
+                <div style="font-family:var(--serif);font-size:14px;font-style:italic;line-height:1.7;color:rgba(255,255,255,0.5);">5.7M sqm mixed-use mega-project on the Red Sea waterfront in central Jeddah — developed by Jeddah Central Development Company (PIF-owned). Features an opera house, aquarium, sports stadium, 2,900 hotel keys, 11,000 residential units, and significant retail.</div>
+                <div style="margin-top:14px;font-size:12px;color:var(--green-bright);font-weight:600;">Coastal mixed-use · premium residential opportunity</div>
+            </div>
+            <div class="js-reveal" style="background:#1c1c1c;border:1px solid rgba(255,255,255,0.08);padding:32px;transition:border-color 0.3s,background 0.3s;" onmouseenter="this.style.borderColor='rgba(0,165,80,0.3)';this.style.background='#222'" onmouseleave="this.style.borderColor='rgba(255,255,255,0.08)';this.style.background='#1c1c1c'">
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--green-bright);margin-bottom:12px;">Jeddah</div>
+                <div style="font-family:var(--serif);font-size:22px;color:var(--white);margin-bottom:10px;">Jeddah Tower</div>
+                <div style="font-family:var(--serif);font-size:14px;font-style:italic;line-height:1.7;color:rgba(255,255,255,0.5);">The world's tallest building under construction — exceeding 1,000 metres. The centrepiece of Jeddah Economic City on the Red Sea shore north of Jeddah. Mixed-use with a Four Seasons Hotel, apartments, and observation decks. Construction resumed and progressing.</div>
+                <div style="margin-top:14px;font-size:12px;color:var(--green-bright);font-weight:600;">Iconic landmark · luxury residential and hospitality</div>
+            </div>
+            <div class="js-reveal" style="background:#1c1c1c;border:1px solid rgba(255,255,255,0.08);padding:32px;transition:border-color 0.3s,background 0.3s;" onmouseenter="this.style.borderColor='rgba(0,165,80,0.3)';this.style.background='#222'" onmouseleave="this.style.borderColor='rgba(255,255,255,0.08)';this.style.background='#1c1c1c'">
+                <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--green-bright);margin-bottom:12px;">Special Economic Zones</div>
+                <div style="font-family:var(--serif);font-size:22px;color:var(--white);margin-bottom:10px;">SEZ Network</div>
+                <div style="font-family:var(--serif);font-size:14px;font-style:italic;line-height:1.7;color:rgba(255,255,255,0.5);">Saudi Arabia's six Special Economic Zones (King Abdullah Economic City, Ras Al-Khair, Jazan, Cloud Computing Zone in NEOM, and others) offer additional incentives including 5% corporate tax, 0% customs duties, and streamlined business licensing — creating industrial real estate opportunities beyond residential.</div>
+                <div style="margin-top:14px;font-size:12px;color:var(--green-bright);font-weight:600;">Industrial &amp; logistics · SEZ incentives available</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
 <section class="cta">
-    <div class="cta-wm" aria-hidden="true">SADDLEPOINT</div>
-    <span class="section-label">Expert Access</span>
-    <h2 class="cta-h js-reveal">Position Your Capital<br>Inside the Projects</h2>
-    <p class="cta-sub js-reveal">We identify investment opportunities within and adjacent to Saudi Arabia's mega-projects before they reach the open market.</p>
-    <div class="cta-btns js-reveal">
-        <a href="/#consultation" class="btn btn-white"><span>Book Private Consultation</span></a>
-        <a href="/strategies/" class="btn btn-outline-w"><span>View Investment Strategies</span></a>
+    <div class="cta-wm" aria-hidden="true">MEGA</div>
+    <div class="container" style="position:relative;z-index:2;text-align:center;">
+        <span class="section-label">Position Your Capital</span>
+        <h2 class="cta-h js-reveal">Identify Your<br>Mega-Project Opportunity</h2>
+        <p class="cta-sub js-reveal">Each mega-project creates distinct investment opportunities at different price points and risk profiles. Saddlepoint identifies the specific entry points aligned with your investment strategy — direct, adjacent, and spillover opportunities.</p>
+        <div class="cta-btns js-reveal">
+            <a href="/#consultation" class="btn btn-white btn-arrow">Book Private Consultation</a>
+            <a href="/strategies/" class="btn btn-outline-w">Investment Strategies</a>
+        </div>
     </div>
 </section>
 
@@ -198,54 +476,44 @@
         <div class="footer-top">
             <div>
                 <span class="fbrand">Saddle<em>point</em></span>
-                <p class="ftagline">Your trusted partner in navigating Saudi Arabia's real estate transformation. Professional advisory for intelligent capital placement aligned with Vision 2030.</p>
+                <p class="ftagline">Professional advisory for intelligent capital placement in Saudi Arabia's Vision 2030 transformation.</p>
             </div>
             <div>
-                <span class="fcol-title">Investment Services</span>
+                <span class="fcol-title">Mega Projects</span>
+                <ul class="flinks">
+                    <li><a href="/mega-projects/#neom">NEOM</a></li>
+                    <li><a href="/mega-projects/#red-sea">Red Sea Global</a></li>
+                    <li><a href="/mega-projects/#qiddiya">Qiddiya</a></li>
+                    <li><a href="/mega-projects/#diriyah">Diriyah Gate</a></li>
+                </ul>
+            </div>
+            <div>
+                <span class="fcol-title">Investment Intelligence</span>
                 <ul class="flinks">
                     <li><a href="/why-saudi/">Why Saudi Arabia</a></li>
-                    <li><a href="/mega-projects/">Mega Projects</a></li>
                     <li><a href="/strategies/">Strategies</a></li>
-                    <li><a href="/market-intelligence/">Market Intelligence</a></li>
-                    <li><a href="/portfolio/">Portfolio</a></li>
-                    <li><a href="/#consultation">Private Consultation</a></li>
+                    <li><a href="/market-intelligence/">Market Data</a></li>
+                    <li><a href="/market-intelligence/#calculator">ROI Calculator</a></li>
                 </ul>
             </div>
             <div>
-                <span class="fcol-title">Resources</span>
+                <span class="fcol-title">Contact</span>
                 <ul class="flinks">
-                    <li><a href="/why-saudi/#legal">Legal Framework Guide</a></li>
-                    <li><a href="/market-intelligence/#analysis">Market Analysis</a></li>
-                    <li><a href="/market-intelligence/#calculator">Investment Calculator</a></li>
+                    <li><a href="/#consultation">Book Consultation</a></li>
+                    <li><a href="mailto:hello@saddlepoint.sa">hello@saddlepoint.sa</a></li>
                     <li><a href="/why-saudi/#faq">FAQ</a></li>
-                </ul>
-            </div>
-            <div>
-                <span class="fcol-title">Company</span>
-                <ul class="flinks">
-                    <li><a href="#">About Saddlepoint</a></li>
-                    <li><a href="#">Advisory Team</a></li>
-                    <li><a href="/portfolio/">Success Stories</a></li>
-                    <li><a href="mailto:hello@saddlepoint.sa">Contact Us</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bot">
-            <span class="fcopy">© 2026 Saddlepoint. All rights reserved.</span>
-            <ul class="flegal">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Cookie Policy</a></li>
-            </ul>
+            <span class="fcopy">© 2026 Saddlepoint. Project data sourced from official government and developer publications. Investment figures are publicly disclosed commitments.</span>
+            <ul class="flegal"><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul>
         </div>
     </div>
 </footer>
 
-<!-- GSAP + ScrollTrigger -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<!-- Shared JS -->
 <script src="/js/shared.js"></script>
-
 </body>
 </html>
